@@ -199,6 +199,33 @@ button:hover span:after {
 
 <h1>Lord Latifi Streams</h1>
 <h2>If links redirect you back here, then streams are offline.</h2>
+<h2>Countdown to Rolex 24:</h2>
+<h2 id="demo"></h2>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 28, 2023 12:30:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+// If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "RACING IS BACK!";
+  }
+}, 1000);
+</script>
 <div class="container">
 <div class="cleanslate w24tz-current-time w24tz-middle" style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;"><p><a href="//24timezones.com/time-zone/ct" style="text-decoration: none" class="clock24" id="tz24-1667723378-tzcst-eyJob3VydHlwZSI6MTIsInNob3dkYXRlIjoiMSIsInNob3dzZWNvbmRzIjoiMCIsImNvbnRhaW5lcl9pZCI6ImNsb2NrX2Jsb2NrX2NiNjM2NzcwNzJmMjk3ZiIsInR5cGUiOiJkYiIsImxhbmciOiJlbiJ9" title="CST time zone" target="_blank" rel="nofollow">CST</a></p><div id="clock_block_cb63677072f297f"></div></div>
 <script type="text/javascript" src="//w.24timezones.com/l.js" async></script>

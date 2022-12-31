@@ -187,27 +187,6 @@ p {
  color: white;
 }
 
-  /* if desktop */
-    .mobile_device_380px {
-        display: none;
-    }
-    .mobile_device_480px {
-        display: none;
-    }
-
-
-    /* if mobile device max width 380px */
-    @media only screen and (max-device-width: 380px) {
-        .mobile_device_380px{display: block;}       
-        .desktop {display: none;}
-    } 
-
-    /* if mobile device max width 480px */
-    @media only screen and (max-device-width: 480px) {
-       .mobile_device_480px{display: block;}
-       .desktop {display: none;}
-    }
-
 div.streamtable {
   padding: 5px;
   background-color: #000;
@@ -248,26 +227,12 @@ div.stream-title {
 	<script src="/.s/src/jquery-3.6.0.min.js"></script>
 
 <head>
-<div id="content">
-    <div class="desktop">
-      <div class="topnav">
-         <a class="active" href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
-        <a style="float:left;padding-top: 20px;" href="/motorsport">Motorsport</a><a style="float:left;padding-top: 20px;" href="/soccer">Soccer</a>
-      </div>
-    </div>
-    <div class="mobile_device_380px">
-      <div class="topnav">
-         <a class="active" href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
-      </div>
-    </div>
-    <div class="mobile_device_480px">
-      <div class="topnav">
-         <a class="active" href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
-      </div>
-    </div>
-</div>
 <body>
-
+	
+<div class="topnav">
+  <a class="active" href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+</div>
+	
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">

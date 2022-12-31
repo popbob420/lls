@@ -184,6 +184,39 @@ p {
  color: white;
  background-color:#232323;
 }
+	
+div.streamtable {
+  padding: 5px;
+  background-color: #000;
+  border-radius: 15px;
+  margin:auto;
+  width: 90%;
+  margin-bottom: 25px;
+}
+
+div.stream {
+  padding:.5px;
+  background-color: #111;
+  border-radius: 15px;
+  margin:10px;
+  transition: 0.5s;
+}  
+
+div.stream:hover {
+  padding:.5px;
+  background-color: #00a3e0;
+  border-radius: 15px;
+  margin:10px;
+  transition: 0.5s;
+  cursor: pointer;
+}  
+
+div.stream-title {
+  padding:.5px;
+  background-color: #111;
+  border-radius: 15px;
+  margin:10px;
+}  
 </style>
 
 	<link rel="stylesheet" href="/.s/src/base.min.css" />
@@ -240,16 +273,14 @@ var x = setInterval(function() {
   }
 }, 1000);
 </script>
-<div class="container">
-<div class="cleanslate w24tz-current-time w24tz-middle" style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;"><p><a href="//24timezones.com/time-zone/ct" style="text-decoration: none" class="clock24" id="tz24-1667723378-tzcst-eyJob3VydHlwZSI6MTIsInNob3dkYXRlIjoiMSIsInNob3dzZWNvbmRzIjoiMCIsImNvbnRhaW5lcl9pZCI6ImNsb2NrX2Jsb2NrX2NiNjM2NzcwNzJmMjk3ZiIsInR5cGUiOiJkYiIsImxhbmciOiJlbiJ9" title="CST time zone" target="_blank" rel="nofollow">CST</a></p><div id="clock_block_cb63677072f297f"></div></div>
-<script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
+<div class="streamtable">
+  <div class="stream" onclick="location.href='/motorsport';">
+    <h2>Motorsport Streams</h2>
+  </div>
+  <div class="stream" onclick="location.href='/soccer';">
+    <h2>Soccer/Football Streams</h2>
+  </div>
 </div>
- <table>
- <tr>
- <td style="width:100%">Soccer Streams</td>
- <td><button onClick="location.href='/soccer'">Link</button></td>
- </tr>
- </table>
  <!--U1BFOOTER1Z--><style>
 @font-face {
  font-family: DIN-Pro;

@@ -38,7 +38,7 @@
 }
 
 body {
- background-image: linear-gradient(to bottom, transparent 0%, #000000bd 70%, #000000 95%), url("https://parallelmc.org/wp-content/uploads/2022/04/homepage-background.jpg");
+ background-image: linear-gradient(to bottom, transparent 0%, #000000bd 70%, #000000 95%), url("https://image.discovery.indazn.com/eu/v2/us/image?id=159337541620_image-header_pUs_1672955713000&quality=70");
  background-position: center;
  background-size: cover;
         background-position: top;
@@ -46,6 +46,12 @@ body {
 	backdrop-filter: blur(3px);
  background-color: #000;
  margin: 0;
+ @media (max-width: 768px) {
+    /* CSS in here for mobile only */ .home {
+        background-image: linear-gradient(to bottom, transparent 0%, #000000bd 70%, #000000 90%), url("https://image.discovery.indazn.com/eu/v2/us/image?id=159337541620_image-header_pUs_1672955713000&quality=70");
+        background-size: 1400px;
+    }
+}
 }
  
 .topnav {

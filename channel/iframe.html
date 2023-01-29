@@ -1,44 +1,20 @@
-<style>
-/*
-body { border-width: 0px; margin: 0px; padding: 0px; overflow: hidden; }
-*/
-html {
-    height: 100%;
-}
-body {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: 0;
-}
-#vid {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-</style>
+<html>
+  <body>
+    <!-- Add a placeholder for the Twitch embed -->
+    <div id="twitch-embed"></div>
 
-<body>
+    <!-- Load the Twitch embed JavaScript file -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
-<div id="oper" style="text-align: justify;">&nbsp;</div>
-
-<div id="vid"></div>
-<script>
- player = new Clappr.Player({
- source: "https://fa723fc1b171.us-west-2.playback.live-video.net/api/video/v1/us-west-2.196233775518.channel.ZdudrEELkKa0.m3u8?player_version=1.14.0",
- mimeType: "application/x-mpegURL",
- autoPlay: false, 
- width: "100%",
- height:"100%",
- mediacontrol: {seekbar: "#00a3e0", buttons: "#00a3e0"},
- plugins: {"core": [LevelSelector]}, 
- parentId: "#vid"});
-</script>
-</body>
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element -->
+    <script type="text/javascript">
+      new Twitch.Embed("twitch-embed", {
+        width: 100%,
+        height: 100%,
+        channel: "reafsdfdsacing",
+        // Only needed if this page is going to be embedded on other websites
+        parent: ["https://LatifiStreams.com"]
+      });
+    </script>
+  </body>
+</html>

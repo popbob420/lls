@@ -1,3 +1,9 @@
+<script>
+if(window==window.top){
+window.location.replace("https://en.m.wikipedia.org/wiki/Nicholas_Latifi");
+}
+</script>
+
 <style>
 /*
 body { border-width: 0px; margin: 0px; padding: 0px; overflow: hidden; }
@@ -31,8 +37,9 @@ body {
 
 <div id="vid"></div>
 <script>
+  var strm = window.atob('aHR0cHM6Ly9ra2ItcHJvZHVjdGlvbi5qdXB5dGVyLXByb3h5LmthZ2dsZS5uZXQvay8xMTk2NjIzNDEvZXlKaGJHY2lPaUprYVhJaUxDSmxibU1pT2lKQk1USTRRMEpETFVoVE1qVTJJaXdpZEhsd0lqb2lTbGRVSW4wLi5XTm4zNmFWazZPNVZsSE83cVFaNWRRLjRVOFpnbDl5eFpqOUNhSGlhMWxUbHMyT0ZrXy13blJxdTkyVXVHZUFjdC15YU5XdngtVXF4MVIzV3ZOZWpvQUprX1REWG5jaWU3ZlAzdmh0UF9lYllkZm82V0RkUTRCREswczc0UGktbXRyUXlqU2FIaUJoeTlIX1JtWDI0ZjdVOWkxLXZzWHdtQjJIWERvS0tfYkh2el9MclVsMWJQbXhXZm56SGU3dGRWc2REVWViNkR4VGFCQk95VXNoVk9ycnBqX1gzc3dRNTFnWWNtazlFblFFc3cuNHUxTmFROG1yS3N3Yl9PZENwc0hFUS9wcm94eS9maWxlcy9nYXZ5bl9uYXNzY2FyLm0zdTg=') ;
  player = new Clappr.Player({
- source: "https://fa723fc1b171.us-west-2.playback.live-video.net/api/video/v1/us-west-2.196233775518.channel.ZdudrEELkKa0.m3u8",
+ source: strm,
  mimeType: "application/x-mpegURL",
  autoPlay: false, 
  width: "100%",

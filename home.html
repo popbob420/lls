@@ -166,7 +166,7 @@ button:hover {
  padding: 5px;
 }
 
-.bruh {
+.date2 {
  background-image: url('https://www.wfla.com/wp-content/uploads/sites/71/2022/02/853079b042bd4d87bdb46d230fb8429d.jpg');
  height: 100px;
  width: 75%;
@@ -179,7 +179,7 @@ button:hover {
  filter: grayscale(1);
 }
 
-.bruh1 {
+.date1 {
  background-image: url('https://cdn.racingnews365.com/_1125x633_crop_center-center_85_none/SI202203200179_hires_jpeg_24bit_rgb.jpg');
  height: 100px;
  width: 75%;
@@ -240,7 +240,6 @@ div.stream-title {
 
 	<script src="/.s/src/jquery-3.6.0.min.js"></script>
 
-<head>
 <div class="topnav">
  <a class="active" href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
 </div>
@@ -252,77 +251,59 @@ div.stream-title {
 <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-
+</head>
 <h1>Lord Latifi Streams</h1>
 <h2><i>Your new home for sports.</i></h2>
-<h2>Countdown to F1 2023 Season:</h2>
-<!-- Display the countdown timer in an element -->
-<div class="bruh1"><p style="font-size:32px;" id="demo"></p></div>
-
 <script>
-// Set the date we're counting down to
-var countDownDate = new Date("Mar 05, 2023 9:00:00").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-
-  // If the count down is finished, write some text
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "RACING IS BACK!";
-  }
-}, 1000);
+ 
+    //Create object with the list of due dates
+    //The 'name' will correspond to the field ID to populate the results
+    var dueDates = {
+        'date1':'2023-03-05 09:00:00',
+        'date2':'2023-03-05 11:00:00',
+        'date3':'2017-06-05 05:32:33'
+    };
+ 
+    var timer = setInterval(function() {
+        //Instantiate variables
+        var dueDate, distance, days, hours, minutes, seconds, output;
+        //Set flag to repeat function
+        var repeat = false;
+        // Get todays date and time
+        var now = new Date().getTime();
+        //Iterate through the due dates
+        for (var dueDateId in dueDates)
+        {
+            //Get the due date for this record
+            dueDate = new Date(dueDates[dueDateId]);
+            // Find the distance between now an the due date
+            distance = dueDate - now;
+            // Time calculations for days, hours, minutes and seconds
+            days    = Math.floor(distance  / (1000 * 60 * 60 * 24));
+            hours   = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            //Determine the output and populate the corresponding field
+            output = "OVERDUE";
+            if (distance > 0)
+            {
+                output = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+                repeat = true; //If any record is not expired, set flag to repeat
+            }
+            document.getElementById(dueDateId).innerHTML = output;
+            //If flag to repeat is false, clear event
+            if(!repeat)
+            {
+                clearInterval(timer);
+            }
+        }
+    }, 1000);
+ 
 </script>
-<h2>Countdown to Indycar 2023 Season:</h2>
-<!-- Display the countdown timer in an element -->
-<div class="bruh"><p style="font-size:32px;" id="demo"></p></div>
-
-<script>
-// Set the date we're counting down to
-var countDownDate2 = new Date("Mar 05, 2023 11:00:00").getTime();
-
-// Update the count down every 1 second
-var x2 = setInterval(function() {
-
-  // Get today's date and time
-  var now2 = new Date().getTime();
-
-  // Find the distance between now and the count down date
-  var distance2 = countDownDate2 - now2;
-
-  // Time calculations for days, hours, minutes and seconds
-  var days2 = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours2 = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes2 = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds2 = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = days2 + "d " + hours2 + "h "
-  + minutes2 + "m " + seconds2 + "s ";
-
-  // If the count down is finished, write some text
-  if (distance2 < 0) {
-    clearInterval(x2);
-    document.getElementById("demo").innerHTML = "RACING IS BACK!";
-  }
-}, 1000);
-</script>
+ 
+<div id="date1"> </div><br>
+ 
+<div id="date2"> </div><br>
 
 <div class="streamtable">
   <div class="stream" onclick="location.href='/motorsport';">

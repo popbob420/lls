@@ -179,6 +179,19 @@ button:hover {
  filter: grayscale(1);
 }
 
+.bruh1 {
+ background-image: url('https://cdn.racingnews365.com/_1125x633_crop_center-center_85_none/SI202203200179_hires_jpeg_24bit_rgb.jpg');
+ height: 100px;
+ width: 75%;
+ margin: auto;
+ margin-bottom: 10px;
+ padding: 50px 0;
+ background-size:     cover;                      /* <------ */
+ background-repeat:   no-repeat;
+ background-position: center center;
+ filter: grayscale(1);
+}
+
 p {
  font-family: 'DIN-Pro', sans-serif;
  text-align: center;
@@ -242,9 +255,43 @@ div.stream-title {
 
 <h1>Lord Latifi Streams</h1>
 <h2><i>Your new home for sports.</i></h2>
-<h2>Countdown to Indycar 2023 Season:</h2>
+<h2>Countdown to F1 2023 Season:</h2>
 <!-- Display the countdown timer in an element -->
 <div class="bruh"><p style="font-size:32px;" id="demo"></p></div>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Mar 05, 2023 9:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "RACING IS BACK!";
+  }
+}, 1000);
+</script>
+<h2>Countdown to Indycar 2023 Season:</h2>
+<!-- Display the countdown timer in an element -->
+<div class="bruh1"><p style="font-size:32px;" id="demo"></p></div>
 
 <script>
 // Set the date we're counting down to

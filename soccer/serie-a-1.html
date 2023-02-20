@@ -10,7 +10,7 @@
 
 	<style>.UhideBlockL{display:none; }</style>
 <meta content="Lord Latifi Streams" property="og:title" />
-<meta content="Watch Soccer/Football in HD with Lord Latifi Streams" property="og:description" />
+<meta content="Watch Soccer in HD with Lord Latifi Streams" property="og:description" />
 <meta content="https://latifistreams.com/" property="og:url" />
 <meta content="#ffffff" data-react-helmet="true" name="theme-color" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -32,11 +32,47 @@
  src: url('DIN-Pro.ttf');
 }
 
+* {
+  box-sizing: border-box;
+}
+  
 body {
- background: #1d125d;
+ background: #232323;
  margin: 0;
 }
- 
+  
+.column1 {
+  float: left;
+  width: 75%;
+  padding: 10px;
+  height: 700px; /* Should be removed. Only for demonstration */
+}
+
+.column2 {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  height: 700px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .column1 {
+    width: 100%;
+  }
+    .column2 {
+    display:none;
+  }
+  
+}
+  
 .topnav {
  overflow: hidden;
  background-color: #000;
@@ -72,6 +108,15 @@ div.main {
  padding-top: 100px;
 }
 
+@media screen and (max-width: 800px) {
+  div.main {
+    height: 1000px;
+    width: 95%;
+    margin: auto;
+    padding-top: 100px;
+}
+}
+  
 div.ad {
  height: auto;
  width: 400px;
@@ -79,15 +124,16 @@ div.ad {
 }
 
 .btn {
- background: #0981fb;
+ background: #00a3e0;
  padding:10px 10px;
  border: 0px;
  font-family: DIN-Pro;
  transition: 0.3s;
+ margin-bottom:5px;
 }
  
 .btn:hover {
- background: #005bff
+ background: #e40046
 }
 	
 .title {
@@ -104,14 +150,23 @@ div.ad {
 <div class="topnav">
  <a class="active" href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
 </div>
- <div class="main">
- <h1><img src="https://upload.wikimedia.org/wikipedia/en/6/66/AtalantaBC.svg" class="title" width="auto" height="50">Atalanta vs Lecce<img src="https://upload.wikimedia.org/wikipedia/en/8/85/Us_lecce.svg" class="title" width="auto" height="50"></h1>
- <button class="btn" onclick="document.getElementById('iframe').src = 'https://cdn.sportcast.life/nginx.php?id=33'">Stream 1</button>
- <button class="btn" onclick="document.getElementById('iframe').src = 'https://cdn.sportcast.life/nginx.php?id=56'">Stream 2</button>
- <button class="btn" onclick="document.getElementById('iframe').src = 'https://cdn.sportcast.life/nginx.php?id=150'">Stream 3</button>
- <iframe id="iframe" src="https://cdn.sportcast.life/nginx.php?id=33" height="60%" width="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
- <script id="cid0020000337689747193" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 100%;height: 250px;">{"handle":"lls-soccer","arch":"js","styles":{"a":"000000","b":100,"c":"FFFFFF","d":"FFFFFF","e":"232323","g":"ffffff","k":"000000","l":"000000","m":"000000","n":"FFFFFF","p":"10","q":"000000","r":100,"t":0,"ab":false,"fwtickm":1}}</script>
- </div>
+<div class="main">
+ <h1><img src="https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg" class="title" width="auto" height="50">Manchester United vs Leicester City<img src="https://upload.wikimedia.org/wikipedia/en/2/2d/Leicester_City_crest.svg" class="title" width="auto" height="50"></h1>
+<div class="row">
+ <div class="column1" style="background-color:#232323;">
+ <button class="btn" onclick="document.getElementById('iframe').src = '/channel/iframe1'">Stream 1</button>
+ <button class="btn" onclick="document.getElementById('iframe').src = '/channel/iframe2'">Stream 2</button>
+ <button class="btn" onclick="document.getElementById('iframe').src = '/channel/iframe3'">Stream 3</button>
+ <button class="btn" onclick="document.getElementById('iframe').src = '/channel/ad-sports-2'">Stream 4 [INT.]</button>
+   <iframe id="iframe" src="/channel/iframe1" height="95%" width="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
+  <button class="btn" onclick=window.location.href='/motorsport/theater-mode'>Theater Mode</button>
+  </div>
+
+  <div class="column2" style="background-color:#232323;">
+ <script id="cid0020000337696593918" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 100%;height: 100%">{"handle":"lls-motorsport","arch":"js","styles":{"a":"000000","b":100,"c":"FFFFFF","d":"FFFFFF","k":"000000","l":"000000","m":"000000","n":"FFFFFF","p":"10","q":"000000","r":100,"t":0,"ab":false,"fwtickm":1}}</script>
+  </div>
+</div>
+</div>
  <div class="ad">
  <a href="https://discord.gg/6vr9CW7ZFa" target="_blank"><img src="https://media.discordapp.net/attachments/839307058674139139/1033433326385639424/llsdsc.png" style="width:100%;height:auto;"></a>
  </div>
@@ -166,4 +221,4 @@ a:hover {
 </footer><!--/U1BFOOTER1Z-->
 </body>
 </html><div id="utbr8214" rel="s101"></div>
-<!-- Ⓒ 2022  LORDLATIFISTREAMS -->
+<!-- Ⓒ 2023  LORDLATIFISTREAMS -->

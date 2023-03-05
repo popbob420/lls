@@ -37,7 +37,7 @@
 }
   
 body {
- background: #002d71;
+ background: #232323;
  margin: 0;
 }
   
@@ -110,10 +110,21 @@ div.main {
 
 @media screen and (max-width: 800px) {
   div.main {
-    height: 1000px;
+    height: 1100px;
     width: 95%;
     margin: auto;
     padding-top: 100px;
+}
+  div.title1 {
+  margin: auto;
+  min-width: 0px;
+  float: none;
+  width: 100%;
+  overflow: auto;
+  word-wrap: break-word;
+}
+  div.fut {
+  margin-left: 0px;
 }
 }
   
@@ -123,8 +134,16 @@ div.ad {
  margin: auto;
 }
 
+div.fut {
+ height: auto;
+ max-width: 675px;
+ margin: auto;
+ float: right;
+ margin-left: 0px;
+}
+
 .btn {
- background: #008fd7;
+ background: #00a3e0;
  padding:10px 10px;
  border: 0px;
  font-family: DIN-Pro;
@@ -133,13 +152,32 @@ div.ad {
 }
  
 .btn:hover {
- background: #024494
+ background: #e40046
 }
 	
 .title {
- vertical-align: middle;
+ margin: auto;
+ display: flex;
  margin-right: 10px;
  margin-left: 10px;
+}
+
+div.title1 {
+  min-width: 300px;
+  padding-top: 25px;
+  display: flex;
+  float: right;
+}
+
+div.top {
+  width: 100%;
+  text-align: center;
+}
+
+@media screen and (min-width: 800px) {
+.title1 {
+  padding-right: 200px;
+}
 }
 </style>
 <body>
@@ -151,13 +189,18 @@ div.ad {
  <a class="active" href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
 </div>
 <div class="main">
- <h1><img src="https://upload.wikimedia.org/wikipedia/en/e/e1/US_Cremonese_logo.svg" class="title" width="auto" height="50">Cremonese vs Roma<img src="https://upload.wikimedia.org/wikipedia/en/f/f7/AS_Roma_logo_%282017%29.svg" class="title" width="auto" height="50"></h1>
+<div class="top">
+<div class="fut">
+ <a href="https://futsimpletrader.com/" target="_blank"><img src="https://media.discordapp.net/attachments/1005943603614458016/1081264632691429396/banner_stream_2.png" style="width:100%;height:auto;"></a>
+ </div>
+ <div class="title1"><img src="https://images.fotmob.com/image_resources/logo/teamlogo/9881_small.png" class="title" width="auto" height="50"><h1>Spezia vs Hellas Verona</h1><img src="https://images.fotmob.com/image_resources/logo/teamlogo/9876_small.png" class="title" width="auto" height="50"></div>
+</div>
 <div class="row">
  <div class="column1" style="background-color:#;">
  <button class="btn" onclick="document.getElementById('iframe').src = 'https://cdn.sportcast.life/nginx.php?id=31'">Stream 1</button>
  <button class="btn" onclick="document.getElementById('iframe').src = 'https://cdn.sportcast.life/nginx.php?id=56'">Stream 2</button>
- <button class="btn" onclick="document.getElementById('iframe').src = 'https://cdn.sportcast.life/nginx.php?id=150'">Stream 3</button>
-   <iframe id="iframe" src="https://cdn.sportcast.life/nginx.php?id=31" height="95%" width="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
+ <button class="btn" onclick="document.getElementById('iframe').src = 'https://cdn.sportcast.life/nginx.php?id=149'">Stream 3</button>
+	 <iframe id="iframe" src="https://cdn.sportcast.life/nginx.php?id=31" height="95%" width="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
   </div>
 
   <div class="column2" style="background-color:#;">

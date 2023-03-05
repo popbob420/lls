@@ -1,0 +1,51 @@
+<script>
+if(window==window.top){
+window.location.replace("https://en.m.wikipedia.org/wiki/Nicholas_Latifi");
+}
+</script>
+
+<style>
+/*
+body { border-width: 0px; margin: 0px; padding: 0px; overflow: hidden; }
+*/
+html {
+    height: 100%;
+}
+body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0;
+}
+#vid {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+</style>
+
+<body>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
+<div id="oper" style="text-align: justify;">&nbsp;</div>
+
+<div id="vid"></div>
+<script>
+  var strm = window.atob('aHR0cHM6Ly9mYTcyM2ZjMWIxNzEudXMtd2VzdC0yLnBsYXliYWNrLmxpdmUtdmlkZW8ubmV0L2FwaS92aWRlby92MS91cy13ZXN0LTIuMTk2MjMzNzc1NTE4LmNoYW5uZWwuWmR1ZHJFRUxrS2EwLm0zdTg/dG9rZW49ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKRlV6TTROQ0o5LmV5SmhkM002WTJoaGJtNWxiQzFoY200aU9pSmhjbTQ2WVhkek9tbDJjenAxY3kxM1pYTjBMVEk2TVRrMk1qTXpOemMxTlRFNE9tTm9ZVzV1Wld3dldtUjFaSEpGUlV4clMyRXdJaXdpWVhkek9tRmpZMlZ6Y3kxamIyNTBjbTlzTFdGc2JHOTNMVzl5YVdkcGJpSTZJaW9pTENKaGQzTTZjM1J5YVdOMExXOXlhV2RwYmkxbGJtWnZjbU5sYldWdWRDSTZabUZzYzJVc0ltVjRjQ0k2TVRZM056azFPRE00TUgwLm54NjJZRWlITXRyam5LX3VRNzJJcE1PUXlNUllZel9ZZTU3RjBuV3ZmRmYyY1BLcnVmR2JHOS01dWFQVUJDTkRBaU5tMmdNWlJjUkp3c3hhVEJzNzNkcGZXUV9BMldxRU8zT3k3eUFTVHpPZWxfNFJpYXk0VVZiQXQ5X1BhSC13JnBsYXllcl92ZXJzaW9uPTEuMTQuMA==') ;
+ player = new Clappr.Player({
+ source: strm,
+ mimeType: "application/x-mpegURL",
+ autoPlay: false, 
+ width: "100%",
+ height:"100%",
+ mediacontrol: {seekbar: "#00a3e0", buttons: "#00a3e0"},
+ plugins: {"core": [LevelSelector]}, 
+ parentId: "#vid"});
+</script>
+</body>

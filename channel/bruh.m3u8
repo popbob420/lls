@@ -3,17 +3,17 @@
 #EXT-X-ALLOW-CACHE:NO
 
 #EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="main_audio",CODECS="mp4a.40.5",LANGUAGE="ENG",NAME="Track 2 MRN",DEFAULT=NO,URI="https://d2ku8s55qcsgd.cloudfront.net/mrn/primary.m3u8" 
-#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="main_audio",CODECS="mp4a.40.5",LANGUAGE="ENG",NAME="Track 1 DEFAULT",DEFAULT=YES,AUTOSELECT=YES,URI=""
+#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="main_audio",CODECS="mp4a.40.5",LANGUAGE="ENG",NAME="Track 1 DEFAULT",DEFAULT=YES,AUTOSELECT=YES
 
-#EXT-X-STREAM-INF:BANDWIDTH=125000,RESOLUTION=320x180,CODECS="avc1.4d001f,mp4a.40.5",AUDIO="main_audio" 
+#EXT-X-STREAM-INF:BANDWIDTH=125000,RESOLUTION=320x180,CODECS="avc1.4d001f,mp4a.40.5"
 https://admdn5.cdn.mangomolo.com/adsports2/smil:adsports2.stream.smil/chunklist_b125000_t64MTgwcA==.m3u8 
-#EXT-X-STREAM-INF:BANDWIDTH=200000,RESOLUTION=416x234,CODECS="avc1.4d001f,mp4a.40.5",AUDIO="main_audio" 
+#EXT-X-STREAM-INF:BANDWIDTH=200000,RESOLUTION=416x234,CODECS="avc1.4d001f,mp4a.40.5"
 https://admdn5.cdn.mangomolo.com/adsports2/smil:adsports2.stream.smil/chunklist_b200000_t64MjM0cA==.m3u8
-#EXT-X-STREAM-INF:BANDWIDTH=450000,RESOLUTION=640x360,CODECS="avc1.4d001f,mp4a.40.5",AUDIO="main_audio" 
+#EXT-X-STREAM-INF:BANDWIDTH=450000,RESOLUTION=640x360,CODECS="avc1.4d001f,mp4a.40.5"
 https://admdn5.cdn.mangomolo.com/adsports2/smil:adsports2.stream.smil/chunklist_b450000_t64MzYwcA==.m3u8
-#EXT-X-STREAM-INF:BANDWIDTH=800000,RESOLUTION=854x480,CODECS="avc1.4d001f,mp4a.40.5",AUDIO="main_audio" 
+#EXT-X-STREAM-INF:BANDWIDTH=800000,RESOLUTION=854x480,CODECS="avc1.4d001f,mp4a.40.5"
 https://admdn5.cdn.mangomolo.com/adsports2/smil:adsports2.stream.smil/chunklist_b800000_t64NDgwcA==.m3u8
-#EXT-X-STREAM-INF:BANDWIDTH=1800000,RESOLUTION=1280x720,CODECS="avc1.4d001f,mp4a.40.5",AUDIO="main_audio" 
+#EXT-X-STREAM-INF:BANDWIDTH=1800000,RESOLUTION=1280x720,CODECS="avc1.4d001f,mp4a.40.5"
 https://admdn5.cdn.mangomolo.com/adsports2/smil:adsports2.stream.smil/chunklist_b1800000_t64NzIwcA==.m3u8
-#EXT-X-STREAM-INF:BANDWIDTH=4000000,RESOLUTION=1920x1080,CODECS="avc1.4d001f,mp4a.40.5",AUDIO="main_audio" 
+#EXT-X-STREAM-INF:BANDWIDTH=4000000,RESOLUTION=1920x1080,CODECS="avc1.4d001f,mp4a.40.5"
 https://admdn5.cdn.mangomolo.com/adsports2/smil:adsports2.stream.smil/chunklist_b4000000_t64MTA4MHA=.m3u8

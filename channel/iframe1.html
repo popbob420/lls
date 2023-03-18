@@ -47,5 +47,12 @@ body {
  mediacontrol: {seekbar: "#00a3e0", buttons: "#00a3e0"},
  plugins: {"core": [LevelSelector]}, 
  parentId: "#vid"});
+ if (navigator.userAgent.match('Android')) {
+	player.on('fullscreen', function(isFullscreen) {
+		if (isFullscreen) {
+			screen.orientation.lock('landscape');
+		}
+	});
+ };
 </script>
 </body>

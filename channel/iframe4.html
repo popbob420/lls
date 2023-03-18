@@ -61,5 +61,12 @@ body {
       }
     },
  parentId: "#vid"});
+		if (navigator.userAgent.match('Android')) {
+			player.on('fullscreen', function(isFullscreen) {
+				if (isFullscreen) {
+					screen.orientation.lock('landscape');
+				}
+			});
+		};
 </script>
 </body>

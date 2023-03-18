@@ -2,8 +2,10 @@
 #EXT-X-VERSION:3 
 #EXT-X-ALLOW-CACHE:NO
 
-#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="main_audio",CODECS="mp4a.40.5",LANGUAGE="ENG",NAME="Track 2 MRN",DEFAULT=NO,URI="https://d2ku8s55qcsgd.cloudfront.net/mrn/primary.m3u8" 
-#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="main_audio",CODECS="mp4a.40.5",LANGUAGE="ENG",NAME="Track 1 DEFAULT",DEFAULT=YES,AUTOSELECT=YES
+#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="main_audio",CODECS="mp4a.40.5",LANGUAGE="ENG",NAME="Track 2 MRN",
+DEFAULT=NO,AUTOSELECT=NO,URI="https://d2ku8s55qcsgd.cloudfront.net/mrn/primary.m3u8" 
+#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="main_audio",CODECS="mp4a.40.5",LANGUAGE="ENG",NAME="Track 1 DEFAULT",
+DEFAULT=YES,AUTOSELECT=YES
 
 #EXT-X-STREAM-INF:BANDWIDTH=125000,RESOLUTION=320x180,CODECS="avc1.4d001f,mp4a.40.5",AUDIO="main_audio"
 https://admdn5.cdn.mangomolo.com/adsports2/smil:adsports2.stream.smil/chunklist_b125000_t64MTgwcA==.m3u8 

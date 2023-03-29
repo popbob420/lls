@@ -196,12 +196,41 @@ h2.title {
 <div class="top-title">
   <h2 class="title">MOTORSPORT STREAMS</h2>
 </div>
-  
+
 <div class="streamtable">
   <div class="stream-title">
     <h1>WEDNESDAY, MARCH 29</h1>
   </div>
 </div>
+
+<div id="clockbox" style="color:#ff5151"></div>
+
+<script type="text/javascript">
+function GetClock(){
+var tzOffset = -4;//set this to the number of hours offset from UTC
+
+var d=new Date();
+var dx=d.toGMTString();
+dx=dx.substr(0,dx.length -3);
+d.setTime(Date.parse(dx))
+d.setHours(d.getHours()+tzOffset);
+var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+
+if(nhour==0){ap=" AM";nhour=12;}
+else if(nhour<12){ap=" AM";}
+else if(nhour==12){ap=" PM";}
+else if(nhour>12){ap=" PM";nhour-=12;}
+
+if(nmin<=9) nmin="0"+nmin;
+if(nsec<=9) nsec="0"+nsec;
+
+var clocktext=""+nhour+":"+nmin+":"+nsec+ap+"";
+document.getElementById('clockbox').innerHTML=clocktext;
+}
+
+GetClock();
+setInterval(GetClock,1000);
+</script>
 
 <!--
 f1 - #ff1e02

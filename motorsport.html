@@ -205,7 +205,6 @@ h2.title {
 
 <div class="streamtable">
 <div class="stream-title">
-<h1>Current time in ET:</h1>
 <div id="clockbox" style="
  font-family: 'Barlow', sans-serif;
  text-align:center;
@@ -235,7 +234,7 @@ else if(nhour>12){ap=" PM";nhour-=12;}
 if(nmin<=9) nmin="0"+nmin;
 if(nsec<=9) nsec="0"+nsec;
 
-var clocktext=""+nhour+":"+nmin+":"+nsec+ap+"";
+var clocktext=""+nhour+":"+nmin+":"+nsec+ap+"EDT";
 document.getElementById('clockbox').innerHTML=clocktext;
 }
 

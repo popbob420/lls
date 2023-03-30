@@ -32,6 +32,16 @@
  src: url('DIN-Pro.ttf');
 }
 
+@font-face {
+ font-family: F1;
+ src: url('Formula1-Wide.otf');
+}
+
+@font-face {
+ font-family: V8;
+ src: url('supercars.ttf');
+}
+
 * {
   box-sizing: border-box;
 }
@@ -89,6 +99,20 @@ body {
  
 h1 {
  font-family: DIN-Pro;
+ font-size:29px;
+ color: #ffffff;
+ text-align: center;
+}
+
+h1.f1 {
+ font-family: F1;
+ font-size:29px;
+ color: #ffffff;
+ text-align: center;
+}
+
+h1.v8 {
+ font-family: supercars;
  font-size:29px;
  color: #ffffff;
  text-align: center;
@@ -151,7 +175,7 @@ div.ad {
  <a class="active" href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
 </div>
 <div class="main">
- <h1>SUPERCARS AT MELBOURNE</h1>
+ <h1 class="f1">FORMULA 1</h1> & <h1 class="v8">SUPERCARS</h1> AT MELBOURNE</h1>
 <div class="row">
  <div class="column1" style="background-color:#232323;">
  <!-- <button class="btn" onclick="document.getElementById('iframe').src = 'https://sportskart.click/embed/stream-592.php'">Stream 1</button> -->

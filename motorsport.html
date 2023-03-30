@@ -198,9 +198,35 @@ h2.title {
 </div>
 
 <div class="streamtable">
-  <div class="stream-title">
-    <h1>WEDNESDAY, MARCH 29</h1>
-  </div>
+<div class="stream-title">
+<div class="clockbox"></div>
+
+<script type="text/javascript">
+var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+function GetClock(){
+var tzOffset = -4;//set this to the number of hours offset from UTC
+
+var d=new Date();
+var dx=d.toGMTString();
+dx=dx.substr(0,dx.length -3);
+d.setTime(Date.parse(dx))
+d.setHours(d.getHours()+tzOffset);
+var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate();
+
+var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+"";
+var obj=document.querySelectorAll('.clockbox');
+for(var i in obj){
+	obj[i].innerHTML=clocktext;
+}
+}
+
+GetClock();
+setInterval(GetClock,1000);
+</script>
+
+</div>
 </div>
 
 <div class="streamtable">

@@ -206,68 +206,108 @@ h2.title {
 </div>
   
 <div class="streamtable">
-  <div class="stream-title">
-    <h1>TUESDAY, MARCH 28</h1>
+<div class="stream-title">
+<div class="clockbox" style="
+ font-family: 'Barlow', sans-serif;
+ text-align:center;
+ font-size:24px;
+ color: white;
+ padding: .2px;
+ margin:12px;
+"></div>
+
+<script type="text/javascript">
+var tday=["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"];
+var tmonth=["JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"];
+
+function GetClock(){
+var tzOffset = -4;//set this to the number of hours offset from UTC
+
+var d=new Date();
+var dx=d.toGMTString();
+dx=dx.substr(0,dx.length -3);
+d.setTime(Date.parse(dx))
+d.setHours(d.getHours()+tzOffset);
+var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate();
+
+var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+"";
+var obj=document.querySelectorAll('.clockbox');
+for(var i in obj){
+	obj[i].innerHTML=clocktext;
+}
+}
+
+GetClock();
+setInterval(GetClock,1000);
+</script>
+
+</div>
+</div>
+
+<div class="streamtable">
+<div class="stream-title">
+<div id="clockbox" style="
+ font-family: 'Barlow', sans-serif;
+ text-align:center;
+ font-size:24px;
+ color: white;
+ padding: .2px;
+ margin:12px;
+"></div>
+</div>
+
+<script type="text/javascript">
+function GetClock(){
+var tzOffset = -4;//set this to the number of hours offset from UTC
+
+var d=new Date();
+var dx=d.toGMTString();
+dx=dx.substr(0,dx.length -3);
+d.setTime(Date.parse(dx))
+d.setHours(d.getHours()+tzOffset);
+var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+
+if(nhour==0){ap=" AM";nhour=12;}
+else if(nhour<12){ap=" AM";}
+else if(nhour==12){ap=" PM";}
+else if(nhour>12){ap=" PM";nhour-=12;}
+
+if(nmin<=9) nmin="0"+nmin;
+if(nsec<=9) nsec="0"+nsec;
+
+var clocktext=""+nhour+":"+nmin+":"+nsec+ap+" EDT";
+document.getElementById('clockbox').innerHTML=clocktext;
+}
+
+GetClock();
+setInterval(GetClock,1000);
+</script>
+</div>
+
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #045ba4">
+    <h1>LA LIGA</h1>
+  </div>
+  <div class="stream" onclick="location.href='/soccer/la-liga-1';">
+    <h2>3:00PM ET - Mallorca vs Osasuna</h2>
   </div>
 </div>
 
 <div class="streamtable">
-  <div class="stream-title" style="background-color: #143ddb">
-    <h1>EURO QUALIFICATION</h1>
+  <div class="stream-title" style="background-color: #d00215">
+    <h1>BUNDESLIGA</h1>
   </div>
-  <div class="streamdiv">
-    <h2>GROUP A</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/euro-qualifying-1';">
-    <h2>12:00PM ET - Georgia vs Norway</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/euro-qualifying-2';">
-    <h2>2:45PM ET - Scotland vs Spain</h2>
-  </div>
-  <div class="streamdiv">
-    <h2>GROUP D</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/euro-qualifying-3';">
-    <h2>2:45PM ET - Turkiye vs Croatia</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/euro-qualifying-4';">
-    <h2>2:45PM ET - Wales vs Latvia</h2>
-  </div>
-  <div class="streamdiv">
-    <h2>GROUP I</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/euro-qualifying-5';">
-    <h2>2:45PM ET - Kosovo vs Andorra</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/euro-qualifying-6';">
-    <h2>2:45PM ET - Romania vs Belarus</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/euro-qualifying-7';">
-    <h2>2:45PM ET - Switzerland vs Israel</h2>
+  <div class="stream" onclick="location.href='/soccer/bundesliga-1';">
+    <h2>2:30PM ET - Eintracht Frankfurt vs Bochum</h2>
   </div>
 </div>
 
 <div class="streamtable">
-  <div class="stream-title" style="background-color: #162050">
-    <h1>CONCACAF NATIONS LEAGUE</h1>
+  <div class="stream-title" style="background-color: #091d3f">
+    <h1>LIGUE 1</h1>
   </div>
-  <div class="streamdiv">
-    <h2>LEAGUE A GROUP 2</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/nations-league-1';">
-    <h2>10:00PM ET - Costa Rica vs Panama</h2>
-  </div>
-  <div class="streamdiv">
-    <h2>LEAGUE A GROUP 3</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/nations-league-2';">
-    <h2>8:00PM ET - Canada vs Honduras</h2>
-  </div>
-  <div class="streamdiv">
-    <h2>LEAGUE B GROUP 4</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/nations-league-3';">
-    <h2>6:00PM ET - Haiti vs Bermuda</h2>
+  <div class="stream" onclick="location.href='/soccer/ligue-one-1';">
+    <h2>3:00PM ET - Olympique Marseille vs Montpellier</h2>
   </div>
 </div>
 

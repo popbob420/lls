@@ -46,6 +46,19 @@ body {
  height:"100%",
  mediacontrol: {seekbar: "#00a3e0", buttons: "#00a3e0"},
  plugins: {"core": [LevelSelector]}, 
+ levelSelectorConfig: {
+      title: 'QUALITY',
+      labels: {
+          4: '1080p',
+          3: '720p',
+          2: '480p',
+          1: '360p',
+          0: '240p',
+ },
+ labelCallback: function(playbackLevel, customLabel) {
+          return customLabel + playbackLevel.level.height+'p'; // High 720p
+      }
+    },
  parentId: "#vid"});
  if (navigator.userAgent.match('Android')) {
 	player.on('fullscreen', function(isFullscreen) {

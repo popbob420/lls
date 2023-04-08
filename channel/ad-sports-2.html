@@ -1,4 +1,14 @@
-Content-Security-Policy: frame-ancestors 'self' https://www.example.org;
+<system.webServer>
+    ...
+
+    <httpProtocol>
+        <customHeaders>
+            <add name="X-Frame-Options" value="sameorigin" />
+        </customHeaders>
+    </httpProtocol>
+
+    ...
+</system.webServer>
 
 <style>
 /*

@@ -1,1 +1,1 @@
-header set x-frame-options SAMEORIGIN
+X-Frame-Options: same-origin

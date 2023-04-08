@@ -26,7 +26,7 @@ body {
 
 <body>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script><script type="text/javascript" src="/channel/level-selector.min.js"></script>
 <div id="oper" style="text-align: justify;">&nbsp;</div>
 
 <div id="vid"></div>
@@ -39,6 +39,20 @@ body {
  height:"100%",
  mediacontrol: {seekbar: "#00a3e0", buttons: "#00a3e0"},
  plugins: {"core": [LevelSelector]}, 
+ levelSelectorConfig: {
+      title: 'QUALITY',
+      labels: {
+          5: '1080p',
+          4: '720p',
+          3: '480p',
+          2: '360p',
+          1: '234p',
+          0: '180p',
+ },
+ labelCallback: function(playbackLevel, customLabel) {
+          return customLabel + playbackLevel.level.height+'p'; // High 720p
+      }
+    },
  parentId: "#vid"});
 </script>
 </body>

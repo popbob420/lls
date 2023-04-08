@@ -1,1 +1,4 @@
-X-Frame-Options: SAMEORIGIN
+# a path:
+/channel/ad-sports-2.html
+  # headers for that path:
+  X-Frame-Options: DENY

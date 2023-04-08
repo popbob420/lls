@@ -1,5 +1,7 @@
 <script>
-    if (window.top !== window.self) window.top.location.replace(window.self.location.href);
+if (window.top.location.host != "latififstreams.com") {
+    document.body.innerHTML = "Access Denied";
+}
 </script>
 
 <style>

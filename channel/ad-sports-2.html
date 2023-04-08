@@ -1,14 +1,4 @@
-<system.webServer>
-    ...
-
-    <httpProtocol>
-        <customHeaders>
-            <add name="X-Frame-Options" value="sameorigin" />
-        </customHeaders>
-    </httpProtocol>
-
-    ...
-</system.webServer>
+<?php header('X-Frame-Options: SAMEORIGIN'); ?>
 
 <style>
 /*

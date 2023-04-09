@@ -1,0 +1,71 @@
+<script>
+if(window==window.top){
+window.location.replace("https://en.m.wikipedia.org/wiki/Nicholas_Latifi");
+}
+</script>
+
+<style>
+/*
+body { border-width: 0px; margin: 0px; padding: 0px; overflow: hidden; }
+*/
+html {
+    height: 100%;
+}
+body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0;
+}
+#vid {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+</style>
+
+<body>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script><script type="text/javascript" src="/channel/level-selector.min.js"></script>
+<div id="oper" style="text-align: justify;">&nbsp;</div>
+
+<div id="vid"></div>
+<script>
+ var strm = window.atob('aHR0cHM6Ly92aWRlb3MtMy5lYXJ0aGNhbS5jb20vZmVjbmV0d29yay85NTkzLmZsdi9jaHVua2xpc3RfdzIxNjAxNTY1NC5tM3U4P3Q9SWJqcVFQcVFoajYlMkZBdTdiNWJEZHdHZUhwWXRORGhNJTJGeUVheThuUVY5bEpNTDN5Z0wzblplVVlTd0NvUFdLN3M=') ;
+ player = new Clappr.Player({
+ source: strm,
+ mimeType: "application/x-mpegURL",
+ autoPlay: false, 
+ width: "100%",
+ height:"100%",
+ mediacontrol: {seekbar: "#00a3e0", buttons: "#00a3e0"},
+ plugins: {"core": [LevelSelector]}, 
+ levelSelectorConfig: {
+      title: 'QUALITY',
+      labels: {
+          4: '1080p60',
+          3: '720p60',
+          2: '480p',
+          1: '360p',
+          0: '160p',
+ },
+ labelCallback: function(playbackLevel, customLabel) {
+          return customLabel + playbackLevel.level.height+'p'; // High 720p
+      }
+    },
+ parentId: "#vid"});
+ if (navigator.userAgent.match('Android')) {
+	player.on('fullscreen', function(isFullscreen) {
+		if (isFullscreen) {
+			screen.orientation.lock('landscape');
+		}
+	});
+ };
+</script>
+</body>

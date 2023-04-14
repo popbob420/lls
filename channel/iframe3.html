@@ -32,12 +32,12 @@ body {
 
 <body>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script><script type="text/javascript" src="/channel/level-selector.min.js"></script>
 <div id="oper" style="text-align: justify;">&nbsp;</div>
 
 <div id="vid"></div>
 <script>
-  var strm = window.atob('aHR0cHM6Ly9ra2ItcHJvZHVjdGlvbi5qdXB5dGVyLXByb3h5LmthZ2dsZS5uZXQvay8xMjExNTE1ODMvZXlKaGJHY2lPaUprYVhJaUxDSmxibU1pT2lKQk1USTRRMEpETFVoVE1qVTJJaXdpZEhsd0lqb2lTbGRVSW4wLi5GX2FUeEE1T2VpTlpHa2hOSHpUMDNBLmpsbmlqdE1halBmeDk2VlZETGdoRU51ZU13dmFDRk1WUVlZVGU1b2lVczJrNFQzU0VLLU5DZXVDRkxfTnozdmJCbHlIcXhiWVNOX0JEbXVmeWlyaGRDLXBxcnN6eE1RanY5OFFIdVQxbVpQOXpTcjgta1M2RDBGUGV6U0xBdy1lb0d3NTdiVkg5NnJXV1VlVWV6aW9GRFlpRUtuenM2LURfTE9nR1BrUzdVZEZVNVVFTDNrcEIwUGR4QjJjc2g1OXRiOVZ5S2VKbnlObTd6ZTloeXNIVncuTlRRLTlhU3V1aXdMSFlXYjVuSHlqdy9wcm94eS9maWxlcy9NcmdhbWluZ2ZveC5tM3U4') ;
+ var strm = window.atob('aHR0cHM6Ly9kMWNtaGhhMnI5dXVoaS5jbG91ZGZyb250Lm5ldC9pbXNhX2RvbWVzdGljL21hc3Rlci5tM3U4') ;
  player = new Clappr.Player({
  source: strm,
  mimeType: "application/x-mpegURL",
@@ -45,7 +45,30 @@ body {
  width: "100%",
  height:"100%",
  mediacontrol: {seekbar: "#00a3e0", buttons: "#00a3e0"},
+ position: 'bottom-left',
+ watermark: 'https://media.discordapp.net/attachments/839307058674139139/1086857384535801916/llsicon.png?width=1025&height=118',
  plugins: {"core": [LevelSelector]}, 
+ levelSelectorConfig: {
+      title: 'QUALITY',
+      labels: {
+          5: '1080p',
+          4: '720p',
+          3: '720p',
+          2: '540p',
+          1: '360p',
+          0: '270p',
+ },
+ labelCallback: function(playbackLevel, customLabel) {
+          return customLabel + playbackLevel.level.height+'p'; // High 720p
+      }
+    },
  parentId: "#vid"});
+ if (navigator.userAgent.match('Android')) {
+	player.on('fullscreen', function(isFullscreen) {
+		if (isFullscreen) {
+			screen.orientation.lock('landscape');
+		}
+	});
+ };
 </script>
 </body>

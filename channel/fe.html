@@ -48,14 +48,23 @@ Why are you here?
  levelSelectorConfig: {
       title: 'QUALITY',
       labels: {
-          2: '1080p',
-          1: '720p',
-          0: '240p',
+          4: '720p',
+          3: '540p',
+          2: '360p',
+          1: '288p',
+          0: '224p',
  },
  labelCallback: function(playbackLevel, customLabel) {
           return customLabel + playbackLevel.level.height+'p'; // High 720p
       }
     },
  parentId: "#vid"});
+ if (navigator.userAgent.match('Android')) {
+	player.on('fullscreen', function(isFullscreen) {
+		if (isFullscreen) {
+			screen.orientation.lock('landscape');
+		}
+	});
+ };
 </script>
 </body>

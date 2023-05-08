@@ -28,8 +28,8 @@ html {
 <!-- Hls.js 0.9.x and 0.10.x both have critical bugs affecting this demo. Using fixed git hash to when it was working (0.10.0 pre-release), until https://github.com/video-dev/hls.js/issues/1790 has been resolved -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  var strm = window.atob('aHR0cHM6Ly92c2QxOTgubXljZG4ubWUvaGxzLzQyNjQ2MDkxMjMwNTcubTN1OC9zaWcvN2RYT3dldjFHMkkvZXhwaXJlcy8xNjgzNTcyOTQxNzEzL3NyY0lwLzE3Mi41Ni45My4yMS91cmxzLzE4NS4yMjYuNTIuOTYvY2xpZW50VHlwZS8wL3NyY0FnL0NIUk9NRS9taWQvNTU4Mjg2MjM2MDMwNS92aWRlby5tM3U4')
-	const source = strm;
+  var strm = window.atob('')
+	const source = "https://devimages.apple.com.edgekey.net/streaming/examples/bipbop_16x9/bipbop_16x9_variant.m3u8";
 	const video = document.querySelector('video');
 
 	const defaultOptions = {};

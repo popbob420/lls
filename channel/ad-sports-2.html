@@ -26,7 +26,7 @@ body {
 
 <body>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script><script type="text/javascript" src="/channel/level-selector.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script><script type="text/javascript" src="/channel/level-selector.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clappr-pip-plugin@latest/dist/clappr-pip-plugin.js"></script>
 <div id="oper" style="text-align: justify;">&nbsp;</div>
 
 <div id="vid"></div>
@@ -38,7 +38,7 @@ body {
  width: "100%",
  height:"100%",
  mediacontrol: {seekbar: "#00a3e0", buttons: "#00a3e0"},
- plugins: {"core": [LevelSelector]}, 
+ plugins: {"core": [LevelSelector, ClapprPIPPlugin]}, 
  levelSelectorConfig: {
       title: 'QUALITY',
       labels: {

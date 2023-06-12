@@ -164,36 +164,43 @@ div.ad {
 <div class="main">
  <h1>NASCAR AT SONOMA</h1>
 <div class="row">
- <div class="column1" style="background-color:#232323;">
- <button class="btn" onclick="document.getElementById('iframe').src = '/channel/iframe1'">Stream 1</button>
+ <div class="column1" style="background-color:#;">
+ <button class="btn" onclick="document.getElementById('iframe').src = 'https://latifistreams.com/channel/iframe1'">Stream 1</button>
  <button class="btn" onclick="document.getElementById('iframe').src = 'https://en.tvfreemium.com/embed/tsn-5/?autoplay=true'">Stream 2</button>
  <button class="btn" onclick="document.getElementById('iframe').src = 'https://wikisport.click/strm/24.php'">Stream 3</button>
  <button class="btn" onclick="document.getElementById('iframe').src = 'https://sportskart.click/embed/stream-54.php'">Stream 4</button>
  <button class="btn" onclick="document.getElementById('iframe').src = 'https://sportskart.click/embed/stream-115.php'">Stream 5</button>
  <button class="btn" onclick="document.getElementById('iframe').src = 'https://sportskart.click/embed/stream-643.php'">Stream 6</button>
  <button class="btn" onclick="document.getElementById('iframe').src = '/channel/ad-sports-1'">Stream 7 [INT.]</button>
- <iframe id="iframe" src="/channel/iframe1" height="94.4%" width="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
+ <iframe id="iframe" src="https://latifistreams.com/channel/iframe1" height="94.4%" width="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
  <button class="btn" onclick="TheatreMode();">THEATRE MODE</button>
  <script>
  var TheatreModeActivated = false
  function TheatreMode(){
    if(TheatreModeActivated){
-     $(".topnav").css({"display": "none"})     
-     $(".column1").css({"height": "1000px"})
-     $(".column2").css({"height": "100%"})
-     $(".ad").css({"display": "none"})     
-     $("footer").css({"display": "none"})     
-     $("html").css({"height": "100%", "margin": "0"})     
+     TheatreModeActivated = false; <!--after click-->
+     $(".topnav").css({"display": ""});     
+     $(".column1").css({"height": "700px"});
+     $(".main").css({"width": ""});
+     $(".column2").css({"height": "700px"});
+     $(".ad").css({"display": ""});     
+     $("footer").css({"display": ""});     
+     $(".row").css({"position": "", "top": "", "transform": "", "width" : "100%", "height" : "100%", "margin" : ""});     
    }
    else {
      TheatreModeActivated = true;
-     
-   }
+     $(".topnav").css({"display": "none"});     
+     $(".column1").css({"height": "102.3%"});
+     $(".main").css({"width": "100%"});
+     $(".column2").css({"height": "100%"});
+     $(".ad").css({"display": "none"});     
+     $("footer").css({"display": "none"});     
+     $(".row").css({"position": "absolute", "top": "50%", "transform": "translateY(-50%)", "width" : "100%", "height" : "100%", "margin" : "0"});        }
  }
  </script>
  </div>
 
-  <div class="column2" style="background-color:#;">
+  <div class="column2" style="background-color:#000;">
  <script id="cid0020000337696593918" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 100%;height: 100%">{"handle":"lls-motorsport","arch":"js","styles":{"a":"000000","b":100,"c":"FFFFFF","d":"FFFFFF","k":"000000","l":"000000","m":"000000","n":"FFFFFF","p":"10","q":"000000","r":100,"t":0,"ab":false,"fwtickm":1}}</script>
   </div>
 </div>

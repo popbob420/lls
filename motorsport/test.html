@@ -173,11 +173,11 @@ div.ad {
  <button class="btn" onclick="document.getElementById('iframe').src = 'https://sportskart.click/embed/stream-643.php'">Stream 6</button>
  <button class="btn" onclick="document.getElementById('iframe').src = '/channel/ad-sports-1'">Stream 7 [INT.]</button>
  <iframe id="iframe" src="https://latifistreams.com/channel/iframe1" height="94.4%" width="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
- <button class="btn" onclick="TheatreMode();"><b>Theatre Mode [PC]</b></button>
+ <button class="btn" onclick="TheatreMode();"><b>Theater Mode [PC]</b></button>
  <script>
- var TheatreModeActivated = false
- function TheatreMode(){
-   if(TheatreModeActivated){
+ var TheaterModeActivated = false
+ function TheaterMode(){
+   if(TheaterModeActivated){
      TheatreModeActivated = false; <!--after click-->
      $(".topnav").css({"display": ""});     
      $(".column1").css({"height": "700px"});
@@ -188,7 +188,7 @@ div.ad {
      $(".row").css({"position": "", "top": "", "transform": "", "width" : "100%", "height" : "100%", "margin" : ""});     
    }
    else {
-     TheatreModeActivated = true;
+     TheaterModeActivated = true;
      $(".topnav").css({"display": "none"});     
      $(".column1").css({"height": "101.4%"});
      $(".main").css({"width": "100%"});

@@ -255,7 +255,6 @@ setInterval(GetClock,1000);
  margin:12px;
 "></div>
 </div>
-<noscript><h1>JavaScript is disabled.</h1></noscript>
 <script type="text/javascript">
 function GetClock(){
 var tzOffset = -4;//set this to the number of hours offset from UTC
@@ -282,6 +281,7 @@ document.getElementById('clockbox').innerHTML=clocktext;
 GetClock();
 setInterval(GetClock,1000);
 </script>
+<noscript><h1>JavaScript is disabled.</h1></noscript>
 </div>
 <!--
 <h1 style="padding: 100px">No events are scheduled for this date.</h1>

@@ -1,0 +1,65 @@
+<style>
+/*
+body { border-width: 0px; margin: 0px; padding: 0px; overflow: hidden; }
+*/
+html {
+    height: 100%;
+}
+body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0;
+}
+#vid {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+</style>
+
+<body>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script><script type="text/javascript" src="/channel/level-selector.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clappr-pip-plugin@latest/dist/clappr-pip-plugin.js"></script>
+<div id="oper" style="text-align: justify;">&nbsp;</div>
+
+<div id="vid"></div>
+<script>
+ player = new Clappr.Player({
+ source: "https://1358e17031084982bb2e0c48319cc663.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/Linear-599-1-Speed-Sport-1-Obsession-Media/mt/obsessionmedia/599/hls/master/playlist.m3u8",
+ mimeType: "application/x-mpegURL",
+ autoPlay: false, 
+ width: "100%",
+ height:"100%",
+ mediacontrol: {seekbar: "#00a3e0", buttons: "#00a3e0"},
+ plugins: {"core": [LevelSelector, ClapprPIPPlugin]}, 
+ levelSelectorConfig: {
+      title: 'QUALITY',
+      labels: {
+          4: '1080p',
+          3: '720p',
+          2: '576p',
+          1: '360p',
+          0: '216p',
+ },
+ labelCallback: function(playbackLevel, customLabel) {
+          return customLabel + playbackLevel.level.height+'p'; // High 720p
+      }
+    },
+ parentId: "#vid"});
+ if (navigator.userAgent.match('Android')) {
+	player.on('fullscreen', function(isFullscreen) {
+		if (isFullscreen) {
+			screen.orientation.lock('landscape');
+		}
+	});
+ };
+
+</script>
+</body

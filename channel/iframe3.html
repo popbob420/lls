@@ -35,14 +35,14 @@ body {
 </style>
 
 <body>
-
+<script type="text/javascript" src="https://kick.com/kick-token-provider"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script><script type="text/javascript" src="https://latifistreams.com/channel/level-selector.min.js"></script>
 <div id="oper" style="text-align: justify;">&nbsp;</div>
 
 <div id="vid"></div>
 <script>
  player = new Clappr.Player({
- source: "https://vkvsd214.mycdn.me/hls/5005260425938.m3u8/sig/sM3l6nzTwSY/srcIp/172.56.91.113/urls/185.226.52.53/expires/1687492961136/clientType/13/srcAg/CHROME/fromCache/1/mid/6134431099858/id/5005260425938/video.m3u8?p",
+ source: "https://fa723fc1b171.us-west-2.playback.live-video.net/api/video/v1/us-west-2.196233775518.channel.G8gdOxZRLSG2.m3u8",
  mimeType: "application/x-mpegURL",
  autoPlay: false, 
  width: "100%",
@@ -58,7 +58,7 @@ body {
           3: '720p',
           2: '480p',
           1: '360p',
-          0: '240p',
+          0: '160p',
  },
  labelCallback: function(playbackLevel, customLabel) {
           return customLabel + playbackLevel.level.height+'p'; // High 720p

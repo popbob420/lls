@@ -1,0 +1,74 @@
+<script>
+if(window==window.top){
+window.location.replace("https://en.m.wikipedia.org/wiki/Nicholas_Latifi");
+}
+</script>
+
+<style>
+/*
+body { border-width: 0px; margin: 0px; padding: 0px; overflow: hidden; }
+*/
+html {
+    height: 100%;
+}
+body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0;
+}
+#vid {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+</style>
+
+<body>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script><script type="text/javascript" src="/channel/level-selector.min.js"></script>
+<div id="oper" style="text-align: justify;">&nbsp;</div>
+
+<div id="vid"></div>
+<script>
+ var strm = window.atob('aHR0cHM6Ly8wNC5tZXYyLmlwdHZmcmVlbWl1bS5jb20vcGxheWxpc3QvVW1aT2FqSXJhMDlrWjBaWFYyVkRWemhYYkhoNVFWbFdOMjFuT1VJeGJHY3ZPRlIwWWs5Uk4xQlZNRFJHWkZGTFVXTkpRMU5IZFhwc2VXWkJTR2h0WWxKMlJuUk5Oa05HVjJsdlIwTldjSFp0ZVU5VmFsRTlQUSwsL21hc3Rlci5tM3U4P3Rva2VuPWJUWnhOMU5JV0VaU1pGTk1jbWhRZVROUlZtUTBiRWszWjFjdmFFeHhjMVpOZEZselEyVXlVMUZoVEhoblFXWkJWU3RIYTBoUVJUTjNkUzh6WldNeFlYVm1NMHBXZUdsSVdHSnRSVGRyWkdaM2RFZE9UMEU5UFEsLA==') ;
+ player = new Clappr.Player({
+ source: strm,
+ mimeType: "application/x-mpegURL",
+ autoPlay: false, 
+ width: "100%",
+ height:"100%",
+ mediacontrol: {seekbar: "#00a3e0", buttons: "#00a3e0"},
+ position: 'bottom-left',
+ watermark: 'https://media.discordapp.net/attachments/839307058674139139/1086857384535801916/llsicon.png?width=1025&height=118',
+ plugins: {"core": [LevelSelector]}, 
+ levelSelectorConfig: {
+      title: 'QUALITY',
+      labels: {
+          5: '1080p',
+          4: '720p',
+          3: '480p',
+          2: '360p',
+          1: '240p',
+          0: '144p',
+ },
+ labelCallback: function(playbackLevel, customLabel) {
+          return customLabel + playbackLevel.level.height+'p'; // High 720p
+      }
+    },
+ parentId: "#vid"});
+ if (navigator.userAgent.match('Android')) {
+	player.on('fullscreen', function(isFullscreen) {
+		if (isFullscreen) {
+			screen.orientation.lock('landscape');
+		}
+	});
+ };
+</script>
+</body>

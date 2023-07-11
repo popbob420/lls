@@ -1,291 +1,293 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Password Protected Page</title>
-    <style>
-        html, body {
-            margin: 0;
-            width: 100%;
-            height: 100%;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        #dialogText {
-            color: white;
-        }
-        
-        #dialogWrap {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: table;
-            background-color: #232323;
-        }
-        
-        #dialogWrapCell {
-            display: table-cell;
-            text-align: center;
-            vertical-align: middle;
-        }
-        
-        #mainDialog {
-            max-width: 400px;
-            margin: 5px;
-            margin-left: auto;
-            margin-right: auto;
-            overflow: hidden;
-            text-align: left;
-        }
-        #mainDialog > * {
-            padding: 10px 30px;
-        }
-        #passArea {
-            padding: 20px 30px;
-        }
-        #passArea > * {
-            margin: 5px auto;
-        }
-        #pass {
-            width: 100%;
-            height: 40px;
-            font-size: 30px;
-        }
-        
-        #messageWrapper {
-            float: left;
-            vertical-align: middle;
-            line-height: 30px;
-        }
-        
-        .notifyText {
-            display: none;
-        }
-        
-        #invalidPass {
-            color: red;
-        }
-        
-        #success {
-            color: green;
-        }
-        
-        #submitPass {
-            font-size: 20px;
-            border-radius: 5px;
-            background-color: #E7E7E7;
-            border: solid gray 1px;
-            float: right;
-            cursor: pointer;
-        }
-        #contentFrame {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        #attribution {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            text-align: center;
-            padding: 10px;
-            font-weight: bold;
-            font-size: 0.8em;
-        }
-        #attribution, #attribution a {
-            color: #999;
-        }
-        .error {
-            display: none;
-            color: red;
-        }
-    </style>
-  </head>
-  <body>
-    <iframe id="contentFrame" frameBorder="0" allowfullscreen></iframe>
-    <div id="dialogWrap">
-        <div id="dialogWrapCell">
-            <div id="mainDialog">
-              <img style="display:block;" width="300px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" />
-                <div id="dialogText">This page is password protected.</div>
-                <div id="passArea">
-                    <p id="passwordPrompt">Password</p>
-                    <input id="pass" type="password" name="pass" autofocus>
-                    <div>
-                        <span id="messageWrapper">
-                            <span id="invalidPass" class="error">Sorry, please try again.</span>
-                            <span id="trycatcherror" class="error">Sorry, something went wrong.</span>
-                            <span id="success" class="notifyText">Success!</span>
-                            &nbsp;
-                        </span>
-                        <button id="submitPass" type="button">Submit</button>
-                        <div style="clear: both;"></div>
-                    </div>
-                </div>
-                <div id="securecontext" class="error">
-                    <p>
-                        Sorry, but password protection only works over a secure connection. Please load this page via HTTPS.
-                    </p>
-                </div>
-                <div id="nocrypto" class="error">
-                    <p>
-                        Your web browser appears to be outdated. Please visit this page using a modern browser.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script>
-    (function() {
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial -scale=1 ">
+<title>LordLatifiStreams / Replays</title>
+<link rel="icon" type="image/x-icon" href="favicon.png">
+<meta content="Lord Latifi Streams" property="og:title" />
+<meta content="Watch Sports in HD with Lord Latifi Streams" property="og:description" />
+<meta content="https://lordlatifistreams.usite.pro/" property="og:url" />
+<meta content="#ffffff" data-react-helmet="true" name="theme-color" />
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3W9MBHEVCM"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
 
-        var pl = "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";
-        
-        var submitPass = document.getElementById('submitPass');
-        var passEl = document.getElementById('pass');
-        var invalidPassEl = document.getElementById('invalidPass');
-        var trycatcherror = document.getElementById('trycatcherror');
-        var successEl = document.getElementById('success');
-        var contentFrame = document.getElementById('contentFrame');
-        
-        // Sanity checks
+ gtag('config', 'G-3W9MBHEVCM');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2226400138289610"
+     crossorigin="anonymous"></script>
+<style>
+@font-face {
+    font-family: 'DIN Pro';
+    src: url('https://latifistreams.com/DINPro.eot');
+    src: url('https://latifistreams.com/DINPro.eot?#iefix') format('embedded-opentype'),
+        url('https://latifistreams.com/DINPro.woff2') format('woff2'),
+        url('https://latifistreams.com/DINPro.woff') format('woff'),
+        url('https://latifistreams.com/DINPro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
-        if (pl === "") {
-            submitPass.disabled = true;
-            passEl.disabled = true;
-            alert("This page is meant to be used with the encryption tool. It doesn't work standalone.");
-            return;
-        }
+@font-face {
+    font-family: 'Barlow';
+    src: url('https://latifistreams.com/Barlow-BlackItalic.eot');
+    src: url('https://latifistreams.com/Barlow-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('https://latifistreams.com/Barlow-BlackItalic.woff2') format('woff2'),
+        url('https://latifistreams.com/Barlow-BlackItalic.woff') format('woff'),
+        url('https://latifistreams.com/Barlow-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+	
+h1 {
+ font-family: 'Barlow', sans-serif;
+ text-align:center;
+ font-size:24px;
+ color: white;
+}
+ 
+h2 {
+ font-family: 'DIN-Pro', sans-serif;
+ text-align:center;
+ font-size: 24px;
+ color: white;
+ margin-top:25px;
+}
+	
+body {
+ background: #212121;
+ margin: 0;
+}
 
-        if (!isSecureContext) {
-            document.querySelector("#passArea").style.display = "none";
-            document.querySelector("#securecontext").style.display = "block";
-            return;
-        }
+.topnav {
+ overflow: hidden;
+ background-color: #000;
+ vertical-align: middle;
+}
 
-        if (!crypto.subtle) {
-            document.querySelector("#passArea").style.display = "none";
-            document.querySelector("#nocrypto").style.display = "block";
-            return;
-        }
-        
-        function str2ab(str) {
-            var ustr = atob(str);
-            var buf = new ArrayBuffer(ustr.length);
-            var bufView = new Uint8Array(buf);
-            for (var i=0, strLen=ustr.length; i < strLen; i++) {
-                bufView[i] = ustr.charCodeAt(i);
-            }
-            return bufView;
-        }
+.topnav a {
+ float: left;
+ color: #f2f2f2;
+ text-align: center;
+ padding: 14px 16px;
+ text-decoration: none;
+ font-size: 17px;
+ font-family: 'DIN-Pro', sans-serif;
+}
+ 
+.container {
+ width: 100%;
+ height: 95%;
+ display: flex;
+ justify-content: center;
+ padding-bottom: 10px;
+}
+ 
+.tablemain {
+ padding: 5px;
+}
 
-        async function deriveKey(salt, password) {
-            const encoder = new TextEncoder()
-            const baseKey = await crypto.subtle.importKey(
-                'raw',
-                encoder.encode(password),
-                'PBKDF2',
-                false,
-                ['deriveKey'],
-            )
-            return await crypto.subtle.deriveKey(
-                { name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' },
-                baseKey,
-                { name: 'AES-GCM', length: 256 },
-                true,
-                ['decrypt'],
-            )
-        }
-        
-        async function doSubmit(evt) {
-            submitPass.disabled = true;
-            passEl.disabled = true;
+.bruh {
+ background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/eb3a107e-917c-4eec-a22f-47b983e13b51-1643231683.jpg');
+ height: 100px;
+ width: 75%;
+ margin: auto;
+ margin-bottom: 10px;
+ padding: 50px 0;
+ background-size:     cover;                      /* <------ */
+ background-repeat:   no-repeat;
+ background-position: center center;
+ filter: grayscale(1);
+}
 
-            let iv, ciphertext, key;
-            
-            try {
-                var unencodedPl = str2ab(pl);
+p {
+ font-family: 'DIN-Pro', sans-serif;
+ text-align: center;
+ font-size: 32px;
+ color: white;
+}
 
-                const salt = unencodedPl.slice(0, 32)
-                iv = unencodedPl.slice(32, 32 + 16)
-                ciphertext = unencodedPl.slice(32 + 16)
+div.streamtable {
+  padding: 5px;
+  background-color: #000;
+  border-radius: 15px;
+  margin:auto;
+  width: 90%;
+  max-width: 1000px;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
 
-                key = await deriveKey(salt, passEl.value);
-            } catch (e) {
-                trycatcherror.style.display = "inline";
-                console.error(e);
-                return;
-            }
+div.stream {
+  padding:.5px;
+  background-color: #111;
+  border-radius: 15px;
+  margin:10px;
+  transition: 0.5s;
+}  
 
-            try {
-                const decryptedArray = new Uint8Array(
-                    await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, ciphertext)
-                );
+div.stream:hover {
+  padding:.5px;
+  background-color: #00a3e0;
+  border-radius: 15px;
+  margin:10px;
+  transition: 0.5s;
+  cursor: pointer;
+}  
 
-                let decrypted = new TextDecoder().decode(decryptedArray);
+div.stream:active {
+  padding:.5px;
+  background-color: #111;
+  border-radius: 15px;
+  margin:10px;
+  transition: 0.5s;
+}  
 
-                if (decrypted === "") throw "No data returned";
+div.stream-title {
+  padding:.2px;
+  background-color: #111;
+  border-radius: 15px;
+  margin:10px;
+}  
 
-                const basestr = '<base href="." target="_top">';
-                const anchorfixstr = `
-                    <script>
-                        Array.from(document.links).forEach((anchor) => {
-                            const href = anchor.getAttribute("href");
-                            if (href.startsWith("#")) {
-                                anchor.addEventListener("click", function(e) {
-                                    e.preventDefault();
-                                    const targetId = this.getAttribute("href").substring(1);
-                                    const targetEl = document.getElementById(targetId);
-                                    targetEl.scrollIntoView();
-                                });
-                            }
-                        });
-                    <\/script>
-                `;
-                
-                // Set default iframe link targets to _top so all links break out of the iframe
-                if (decrypted.includes("<head>")) decrypted = decrypted.replace("<head>", "<head>" + basestr);
-                else if (decrypted.includes("<!DOCTYPE html>")) decrypted = decrypted.replace("<!DOCTYPE html>", "<!DOCTYPE html>" + basestr);
-                else decrypted = basestr + decrypted;
+div.top-title {
+  background-image: linear-gradient(to bottom, rgba(0,0,0, 0), rgba(33,33,33, 1)), url('https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2022/07/19112106/williams-nicholas-latifi-austrian-grand-prix-planet-f1.jpg');
+  width: 100%;
+  height: 250px;
+  display: flex;
+  background-size:100% auto;
+  background-position: 50% 50%;
+  filter: grayscale(1);
+  margin: auto;
+  transition: 0.5s;
+  margin-bottom: 5px;
+}
 
-                // Fix fragment links
-                if (decrypted.includes("</body>")) decrypted = decrypted.replace("</body>", anchorfixstr + '</body>');
-                else if (decrypted.includes("</html>")) decrypted = decrypted.replace("</html>", anchorfixstr + '</html>');
-                else decrypted = decrypted + anchorfixstr;
-                
-                contentFrame.srcdoc = decrypted;
-                
-                successEl.style.display = "inline";
-                setTimeout(function() {
-                    dialogWrap.style.display = "none";
-                }, 1000);
-            } catch (e) {
-                invalidPassEl.style.display = "inline";
-                passEl.value = "";
-                submitPass.disabled = false;
-                passEl.disabled = false;
-                console.error(e);
-                return;
-            }
-        }
-        
-        submitPass.onclick = doSubmit;
-        passEl.onkeypress = function(e){
-            if (!e) e = window.event;
-            var keyCode = e.keyCode || e.which;
-            invalidPassEl.style.display = "none";
-            if (keyCode == '13'){
-              // Enter pressed
-              doSubmit();
-              return false;
-            }
-        }
-    })();
-    </script>
-  </body>
+div.top-title:hover {
+  filter: grayscale(0);
+  transition: 0.5s;
+}
+
+h2.title {
+ font-family: 'Barlow', sans-serif;
+ text-align:center;
+ color: white;
+ margin: auto;
+}
+
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (min-width: 1000px) {
+  h2.title {
+    font-size: 80px;
+  }
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 999px) {
+  h2.title {
+    font-size: 50px;
+  }
+}
+</style>
+
+	<link rel="stylesheet" href="/.s/src/base.min.css" />
+	<link rel="stylesheet" href="/.s/src/layer7.min.css" />
+
+	<script src="/.s/src/jquery-3.6.0.min.js"></script>
+
+<head>
+<body>
+	
+<div class="topnav">
+  <a class="active" href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+</div>
+	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+<div class="top-title">
+  <h2 class="title">MOTORSPORT VODS</h2>
+</div>
+
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #ffffff">
+    <h1 style="color: #000;">2023 SEASON</h1>
+  </div>
+  <div class="stream" onclick="location.href='/vods/f1';">
+    <h2>FORMULA 1</h2>
+  </div>
+  <div class="stream" onclick="location.href='/vods/ncs';">
+    <h2>NASCAR CUP SERIES</h2>
+  </div>
+  <div class="stream" onclick="location.href='/vods/nxs';">
+    <h2>NASCAR XFINITY SERIES</h2>
+  </div>
+  <div class="stream" onclick="location.href='/vod/ncts';">
+    <h2>NASCAR TRUCK SERIES</h2>
+  </div>
+  <div class="stream" onclick="location.href='vods/arca';">
+    <h2>ARCA</h2>
+  </div>
+</div>
+	
+
+
+<script id="cid0020000341398164600" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 200px;height: 300px;">{"handle":"lls-motorsport","arch":"js","styles":{"a":"000000","b":100,"c":"FFFFFF","d":"FFFFFF","k":"000000","l":"000000","m":"000000","n":"FFFFFF","p":"10","q":"000000","r":100,"pos":"br","cv":1,"cvbg":"000000","cvw":75,"cvh":30,"fwtickm":1}}</script>	
+<style>
+@font-face {
+ font-family: DIN-Pro;
+ src: url('DIN-Pro.ttf');
+}
+ 
+footer {
+ text-align: center;
+ padding: 15px;
+ background-color: #000;
+ color: #ffffff;
+ font-family: 'DIN-Pro', sans-serif;
+}
+ 
+h3 {
+ font-size: 12px;
+ font-family: 'DIN-Pro', sans-serif;
+}
+   
+a {
+  color: #ffffff;
+  background-color: transparent;
+  text-decoration: underline;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+a:hover {
+  color: #ff5151;
+  background-color: transparent;
+  text-decoration: underline;
+}
+	
+.tags {
+  color:#000;
+  margin-bottom:38px;
+}
+</style>
+
+<footer>
+ <a href="https://www.latifistreams.com/"><img style="display:block; margin:auto; margin-top:5px" width="300px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+ <h3><a href="/contact">Contact Us</a></h3>
+ <h3><a href="https://twitter.com/latifistreams" target="_blank">Twitter</a> | <a href="https://discord.gg/6vr9CW7ZFa" target="_blank">Discord</a></h3>
+ <h3>#StandWithUkraine #StandWithArtsakh</h3>
+ <img style="margin:5px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/1200px-Flag_of_Ukraine.svg.png" width="auto" height="50"><img style="margin:5px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Flag_of_Artsakh.svg/1200px-Flag_of_Artsakh.svg.png" width="auto" height="50">
+ <h3 class="tags">lordlatifistreams, latifisteams, lord latifi streams, latifi streams</h3>
+</footer>
+</body>
 </html>
+<!-- Ⓒ 2023  LORDLATIFISTREAMS -->

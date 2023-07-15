@@ -26,11 +26,17 @@
   </script>
 
   <style>
-    @font-face {
-      font-family: DIN-Pro;
-      src: url('DIN-Pro.ttf');
-    }
-
+@font-face {
+    font-family: 'DIN-Pro';
+    src: url('https://latifistreams.com/DINPro.eot');
+    src: url('https://latifistreams.com/DINPro.eot?#iefix') format('embedded-opentype'),
+        url('https://latifistreams.com/DINPro.woff2') format('woff2'),
+        url('https://latifistreams.com/DINPro.woff') format('woff'),
+        url('https://latifistreams.com/DINPro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
     @font-face {
       font-family: F1;
       src: url('Formula1-Wide.otf');
@@ -164,7 +170,7 @@
           src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
     </div>
     <div class="main">
-      <h1>SUPER FORMULA AT SUGO</h1>
+      <h1>SUPER FORMULA AT FUJI</h1>
       <div class="row">
         <div class="column1" style="background-color:#;">
           <button class="btn" onclick="document.getElementById('iframe').src = '/channel/sf'">Stream 1</button>

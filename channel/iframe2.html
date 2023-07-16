@@ -38,7 +38,7 @@ body {
 <div id="vid"></div>
 <script>
  player = new Clappr.Player({
- source: "https://stream.mux.com/kZpLkJFphUzWXHSiglEAKMnxc401IusfAzhT92BAohiQ.m3u8?token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkdLQ0J2S3RxdDllMlhZTUFMWDdhUEFIZm43d3JtZWhCbTAxQ2VHRzRaUjZjIn0.eyJhZGRfYXVkaW9fb25seSI6ZmFsc2UsImN1c3RvbSI6eyJ1c2VyIjo0OTk0MDd9LCJleHAiOjE2ODk1MzM0MDQsImF1ZCI6InYiLCJzdWIiOiJrWnBMa0pGcGhVeldYSFNpZ2xFQUtNbnhjNDAxSXVzZkF6aFQ5MkJBb2hpUSJ9.WTWECMx2rs4dwstSsAh0EQ90yxPNiq4XFfdE4_Scn2kyFPLA2vOZ7i2Bc86LExUnL_e1fJkJS2utzHzs5iAfw6rpBJMFczndSQn14fnEt5prS0KV3zM-H8IgXk9xteroMlDfLCWlzwUXM4YwyOGW9rljvIgR35Ih_GPCoW1hY-YbfsFRpGTTe4RGy7brR3mB_GhJ4K_8NeRa08zb8UJUhDbjxLj7YAsA1F-XLeQ-pHBpXsJxlP2CkAdjXXeBw1iefL2rbAB2hMcx6CxDOrMnk3UaCa6N4pCooX-znUZeHbwZHPVb3yUy6bUEvSwVtUKD6-0YaRL6oPo_HEnPS25VUQ",
+ source: "https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8",
  mimeType: "application/x-mpegURL",
  autoPlay: false, 
  width: "100%",
@@ -50,10 +50,11 @@ body {
  levelSelectorConfig: {
       title: 'QUALITY',
       labels: {
-          3: '1080p',
-          2: '720p',
-          1: '480p',
-          0: '270p',
+          4: '1080p',
+          3: '720p',
+          2: '540p',
+          1: '360p',
+          0: '234p',
  },
  labelCallback: function(playbackLevel, customLabel) {
           return customLabel + playbackLevel.level.height+'p'; // High 720p

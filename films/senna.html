@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>LLS - Senna</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<meta content="Lord Latifi Streams" property="og:title" />
+<meta content="Watch Motorsport in HD with Lord Latifi Streams" property="og:description" />
+<meta content="https://latifistreams.com/" property="og:url" />
+<meta content="#ffffff" data-react-helmet="true" name="theme-color" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="https://fonts.googleapis.com/css?family=Material+Icons|Roboto:400,700" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+
+<html>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3W9MBHEVCM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-3W9MBHEVCM');
+  </script>
+
+  <style>
+@font-face {
+    font-family: 'DIN-Pro';
+    src: url('https://latifistreams.com/DINPro.eot');
+    src: url('https://latifistreams.com/DINPro.eot?#iefix') format('embedded-opentype'),
+        url('https://latifistreams.com/DINPro.woff2') format('woff2'),
+        url('https://latifistreams.com/DINPro.woff') format('woff'),
+        url('https://latifistreams.com/DINPro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+    @font-face {
+      font-family: F1;
+      src: url('Formula1-Wide.otf');
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #232323;
+      margin: 0;
+    }
+
+    .column1 {
+      float: left;
+      width: 75%;
+      padding: 10px;
+      height: 700px;
+      /* Should be removed. Only for demonstration */
+    }
+
+    .column2 {
+      float: left;
+      width: 25%;
+      padding: 10px;
+      height: 700px;
+      /* Should be removed. Only for demonstration */
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 1000px) {
+      .column1 {
+        width: 100%;
+      }
+
+      .column2 {
+        display: none;
+      }
+
+    }
+
+    .topnav {
+      overflow: hidden;
+      background-color: #000;
+    }
+
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    h1 {
+      font-family: DIN-Pro;
+      font-size: 29px;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    h2 {
+      font-family: DIN-Pro;
+      font-size: 19px;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    div.main {
+      height: 1000px;
+      width: 90%;
+      margin: auto;
+      padding-top: 100px;
+    }
+
+    @media screen and (max-width: 800px) {
+      div.main {
+        height: 1000px;
+        width: 95%;
+        margin: auto;
+        padding-top: 100px;
+      }
+    }
+
+    div.ad {
+      height: auto;
+      width: 100%;
+      max-width: 400px;
+      margin: auto;
+      padding: 5px;
+    }
+
+    .title {
+      vertical-align: middle;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
+    .filmbg {
+        width: 100%;
+        height: 1000px;
+        background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(17, 17, 17, 1)), url('https://m.media-amazon.com/images/M/MV5BMjEwNjE0MTkwNF5BMl5BanBnXkFtZTcwNDc3MDQ2NA@@._V1_.jpg');
+        margin: 0;
+        background-position: center;
+    }
+
+    h1 {
+        font-size: 48px;
+        text-align: left;
+    }
+
+    .film h2 {
+        text-align: left;
+        font-size: 19px;
+    }
+
+    .film h3 {
+        color: #fff;
+        font-size: 14px;
+    }
+
+    .watch {
+      background: #00a3e0;
+      border: 0px;
+      font-family: DIN-Pro;
+      transition: 0.3s;
+      margin-bottom: 5px;
+      width: 150px;
+      height: 50px;
+      align-items: center;
+      text-align: center;
+      font-size: 14px;
+      
+    }
+
+    .watch:hover {
+      background: #e40046;
+      cursor: pointer;
+    }
+  </style>
+
+<body>
+
+  <body class="base">
+    <div class="topnav">
+      <a class="active" href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%"
+          src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+    </div>
+
+    <div class="filmbg">
+        <div class="main">
+            <div class="film">
+                <img src="https://m.media-amazon.com/images/M/MV5BNDBjYjc3NGEtODNlMi00Yjk1LTgyMTItZmYxODg4MDUyMmVlXkEyXkFqcGdeQXVyNTE1NjY5Mg@@._V1_.jpg" width="180px" height="auto">
+                <h1>SENNA</h1>
+                <h3>2010 | PG-13 | 1h 46m</h3>
+                <h3 style="color:yellow">IMDB: 8.5</h3>
+                <h2>A documentary on Brazilian Formula One racing driver Ayrton Senna, who won the F1 world championship three times before his death at age 34.</h2>
+                <a href="https://latifistreams.com/watch/senna"><button class="watch">WATCH NOW</button></a>
+            </div>
+        </div>
+    </div>
+
+    </section>
+
+    <style>
+      @font-face {
+        font-family: DIN-Pro;
+        src: url('DIN-Pro.ttf');
+      }
+
+      footer {
+        text-align: center;
+        padding: 15px;
+        background-color: #000;
+        color: #ffffff;
+        font-family: 'DIN-Pro', sans-serif;
+      }
+
+      h3 {
+        font-size: 12px;
+        font-family: 'DIN-Pro', sans-serif;
+      }
+
+      a {
+        color: #ffffff;
+        background-color: transparent;
+        text-decoration: underline;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+
+      a:hover {
+        color: #ff5151;
+        background-color: transparent;
+        text-decoration: underline;
+      }
+
+      .tags {
+        color: #000;
+        margin-bottom: 38px;
+      }
+    </style>
+
+    <footer>
+      <a href="https://www.latifistreams.com/"><img style="display:block; margin:auto; margin-top:5px" width="300px"
+          height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+      <h3><a href="/contact">Contact Us</a></h3>
+      <h3><a href="https://twitter.com/latifistreams" target="_blank">Twitter</a> | <a
+          href="https://discord.gg/6vr9CW7ZFa" target="_blank">Discord</a></h3>
+      <h3>#StandWithUkraine #StandWithArtsakh</h3>
+      <img style="margin:5px;"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/1200px-Flag_of_Ukraine.svg.png"
+        width="auto" height="50"><img style="margin:5px"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Flag_of_Artsakh.svg/1200px-Flag_of_Artsakh.svg.png"
+        width="auto" height="50">
+      <h3 class="tags">lordlatifistreams, latifisteams, lord latifi streams, latifi streams</h3>
+    </footer>
+  </body>
+</head>
+</html>
+  <!-- Ⓒ 2023  LORDLATIFISTREAMS -->

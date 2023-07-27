@@ -1,0 +1,30 @@
+<script src="https://cdn.plyr.io/3.4.6/plyr.js"></script>
+<link rel="stylesheet" href="https://cdn.plyr.io/3.4.6/plyr.css">
+
+
+<div class="container">
+<video controls crossorigin playsinline poster="https://m.media-amazon.com/images/M/MV5BMjEwNjE0MTkwNF5BMl5BanBnXkFtZTcwNDc3MDQ2NA@@._V1_FMjpg_UX1000_.jpg" id="player">
+                <!-- Video files -->
+                <source src="https://usa7-nas03.shegu.net/vip/p1/movie_mp4_h264/2010/2/6/2616/movie.2616.2010.360p.H264.20200321051701.mp4?KEY1=dWrdsfREKBWNdXgpOksESA&KEY2=1690447793" type="video/mp4" size="360">
+                <source src="https://usa7-nas09-1.shegu.net/vip/p1/movie_mp4_h264/2010/2/6/2616/movie.2616.2010.1080p.H264.20200321051701.mp4?KEY1=3WCHwjxym5qbmDdwcG7YrA&KEY2=1690447793" type="video/mp4" size="720">
+
+                <!-- Fallback for browsers that don't support the <video> element -->
+            </video>
+
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => { 
+  // This is the bare minimum JavaScript. You can opt to pass no arguments to setup.
+  const player = new Plyr('#player');
+  
+  // Expose
+  window.player = player;
+
+  // Bind event listener
+  function on(selector, type, callback) {
+    document.querySelector(selector).addEventListener(type, callback, false);
+  }
+
+});
+</script>

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>LLS - Drive to Survive</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<meta content="Lord Latifi Streams" property="og:title" />
+<meta content="Watch Motorsport in HD with Lord Latifi Streams" property="og:description" />
+<meta content="https://latifistreams.com/" property="og:url" />
+<meta content="#ffffff" data-react-helmet="true" name="theme-color" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="https://fonts.googleapis.com/css?family=Material+Icons|Roboto:400,700" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script>
+
+
+<html>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3W9MBHEVCM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-3W9MBHEVCM');
+  </script>
+
+  <style>
+@font-face {
+    font-family: 'DIN-Pro';
+    src: url('https://latifistreams.com/DINPro.eot');
+    src: url('https://latifistreams.com/DINPro.eot?#iefix') format('embedded-opentype'),
+        url('https://latifistreams.com/DINPro.woff2') format('woff2'),
+        url('https://latifistreams.com/DINPro.woff') format('woff'),
+        url('https://latifistreams.com/DINPro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+    @font-face {
+      font-family: F1;
+      src: url('Formula1-Wide.otf');
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #232323;
+      margin: 0;
+    }
+
+    .column1 {
+      float: left;
+      width: 75%;
+      padding: 10px;
+      height: 700px;
+      /* Should be removed. Only for demonstration */
+    }
+
+    .column2 {
+      float: left;
+      width: 25%;
+      padding: 10px;
+      height: 700px;
+      /* Should be removed. Only for demonstration */
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 1000px) {
+      .column1 {
+        width: 100%;
+      }
+
+      .column2 {
+        display: none;
+      }
+
+    }
+
+    .topnav {
+      overflow: hidden;
+      background-color: #000;
+    }
+
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    h1 {
+      font-family: DIN-Pro;
+      font-size: 29px;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    h2 {
+      font-family: DIN-Pro;
+      font-size: 19px;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    div.main {
+      height: 1000px;
+      width: 90%;
+      margin: auto;
+      padding-top: 100px;
+    }
+
+    @media screen and (max-width: 800px) {
+      div.main {
+        height: 1000px;
+        width: 95%;
+        margin: auto;
+        padding-top: 100px;
+      }
+    }
+
+    div.ad {
+      height: auto;
+      width: 100%;
+      max-width: 400px;
+      margin: auto;
+      padding: 5px;
+    }
+
+    .title {
+      vertical-align: middle;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
+    .filmbg {
+        width: 100%;
+        height: 3000px;
+        background-image: linear-gradient(to bottom, rgba(35,35,35,0.5) 0%,rgba(17,17,17,1) 100%), url('https://m.media-amazon.com/images/M/MV5BMTkxODg2NjQ5Ml5BMl5BanBnXkFtZTgwMDYzMzc0NzM@._V1_FM.jpg');
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        margin: 0;
+        background-position: center;
+    }
+
+    @media screen and (max-width: 420px) {
+      .filmbg {
+        height: 3000px;
+      }
+    }
+
+    h1 {
+        font-size: 48px;
+        text-align: left;
+    }
+
+    .film h2 {
+        text-align: left;
+        font-size: 19px;
+    }
+
+    .film h3 {
+        color: #fff;
+        font-size: 14px;
+    }
+
+    .watch {
+      background: #00a3e0;
+      border: 0px;
+      font-family: DIN-Pro;
+      transition: 0.3s;
+      margin-bottom: 20px;
+      width: 150px;
+      height: 50px;
+      align-items: center;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .watch2 {
+      background: #00a3e0;
+      border: 0px;
+      font-family: DIN-Pro;
+      transition: 0.3s;
+      width: 100px;
+      height: 50px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 14px;
+      margin: auto;
+      display: flex;
+    }
+
+    .gallery a {
+      text-decoration: none;
+    }
+
+
+    .gallery a:hover {
+      text-decoration: none;
+    }
+
+    .watch:hover {
+      background: #e40046;
+      cursor: pointer;
+    }
+
+    .watch2:hover {
+      background: #e40046;
+      cursor: pointer;
+    }
+
+    /* external css: flickity.css */
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.gallery {
+  width: 100%;
+}
+
+.gallery h2{
+  vertical-align: bottom;
+  text-align: center;
+}
+
+.gallery-cell {
+  width: 33%;
+  height: 250px;
+  margin-right: 10px;
+  counter-increment: gallery-cell;
+}
+
+.gallery-cell.is-selected h2{
+  color: #00a3e0;
+}
+
+  </style>
+
+<body>
+
+  <body class="base">
+    <div class="topnav">
+      <a class="active" href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%"
+          src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+    </div>
+
+    <div class="filmbg">
+        <div class="main">
+            <div class="film">
+                <img alt="SENNA" src="https://m.media-amazon.com/images/M/MV5BMzVkMGU0YWMtOWQxMC00MjFhLTg1NjAtMDFlZTZlYzJlMjlhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg" width="180px" height="auto">
+                <h1>FORMULA 1: DRIVE TO SURVIVE</h1>
+                <h3>2019- | TV-MA | 40m</h3>
+                <h3 style="color:yellow">IMDB: 8.5</h3>
+                <h2>Docuseries following the FIA Formula One World Championship across multiple seasons.</h2>
+                <!--<button class="watch" onclick="divVisibility('Div1');">SEASON 1</button>
+                <button class="watch" onclick="divVisibility('Div2');">SEASON 2</button>
+                <button class="watch" onclick="divVisibility('Div3');">SEASON 3</button>
+                <button class="watch" onclick="divVisibility('Div4');">SEASON 4</button>
+                <button class="watch" onclick="divVisibility('Div5');">SEASON 5</button>
+                <script>
+    var divs = ["Div1", "Div2", "Div3", "Div4", "Div5"];
+    var visibleDivId = null;
+    function divVisibility(divId) {
+      if(visibleDivId === divId) {
+        visibleDivId = null;
+      } else {
+        visibleDivId = divId;
+      }
+      hideNonVisibleDivs();
+    }
+    function hideNonVisibleDivs() {
+      var i, divId, div;
+      for(i = 0; i < divs.length; i++) {
+        divId = divs[i];
+        div = document.getElementById(divId);
+        if(visibleDivId === divId) {
+          div.style.display = "block";
+        } else {
+          div.style.display = "none";
+        }
+      }
+    }
+                </script>-->
+                <h1>SEASON 1</h1>
+                <div id="Div1" class="gallery js-flickity">
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BZDE5NWY5ZGEtMzhlYS00MTlkLWE2N2EtNTJhYmY3N2IxZGJjXkEyXkFqcGdeQXVyNDg4MjkzNDk@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S1E1 - ALL TO PLAY FOR</h2>
+                    <a href="https://latifistreams.com/watch/dts/s1/e1"><button class="watch2">WATCH</button></a>
+                  </div>
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BMTM3NTU0YjItNGZiNi00ZGE5LTlmYmYtMzQ0MjBjNmZiMzM5XkEyXkFqcGdeQXVyNDg4MjkzNDk@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S1E2 - THE KING OF SPAIN</h2>
+                    <a href="https://latifistreams.com/watch/dts/s1/e2"><button class="watch2">WATCH</button></a>
+                  </div>                 
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BMDFhMDJlM2EtMGQ2Yi00OGU4LTg0NjMtNzk5Y2I0ZTlhMDE3XkEyXkFqcGdeQXVyNDg4MjkzNDk@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S1E3 - REDEMPTION</h2>
+                    <a href="https://latifistreams.com/watch/dts/s1/e3"><button class="watch2">WATCH</button></a>
+                  </div>
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BNTZkY2YxYzktNDdhYi00Y2VhLTk4ZDEtMTE3MDQ0M2U2YzlmXkEyXkFqcGdeQXVyNDg4MjkzNDk@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S1E4 - THE ART OF WAR</h2>
+                    <a href="https://latifistreams.com/watch/dts/s1/e4"><button class="watch2">WATCH</button></a>
+                  </div>
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BOTkzZjQ4ZjctZWEwZS00OGJiLTliMDgtYjA3YTE2OTZiYjBjXkEyXkFqcGdeQXVyNDg4MjkzNDk@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S1E5 - TROUBLE AT THE TOP</h2>
+                    <a href="https://latifistreams.com/watch/dts/s1/e5"><button class="watch2">WATCH</button></a>
+                  </div>
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BNzdlN2ZiYmQtNDZiMy00MTQzLWE1NjUtM2Q1NWUzYjg4YmVlXkEyXkFqcGdeQXVyNDg4MjkzNDk@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S1E6 - ALL OR NOTHING</h2>
+                    <a href="https://latifistreams.com/watch/dts/s1/e6"><button class="watch2">WATCH</button></a>
+                  </div>
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BNmUzYTcwZGMtNWNmNC00YzkxLWJkYTEtMTEwYTdmMmVkZjA2XkEyXkFqcGdeQXVyNDg4MjkzNDk@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S1E7 - KEEPING YOUR HEAD</h2>
+                    <a href="https://latifistreams.com/watch/dts/s1/e7"><button class="watch2">WATCH</button></a>
+                  </div>                 
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BYWE4ZDA2ZGMtYzI3NC00OTg1LWIwNDEtYzg3YmZmMTE5ODVlXkEyXkFqcGdeQXVyNDg4MjkzNDk@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S1E8 - THE NEXT GENERATION</h2>
+                    <a href="https://latifistreams.com/watch/dts/s1/e8"><button class="watch2">WATCH</button></a>
+                  </div>
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BN2YzN2M0ZmYtMzAxZi00NGM3LWI5ZGItNjdlOWE1YjMzZThmXkEyXkFqcGdeQXVyNDg4MjkzNDk@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S1E9 - STARS AND STRIPES</h2>
+                    <a href="https://latifistreams.com/watch/dts/s1/e9"><button class="watch2">WATCH</button></a>
+                  </div>
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BNmM3YTQzOWItZWVkOC00MmI1LTg1YWMtODEzMzhjYjY0MWU3XkEyXkFqcGdeQXVyNDg4MjkzNDk@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S1E10 - CROSSING THE LINE</h2>
+                    <a href="https://latifistreams.com/watch/dts/s1/e10"><button class="watch2">WATCH</button></a>
+                  </div>
+                </div>
+                <h1>SEASON 2</h1>
+                <div id="Div2" class="gallery js-flickity">
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BYTI5OWFjYjQtYzhiNi00ZWMwLWFkZDEtMzE2M2U5YWY3Mjk1XkEyXkFqcGdeQXVyMjQ1MjUxNTY@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S2E1 - LIGHTS OUT</h2>
+                    <a href="https://latifistreams.com/watch/dts/s2/e1"><button class="watch2">WATCH</button></a>
+                  </div>
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BZDU0MzZkMWEtYjdkMi00MzFkLThlOTEtNDZkNWVkNTdlNjY2XkEyXkFqcGdeQXVyOTgyMjQxNDk@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S2E2 - BOILING POINT</h2>
+                    <a href="https://latifistreams.com/watch/dts/s2/e2"><button class="watch2">WATCH</button></a>
+                  </div>                 
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BYzc4OGM0MTAtZjExZi00OTU2LWE4YmUtNjA2YmY0NjFiYzQwXkEyXkFqcGdeQXVyMTE0Mjg5MTMz._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S2E3 - DOGFIGHT</h2>
+                    <a href="https://latifistreams.com/watch/dts/s2/e3"><button class="watch2">WATCH</button></a>
+                  </div>
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BNWIyODM2OWUtMjY4Yi00NzM4LWJkMTItNTg2YjUzZjYzYmE5XkEyXkFqcGdeQXVyOTgyMjQxNDk@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S2E4 - DARK DAYS</h2>
+                    <a href="https://latifistreams.com/watch/dts/s2/e4"><button class="watch2">WATCH</button></a>
+                  </div>
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BODZjZGU4ZWYtOTFkNy00ZTQ1LTg3YzYtZDkzZDhlZjI5N2U0XkEyXkFqcGdeQXVyMjA4MjczNTY@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S2E5 - GREAT EXPECTATIONS</h2>
+                    <a href="https://latifistreams.com/watch/dts/s2/e5"><button class="watch2">WATCH</button></a>
+                  </div>
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BNjFmNzY3OTYtM2U2ZC00NjZiLTllYzktYzQ3ZjQ2M2E1YjhiXkEyXkFqcGdeQXVyMjA4MjczNTY@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S2E6 - RAGING BULLS</h2>
+                    <a href="https://latifistreams.com/watch/dts/s2/e6"><button class="watch2">WATCH</button></a>
+                  </div>
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BZTYwNTMwNWEtM2E2ZC00ZjJiLTk3ODUtNDM3MDljMGVhMmExXkEyXkFqcGdeQXVyMjA4MjczNTY@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S2E7 - SEEING RED</h2>
+                    <a href="https://latifistreams.com/watch/dts/s2/e7"><button class="watch2">WATCH</button></a>
+                  </div>                 
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BNjZhMTM2MTItMjczYS00NzhlLWE0ZTMtNzhiMDAyZjRlNzA5XkEyXkFqcGdeQXVyMjA4MjczNTY@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S2E8 - MUSICAL CHAIRS</h2>
+                    <a href="https://latifistreams.com/watch/dts/s2/e8"><button class="watch2">WATCH</button></a>
+                  </div>
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BYzQ4ODliZTItMjFhNi00ZGZhLTk0MTgtN2NiODJhMWQ0YjM1XkEyXkFqcGdeQXVyMjA4MjczNTY@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S2E9 - BLOOD, SWEAT, & TEARS</h2>
+                    <a href="https://latifistreams.com/watch/dts/s2/e9"><button class="watch2">WATCH</button></a>
+                  </div>
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BMTdjMDMwM2UtM2EyNi00ZGUyLWE5OGUtZDI2ZDhhYWIyYmEzXkEyXkFqcGdeQXVyMjA4MjczNTY@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S2E10 - CHECKERED FLAG</h2>
+                    <a href="https://latifistreams.com/watch/dts/s2/e10"><button class="watch2">WATCH</button></a>
+                  </div>
+                </div>
+                  <h1>SEASON 3</h1>
+                <div id="Div3" class="gallery js-flickity">
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BZDc1ZWVhM2YtNjUxYi00MDY2LWExMzktZTIzZjZkYzljNGY4XkEyXkFqcGdeQXVyNjAwNTY1OTI@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S3E1 - CASH IS KING</h2>
+                    <a href="https://latifistreams.com/watch/dts/s3/e1"><button class="watch2">WATCH</button></a>
+                  </div>
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BYWZhYjFlNzYtZTIyOS00ZWRjLWFiNTgtMGVlNzQxZmI4MjJmXkEyXkFqcGdeQXVyMjY3NDk1MTA@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S3E2 - BACK ON TRACK</h2>
+                    <a href="https://latifistreams.com/watch/dts/s3/e2"><button class="watch2">WATCH</button></a>
+                  </div>                 
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BMGY5MDI5MDYtZWE2Ni00ZWQ3LWE4MjQtOGFlZDQzOTEwMjgwXkEyXkFqcGdeQXVyNjYzNDA4MTM@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S3E3 - NOBODY'S FOOL</h2>
+                    <a href="https://latifistreams.com/watch/dts/s3/e3"><button class="watch2">WATCH</button></a>
+                  </div>
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BODI4NTdjYjAtN2E1My00NzE2LTkwNDktYzg0MDkyMjA5NzRmXkEyXkFqcGdeQXVyMjY3NDk1MTA@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S3E4 - WE NEED TO TALK ABOUT FERRARI</h2>
+                    <a href="https://latifistreams.com/watch/dts/s3/e4"><button class="watch2">WATCH</button></a>
+                  </div>
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BYjkwNDIyZTAtNzAzMC00OTM3LTgyNGEtYTRmNmJlMjM3ZTNiXkEyXkFqcGdeQXVyMjY3NDk1MTA@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S3E5 - THE END OF THE AFFAIR</h2>
+                    <a href="https://latifistreams.com/watch/dts/s3/e5"><button class="watch2">WATCH</button></a>
+                  </div>
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BNmZmYTQ5MTYtMWY2Mi00ZTU0LWE1OGMtNDg5MjBlOTBkNDg0XkEyXkFqcGdeQXVyMjY3NDk1MTA@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S3E6 - THE COMEBACK KID</h2>
+                    <a href="https://latifistreams.com/watch/dts/s3/e6"><button class="watch2">WATCH</button></a>
+                  </div>
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BZjI2OTAxYWItYzM1Mi00MmY5LWFlODQtY2VlNDFhYTFmODc2XkEyXkFqcGdeQXVyMjY3NDk1MTA@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S3E7 - GUENTHER'S CHOICE</h2>
+                    <a href="https://latifistreams.com/watch/dts/s3/e7"><button class="watch2">WATCH</button></a>
+                  </div>                 
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BYzY1YWE0M2UtMTU5Ni00MzQwLThjZTktZTAzYzA4MzE1ODQ0XkEyXkFqcGdeQXVyMjY3NDk1MTA@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S3E8 - NO REGRETS</h2>
+                    <a href="https://latifistreams.com/watch/dts/s3/e8"><button class="watch2">WATCH</button></a>
+                  </div>
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BNTIxZDljZmUtYzc3Mi00ODYzLWJiZmUtZmYxYzYyN2RkZTk2XkEyXkFqcGdeQXVyMjY3NDk1MTA@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S3E9 - MAN ON FIRE</h2>
+                    <a href="https://latifistreams.com/watch/dts/s3/e9"><button class="watch2">WATCH</button></a>
+                  </div>
+                  <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BOTdkMTc1MDQtZDE4ZC00NjVkLThhZmYtNDBlOWYxNTY2MDk1XkEyXkFqcGdeQXVyMzQwMDU3NDA@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                    <h2>S3E10 - DOWN TO THE WIRE</h2>
+                    <a href="https://latifistreams.com/watch/dts/s3/e10"><button class="watch2">WATCH</button></a>
+                  </div>
+                </div>
+                <h1>SEASON 4</h1>
+                <div id="Div4" class="gallery js-flickity">
+                    <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BZDQ3MmJlOWEtMTlkNS00OGQ0LTllMmItNjFiNTFlOGRiMTg3XkEyXkFqcGdeQXVyMTM2MzYyNzQ1._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                      <h2>S4E1 - CLASH OF THE TITANS</h2>
+                      <a href="https://latifistreams.com/watch/dts/s4/e1"><button class="watch2">WATCH</button></a>
+                    </div>
+                    <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BMTU5MGMzYTktMWYzOS00ZTk5LWE3YzAtNTg3ZTY2M2I1NWRjXkEyXkFqcGdeQXVyMTAzOTE3NDYx._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                      <h2>S4E2 - ACE IN THE HOLE</h2>
+                      <a href="https://latifistreams.com/watch/dts/s4/e2"><button class="watch2">WATCH</button></a>
+                    </div>                 
+                    <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BZmZlMzM1ZGEtY2ZjNi00Y2Y0LWI2MTctNjM1MGMxNDdmYzY2XkEyXkFqcGdeQXVyMTAzOTE3NDYx._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                      <h2>S4E3 - TIPPING POINT</h2>
+                      <a href="https://latifistreams.com/watch/dts/s4/e3"><button class="watch2">WATCH</button></a>
+                    </div>
+                    <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BMDlhYzdmMDQtYWZiMy00ODcxLWI2OGUtZTljYTRlMDhmOWQwXkEyXkFqcGdeQXVyMTAzOTE3NDYx._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                      <h2>S4E4 - A MOUNTAIN TO CLIMB</h2>
+                      <a href="https://latifistreams.com/watch/dts/s4/e4"><button class="watch2">WATCH</button></a>
+                    </div>
+                    <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BNGFlOTk5NmQtODk3Zi00Y2UyLTk3YzItNmNmZDYwMjg3YmJhXkEyXkFqcGdeQXVyMTAzOTE3NDYx._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                      <h2>S4E5 - STAYING ALIVE</h2>
+                      <a href="https://latifistreams.com/watch/dts/s4/e5"><button class="watch2">WATCH</button></a>
+                    </div>
+                    <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BNGE4NTU2NGYtMTQxMC00MjEyLTkzZmQtOWZkNWUxOGZkZjJmXkEyXkFqcGdeQXVyMTAzOTE3NDYx._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                      <h2>S4E6 - A POINT TO PROVE</h2>
+                      <a href="https://latifistreams.com/watch/dts/s4/e6"><button class="watch2">WATCH</button></a>
+                    </div>
+                    <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BZTI3MGQwYWQtZDRjOS00MzY5LWFlN2ItZDA3ZjVmODcwNmE3XkEyXkFqcGdeQXVyMTAzOTE3NDYx._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                      <h2>S4E7 - GROWING PAINS</h2>
+                      <a href="https://latifistreams.com/watch/dts/s4/e7"><button class="watch2">WATCH</button></a>
+                    </div>                 
+                    <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BN2YxYTMwYjgtNTMwOC00MTE5LWJjYjUtYzg1MWM2MWFlYzg1XkEyXkFqcGdeQXVyMTAzOTE3NDYx._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                      <h2>S4E8 - DANCES WITH WOLFF</h2>
+                      <a href="https://latifistreams.com/watch/dts/s4/e8"><button class="watch2">WATCH</button></a>
+                    </div>
+                    <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BYmNlODQ3ZWItZTEwNS00OTc3LTlmZjAtOThjOWY5ODJkNDE5XkEyXkFqcGdeQXVyMTAzOTE3NDYx._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                      <h2>S4E9 - GLOVES ARE OFF</h2>
+                      <a href="https://latifistreams.com/watch/dts/s4/e9"><button class="watch2">WATCH</button></a>
+                    </div>
+                    <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BMWU5MzE4MzEtMDMwYS00ZjBhLTljZmUtNTdjYzcwNWI1MzFkXkEyXkFqcGdeQXVyMTAzOTE3NDYx._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                      <h2>S4E10 - HARD RACING</h2>
+                      <a href="https://latifistreams.com/watch/dts/s4/e10"><button class="watch2">WATCH</button></a>
+                    </div>
+                </div>
+                <h1>SEASON 5</h1>
+                <div id="Div5" class="gallery js-flickity">
+                    <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BY2FhZjExYzItZTM4OC00ZGE2LTg5NDQtYjg2NDJiYmM4MDc3XkEyXkFqcGdeQXVyMzQwMDU3NDA@._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                      <h2>S5E1 - THE NEW DAWN</h2>
+                      <a href="https://latifistreams.com/watch/dts/s5/e1"><button class="watch2">WATCH</button></a>
+                    </div>
+                    <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BMzA5NDNlM2UtMDNmMi00YjQwLTlhM2ItN2RhNzk1MDMyOTczXkEyXkFqcGdeQXVyMTQxOTQwMzEy._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                      <h2>S5E2 - BOUNCE BACK</h2>
+                      <a href="https://latifistreams.com/watch/dts/s5/e2"><button class="watch2">WATCH</button></a>
+                    </div>                 
+                    <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BZmY0NWQ3MzctNzRkMC00ZjBiLTg4NDctOTFlMTcwZTI0MDIxXkEyXkFqcGdeQXVyMTQxOTQwMzEy._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                      <h2>S5E3 - MATTER OF PRINCIPAL</h2>
+                      <a href="https://latifistreams.com/watch/dts/s5/e3"><button class="watch2">WATCH</button></a>
+                    </div>
+                    <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BYjJjNjg3Y2MtODllOC00YjU4LWI2YzMtZTVjMzk0ZDJmNjRlXkEyXkFqcGdeQXVyMTQxOTQwMzEy._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                      <h2>S5E4 - LIKE FATHER, LIKE SON?</h2>
+                      <a href="https://latifistreams.com/watch/dts/s5/e4"><button class="watch2">WATCH</button></a>
+                    </div>
+                    <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BYjE4ODMxNzAtZmJhOC00NmQ0LTk0MTMtNzFiYTI0NzU0NzkxXkEyXkFqcGdeQXVyMTQxOTQwMzEy._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                      <h2>S5E5 - PARDON MY FRENCH</h2>
+                      <a href="https://latifistreams.com/watch/dts/s5/e5"><button class="watch2">WATCH</button></a>
+                    </div>
+                    <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BN2IyODkwYTEtZGU2Mi00ZjM0LWJkNzEtMjY0ZWRjOTVjZjFmXkEyXkFqcGdeQXVyMTQxOTQwMzEy._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                      <h2>S5E6 - NICE GUYS FINISH LAST</h2>
+                      <a href="https://latifistreams.com/watch/dts/s5/e6"><button class="watch2">WATCH</button></a>
+                    </div>
+                    <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BZThhMzdmYWUtYjU1YS00ZjA3LWE4MzEtM2Y5MWJjOWQ2OTA0XkEyXkFqcGdeQXVyMTQxOTQwMzEy._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                      <h2>S5E7 - HOT SEAT</h2>
+                      <a href="https://latifistreams.com/watch/dts/s5/e7"><button class="watch2">WATCH</button></a>
+                    </div>                 
+                    <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BMmFlMmNlOWEtNTk1MS00M2I3LWJlNTQtYTk5NjUzY2ZiM2JiXkEyXkFqcGdeQXVyMTQxOTQwMzEy._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                      <h2>S5E8 - ALPHA MALE</h2>
+                      <a href="https://latifistreams.com/watch/dts/s5/e8"><button class="watch2">WATCH</button></a>
+                    </div>
+                    <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BZWNmOGVkMmQtMzIxNy00MTNhLWE0ZDUtOGZlMzJkN2YxZWI0XkEyXkFqcGdeQXVyMTQxOTQwMzEy._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                      <h2>S5E9 - OVER THE LIMIT</h2>
+                      <a href="https://latifistreams.com/watch/dts/s5/e9"><button class="watch2">WATCH</button></a>
+                    </div>
+                    <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('https://m.media-amazon.com/images/M/MV5BNTkyMDY4MWMtNDE4OC00NzM5LWI5MzYtYmYxM2U0MzdlZDM2XkEyXkFqcGdeQXVyMTQxOTQwMzEy._V1_FM.jpg');background-size: cover;background-position: center;" class="gallery-cell">
+                      <h2>S5E10 - END OF THE ROAD</h2>
+                      <a href="https://latifistreams.com/watch/dts/s5/e10"><button class="watch2">WATCH</button></a>
+                    </div>
+                </div>
+                <h1>SEASON 6</h1>
+                <div id="Div5" class="gallery js-flickity">
+                    <div style="background-image: linear-gradient(to bottom, rgba(33,33,33, 0.5), rgba(0, 0, 0, 1)), url('');background-size: cover;background-position: center;" class="gallery-cell">
+                      <h2>S6E1 - </h2>
+                      <a href="https://latifistreams.com/watch/dts/s6/e1"><button class="watch2">WATCH</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </section>
+
+    <style>
+      @font-face {
+        font-family: DIN-Pro;
+        src: url('DIN-Pro.ttf');
+      }
+
+      footer {
+        text-align: center;
+        padding: 15px;
+        background-color: #000;
+        color: #ffffff;
+        font-family: 'DIN-Pro', sans-serif;
+      }
+
+      h3 {
+        font-size: 12px;
+        font-family: 'DIN-Pro', sans-serif;
+      }
+
+      a {
+        color: #ffffff;
+        background-color: transparent;
+        text-decoration: underline;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+
+      a:hover {
+        color: #ff5151;
+        background-color: transparent;
+        text-decoration: underline;
+      }
+
+      .tags {
+        color: #000;
+        margin-bottom: 38px;
+      }
+    </style>
+
+    <footer>
+      <a href="https://www.latifistreams.com/"><img style="display:block; margin:auto; margin-top:5px" width="300px"
+          height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+      <h3><a href="/contact">Contact Us</a></h3>
+      <h3><a href="https://twitter.com/latifistreams" target="_blank">Twitter</a> | <a
+          href="https://discord.gg/6vr9CW7ZFa" target="_blank">Discord</a></h3>
+      <h3>#StandWithUkraine #StandWithArtsakh</h3>
+      <img style="margin:5px;"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/1200px-Flag_of_Ukraine.svg.png"
+        width="auto" height="50"><img style="margin:5px"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Flag_of_Artsakh.svg/1200px-Flag_of_Artsakh.svg.png"
+        width="auto" height="50">
+      <h3 class="tags">lordlatifistreams, latifisteams, lord latifi streams, latifi streams</h3>
+    </footer>
+  </body>
+</head>
+</html>
+  <!-- Ⓒ 2023  LORDLATIFISTREAMS -->

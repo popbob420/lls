@@ -20,9 +20,17 @@
      crossorigin="anonymous"></script>
 <style>
 @font-face {
- font-family: DIN-Pro;
- src: url('/DIN-Pro.ttf');
+    font-family: 'DIN-Pro';
+    src: url('https://latifistreams.com/DINPro.eot');
+    src: url('https://latifistreams.com/DINPro.eot?#iefix') format('embedded-opentype'),
+        url('https://latifistreams.com/DINPro.woff2') format('woff2'),
+        url('https://latifistreams.com/DINPro.woff') format('woff'),
+        url('https://latifistreams.com/DINPro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
+
  
 h1 {
  font-family: 'Barlow', sans-serif;
@@ -238,13 +246,13 @@ div.stream-title {
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 
 <h1>Lord Latifi Streams</h1>
-<h2>Countdown to 2023 Belgian Grand Prix:</h2>
+<h2>Countdown to 2023 Dutch Grand Prix:</h2>
 <!-- Display the countdown timer in an element -->
 <div class="bruh"><p style="font-size:32px;" id="demo"></p></div>
 
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("Jul 30, 2023 9:00:00 EDT").getTime();
+var countDownDate = new Date("Aug 27, 2023 9:00:00 EDT").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {

@@ -390,19 +390,19 @@ var jwDefaults = {
   },
   "skin": {
     "controlbar": {
-      "background": "#00a3e0",
+      "background": "#141414",
       "icons": "#b8b8b8",
-      "iconsActive": "#ffb800",
+      "iconsActive": "#00a3e0",
       "text": "#b8b8b8"
     },
     "menus": {
       "background": "#141414",
       "text": "#b8b8b8",
-      "textActive": "#ffb800"
+      "textActive": "#00a3e0"
     },
     "name": "stormtrooper",
     "timeslider": {
-      "progress": "#ffb800"
+      "progress": "#00a3e0"
     },
     "tooltips": {
       "background": "#141414",

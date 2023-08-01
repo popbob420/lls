@@ -390,13 +390,13 @@ var jwDefaults = {
   },
   "skin": {
     "controlbar": {
-      "background": "#141414",
+      "background": "#111111",
       "icons": "#b8b8b8",
       "iconsActive": "#00a3e0",
       "text": "#b8b8b8"
     },
     "menus": {
-      "background": "#141414",
+      "background": "#111111",
       "text": "#b8b8b8",
       "textActive": "#00a3e0"
     },
@@ -405,7 +405,7 @@ var jwDefaults = {
       "progress": "#00a3e0"
     },
     "tooltips": {
-      "background": "#141414",
+      "background": "#111111",
       "text": "#b8b8b8"
     }
   },

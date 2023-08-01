@@ -1,0 +1,56 @@
+<style>
+html,
+body,
+#container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+}
+#myElement {
+    height: 100vh !important;
+}
+body {
+    height: 100vh;
+}
+#container {
+    position: absolute;
+    text-align: center
+}
+
+video {
+    outline: 0
+}
+</style>
+
+<div class='video'>
+  <script src="https://use.fontawesome.com/20603b964f.js"></script>
+  <script type="text/javascript" src="https://latifistreams.com/jwplayer.js"></script>
+  <script type="text/javascript">
+    jwplayer.key = 'ypdL3Acgwp4Uh2/LDE9dYh3W/EPwDMuA2yid4ytssfI=';
+    // jwplayer.key = 'ITWMv7t88JGzI0xPwW8I0+LveiXX9SWbfdmt0ArUSyc=';
+  </script>
+  <div id="myElement"></div>
+  <script type="text/javascript">
+    jwplayer("myElement").setup({
+      image: "https://m.media-amazon.com/images/M/MV5BNDRhN2QyNzQtOGUzZS00M2YyLTlmYmMtNGM1NjIxNDg4YzViXkEyXkFqcGdeQXVyNjc1NDM1NzI@._V1_FMjpg_UX1000_.jpg",
+      //aspectratio: "16:9",
+      // width: '100%',
+      height: window.innerHeight,
+      autostart: false,
+      file : 'https://eerht.artdesigncdn.net/_v10/2e4df2815400bc0d1af33411b98261d269f94f4b9bc182c32d4b1931638762d916a9d37bcf82f37bf9bf5af187340976cbd716020ffd3634d5d98bcfb2d086808acadbf97ad27a513fad13453fa284b0407457167fee853ebc1ddead01ce5b810e6a07360be7aa0b7b9e9209782f27db6bca0849b97508a3fb8c6818de686b721cce81e030bd6c0ee334c7ccb90c0b30/playlist.m3u8',
+      title: 'LLS - 1: LIFE ON THE LIMIT',
+      aboutlink: 'https://www.jwplayer.com/',
+      tracks:[{"file":"<?php echo $cc; ?>","label":"Indonesia","kind":"captions","default":"true"}],
+      captions: {color: '#ffb800',fontSize: 30,backgroundOpacity: 0},
+      sharing: {
+        sites: ['facebook','twitter','tumblr','googleplus',{icon: 'https://support-static.jwplayer.com/images/awesome.svg', src: 'http://www.jwplayer.com/?', label:'jwplayer'}],
+        code: encodeURI("<iframe src='<?php echo $sharing;?>' width='480' height='320'></iframe>"),
+        link: "<?php echo $sharing;?>"
+      }
+    })
+  </script>
+</div>

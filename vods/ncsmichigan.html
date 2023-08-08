@@ -1,0 +1,55 @@
+<style>
+html,
+body,
+#container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+}
+#myElement {
+    height: 100vh !important;
+}
+body {
+    height: 100vh;
+}
+#container {
+    position: absolute;
+    text-align: center
+}
+
+video {
+    outline: 0
+}
+</style>
+
+<div class='video'>
+  <script src="https://use.fontawesome.com/20603b964f.js"></script>
+  <script type="text/javascript" src="https://latifistreams.com/jwplayer.js"></script>
+  <script type="text/javascript">
+    jwplayer.key = 'ypdL3Acgwp4Uh2/LDE9dYh3W/EPwDMuA2yid4ytssfI=';
+    // jwplayer.key = 'ITWMv7t88JGzI0xPwW8I0+LveiXX9SWbfdmt0ArUSyc=';
+  </script>
+  <div id="myElement"></div>
+  <script type="text/javascript">
+    jwplayer("myElement").setup({
+      image: "",
+      //aspectratio: "16:9",
+      // width: '100%',
+      height: window.innerHeight,
+      autostart: false,
+      file : 'https://mev01.iptvfreemium.com/playlist/ZlNSanJRUjZtWEZ6MVdKZGdmL0J4dXg0MjJNQlFtcHY1MUlJdmdhOTlGb2VXaWRZMUN2dUw0OXZ5NFBwWHZqemw3bWxtVXFPK0FYYWYvbnREeGUzY2c9PQ,,/master.m3u8?token=VnhzaCttWC9EQU1OV0pLajhWc2hCOUFKTmpXUzlzMnJKSHpXMUVveFRLakErZC9HUEkzRGt3amdTN1Z1SjA1NzdqaGdQdWY3WmhMdExlZkozazBUTnc9PQ,,',
+      title: '',
+      // tracks:[{"file":"https://latifistreams.com/captions/1-Life-on-the-Limit-(2013)-eng.srt","label":"English","kind":"captions","default":"true"}],
+      captions: {color: '#ffb800',fontSize: 30,backgroundOpacity: 0},
+      sharing: {
+        sites: ['facebook','twitter','tumblr','googleplus',{icon: 'https://support-static.jwplayer.com/images/awesome.svg', src: 'http://www.jwplayer.com/?', label:'jwplayer'}],
+        code: encodeURI("<iframe src='<?php echo $sharing;?>' width='480' height='320'></iframe>"),
+        link: "<?php echo $sharing;?>"
+      }
+    })
+  </script>
+</div>

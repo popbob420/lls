@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>LLS - IndyCar at Nashville</title>
+<title>LLS - IndyCar / NASCAR at Indy RC</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <meta content="Lord Latifi Streams" property="og:title" />
 <meta content="Watch Motorsport in HD with Lord Latifi Streams" property="og:description" />
@@ -171,20 +171,25 @@
           src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
     </div>
     <div class="main">
-      <h1>INDYCAR AT NASHVILLE</h1>
+      <h1>INDYCAR / NASCAR AT INDY RC</h1>
       <div class="row">
         <div class="column1" style="background-color:#;">
-          <button class="btn" onclick="document.getElementById('iframe').src = 'https://voodc.com/embed/85899a889c878a97879983cac2c3cabfb8cfb8db.html'">Stream 1</button>
+          <button class="btn" id="default" onclick="document.getElementById('iframe').src = '/channel/iframe2'">Stream 1</button>
           <button class="btn" onclick="document.getElementById('iframe').src = '/channel/iframe'">Stream 2</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = 'https://wikisport.click/strm/25.php'">Stream 3</button>
+          <button class="btn" onclick="document.getElementById('iframe').src = 'https://wikisport.click/strm/30.php'">Stream 3</button>
           <button class="btn" onclick="document.getElementById('iframe').src = 'https://wikisport.click/embed/skyf1.php'">Stream 4</button>
-	  <button class="btn" onclick="document.getElementById('iframe').src = 'https://daddylivehd.com/embed/stream-53.php'">Stream 5</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = 'https://daddylivehd.com/embed/stream-60.php'">Stream 6</button>
+	  <!--<button class="btn" onclick="document.getElementById('iframe').src = 'https://daddylivehd.com/embed/stream-60.php'">Stream 5</button>
+         <!-- <button class="btn" onclick="document.getElementById('iframe').src = 'https://daddylivehd.com/embed/stream-60.php'">Stream 6</button>
           <button class="btn" onclick="document.getElementById('iframe').src = 'https://embedstream.me/ntt-indycar-series-hy-vee-homefront-250-newton-iowa-stream-1'">Stream 7</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = 'https://daddylivehd.com/embed/stream-521.php'">Stream 8</button>
-          <iframe id="iframe" src="https://voodc.com/embed/85899a889c878a97879983cac2c3cabfb8cfb8db.html" height="94%" width="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
+          <button class="btn" onclick="document.getElementById('iframe').src = 'https://daddylivehd.com/embed/stream-521.php'">Stream 8</button>-->
+          <iframe id="iframe" src="/channel/iframe2" height="94%" width="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
           <button class="btn" onclick="TheaterMode();">Theater Mode [PC]</button>
           <script>
+        $('#default').css({"box-shadow":"0px 5px 0px #e40046 inset"});
+        $('.btn').click(function(){
+        $('.btn').css({"box-shadow":""});
+        $(this).css({"box-shadow":"0px 5px 0px #e40046 inset"});
+        });
             var TheaterModeActivated = false
             function TheaterMode() {
               if (TheaterModeActivated) {

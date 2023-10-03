@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial -scale=1 ">
+<title>LordLatifiStreams / Motorsport</title>
+<link rel="icon" type="image/x-icon" href="favicon.png">
+<meta content="Lord Latifi Streams" property="og:title" />
+<meta content="Watch Sports in HD with Lord Latifi Streams" property="og:description" />
+<meta content="https://latifistreams.com/" property="og:url" />
+<meta content="#ffffff" data-react-helmet="true" name="theme-color" />
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3W9MBHEVCM"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+
+ gtag('config', 'G-3W9MBHEVCM');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2226400138289610"
+     crossorigin="anonymous"></script>
+<style>
+@font-face {
+    font-family: 'DIN-Pro';
+    src: url('https://latifistreams.com/DINPro.eot');
+    src: url('https://latifistreams.com/DINPro.eot?#iefix') format('embedded-opentype'),
+        url('https://latifistreams.com/DINPro.woff2') format('woff2'),
+        url('https://latifistreams.com/DINPro.woff') format('woff'),
+        url('https://latifistreams.com/DINPro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Barlow';
+    src: url('https://latifistreams.com/Barlow-BlackItalic.eot');
+    src: url('https://latifistreams.com/Barlow-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('https://latifistreams.com/Barlow-BlackItalic.woff2') format('woff2'),
+        url('https://latifistreams.com/Barlow-BlackItalic.woff') format('woff'),
+        url('https://latifistreams.com/Barlow-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+	
+h1 {
+ font-family: 'Barlow', sans-serif;
+ text-align:center;
+ font-size:24px;
+ color: white;
+}
+ 
+h2 {
+ font-family: 'DIN-Pro', sans-serif;
+ text-align:center;
+ font-size: 24px;
+ color: white;
+ margin-top:25px;
+}
+	
+body {
+ background: #212121;
+ margin: 0;
+}
+ 
+.container {
+ width: 100%;
+ height: 95%;
+ display: flex;
+ justify-content: center;
+ padding-bottom: 10px;
+}
+ 
+.tablemain {
+ padding: 5px;
+}
+
+.bruh {
+ background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/eb3a107e-917c-4eec-a22f-47b983e13b51-1643231683.jpg');
+ height: 100px;
+ width: 75%;
+ margin: auto;
+ margin-bottom: 10px;
+ padding: 50px 0;
+ background-size:     cover;                      /* <------ */
+ background-repeat:   no-repeat;
+ background-position: center center;
+ filter: grayscale(1);
+}
+
+p {
+ font-family: 'DIN-Pro', sans-serif;
+ text-align: center;
+ font-size: 32px;
+ color: white;
+}
+
+div.streamtable {
+  padding: 5px;
+  background-color: #000;
+  border-radius: 15px;
+  margin:auto;
+  width: 90%;
+  max-width: 1000px;
+  margin-bottom: 25px;
+}
+
+div.stream {
+  padding:.5px;
+  background-color: #111;
+  border-radius: 15px;
+  margin:10px;
+  transition: 0.5s;
+}  
+
+div.stream:hover {
+  padding:.5px;
+  background-color: #00a3e0;
+  border-radius: 15px;
+  margin:10px;
+  transition: 0.5s;
+  cursor: pointer;
+}  
+
+div.stream:active {
+  padding:.5px;
+  background-color: #111;
+  border-radius: 15px;
+  margin:10px;
+  transition: 0.5s;
+}  
+
+div.stream-title {
+  padding:.2px;
+  background-color: #111;
+  border-radius: 15px;
+  margin:10px;
+}  
+
+div.top-title {
+  background-image: linear-gradient(to bottom, rgba(0,0,0, 0), rgba(33,33,33, 1)), url('https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2022/07/19112106/williams-nicholas-latifi-austrian-grand-prix-planet-f1.jpg');
+  width: 100%;
+  height: 250px;
+  display: flex;
+  background-size:100% auto;
+  background-position: 50% 50%;
+  filter: grayscale(1);
+  margin: auto;
+  transition: 0.5s;
+  margin-bottom: 5px;
+}
+
+div.top-title:hover {
+  filter: grayscale(0);
+  transition: 0.5s;
+}
+
+h2.title {
+ font-family: 'Barlow', sans-serif;
+ text-align:center;
+ color: white;
+ margin: auto;
+}
+
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (min-width: 1000px) {
+  h2.title {
+    font-size: 80px;
+  }
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 999px) {
+  h2.title {
+    font-size: 50px;
+  }
+}
+
+.tn1 {
+    max-width:250px;
+    float: left;
+    margin:auto;
+}
+
+.tn2 {
+ float: right;
+ max-height:50px;
+ max-width:100px;
+ margin:auto;
+ margin-right:5px;
+}
+
+.topnav {
+ background-color: #000;
+ padding: 10px;
+ display: flex;
+}
+</style>
+<head>
+<body>
+	
+<div class="topnav">
+  <a class="tn1" href="https://www.latifistreams.com/"><img style="display:block;" width="100%"  height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+  <img class="tn2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Flag_of_Artsakh.svg/1200px-Flag_of_Artsakh.svg.png" width="100%" height="100%"></img>
+</div>
+	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+<div class="top-title">
+  <h2 class="title">MOTORSPORT STREAMS</h2>
+</div>
+
+<div class="streamtable">
+<div class="stream-title">
+<div class="clockbox" style="
+ font-family: 'Barlow', sans-serif;
+ text-align:center;
+ font-size:24px;
+ color: white;
+ padding: .2px;
+ margin:12px;
+"></div>
+<noscript>JavaScript is disabled.</noscript>
+
+<script type="text/javascript">
+var tday=["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"];
+var tmonth=["JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"];
+
+function GetClock(){
+var tzOffset = -4;//set this to the number of hours offset from UTC
+
+var d=new Date();
+var dx=d.toGMTString();
+dx=dx.substr(0,dx.length -3);
+d.setTime(Date.parse(dx))
+d.setHours(d.getHours()+tzOffset);
+var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate();
+
+var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+"";
+var obj=document.querySelectorAll('.clockbox');
+for(var i in obj){
+	obj[i].innerHTML=clocktext;
+}
+}
+
+GetClock();
+setInterval(GetClock,1000);
+</script>
+
+</div>
+</div>
+
+<div class="streamtable">
+<div class="stream-title">
+<div id="clockbox" style="
+ font-family: 'Barlow', sans-serif;
+ text-align:center;
+ font-size:24px;
+ color: white;
+ padding: .2px;
+ margin:12px;
+"></div>
+</div>
+<noscript>JavaScript is disabled.</noscript>
+
+<script type="text/javascript">
+function GetClock(){
+var tzOffset = -4;//set this to the number of hours offset from UTC
+
+var d=new Date();
+var dx=d.toGMTString();
+dx=dx.substr(0,dx.length -3);
+d.setTime(Date.parse(dx))
+d.setHours(d.getHours()+tzOffset);
+var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+
+if(nhour==0){ap=" AM";nhour=12;}
+else if(nhour<12){ap=" AM";}
+else if(nhour==12){ap=" PM";}
+else if(nhour>12){ap=" PM";nhour-=12;}
+
+if(nmin<=9) nmin="0"+nmin;
+if(nsec<=9) nsec="0"+nsec;
+
+var clocktext=""+nhour+":"+nmin+":"+nsec+ap+" EDT";
+document.getElementById('clockbox').innerHTML=clocktext;
+}
+
+GetClock();
+setInterval(GetClock,1000);
+</script>
+</div>
+
+<!--
+f1 - #ff1e02
+f2 - #0191cf
+f3 - #e50405
+wec - #77b62e
+imsa wscc - #ce161e
+wrc - #fd4c00
+NCS - #ffd901
+NXS - #5d3ce3
+Ncts - #dc1f24
+arca - #fdee1c
+Supercross - #0872cf
+indycar - #037ab8
+Indy NXT - #e32627
+FE - #01005b
+MotoGP - #d80544
+Moto2 - #84273b
+v8sc - #f92705
+-->
+<script type="text/javascript">
+function localize(t)
+{
+  var d=new Date(t+" UTC");
+  document.write(d.toString().replace(/GMT.*/g,""));
+}
+</script>     
+
+<!--
+<h1 style="padding: 100px">No events are scheduled for this date.</h1>
+
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #ff1e02">
+    <h1>FORMULA 1</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/japanese-gp';">
+    <h2>1:00AM ET - Japanese Grand Prix</h2>
+  </div>
+</div>
+	<!--
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #0191cf">
+    <h1>FORMULA 2</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/italian-gp';">
+    <h2>3:55AM ET - Monza - Feature Race</h2>
+  </div>
+</div>
+	
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #f92705">
+    <h1>FORMULA 3</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/italian-gp';">
+    <h2>2:15AM ET - Monza - Feature Race</h2>
+  </div>
+</div>
+
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #dc0a27">
+    <h1>PORSCHE SUPERCUP</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/italian-gp';">
+    <h2>5:55AM ET - Monza - Race</h2>
+  </div>
+</div>
+
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #037ab8">
+    <h1>INDYCAR SERIES</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/indy-monterey';">
+    <h2>12:00PM ET - Laguna Seca - Warmup</h2>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/indy-monterey';">
+    <h2>2:30PM ET - Grand Prix of Monterey</h2>
+  </div>
+</div>
+	
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #e32627">
+    <h1>INDY NXT</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/indy-monterey';">
+    <h2>12:55PM ET - Laguna Seca - Race 2</h2>
+  </div>
+</div>
+
+<!--
+
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #01005b">
+    <h1>FORMULA E</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/london-eprix';">
+    <h2>5:30AM ET - London - Free Practice 3</h2>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/london-eprix';">
+    <h2>7:40AM ET - London - Qualifying 2</h2>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/london-eprix';">
+    <h2>12:00PM ET - London E-Prix - Race 2</h2>
+  </div>
+</div>
+	-->
+
+<!--
+
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #77b62e">
+    <h1>WORLD ENDURANCE CHAMPIONSHIP</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/6hrs-monza';">
+    <h2>6:30AM ET - 6 Hours of Monza</h2>
+  </div>
+</div>-->
+
+	<!--
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #005aaa">
+    <h1>IMSA PILOT CHALLENGE</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/imsa-mosport';">
+    <h2>4:00PM ET - Canadian Tire Motorsport 120</h2>
+  </div>
+</div>
+-->
+
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #ffd901">
+    <h1 style="color:#000">NASCAR CUP SERIES</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/nascar-talladega';">
+    <h2><script type="text/javascript">localize("10/08/2023 12:15:00 AM");</script> - YellaWood 500</h2>
+  </div>
+</div>
+<!--
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #1c5ca6">
+    <h1>BRITISH TOURING CAR CHAMPIONSHIP</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/btcc-knockhill';">
+    <h2>6:45AM ET - Knockhill - Race 1</h2>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/btcc-knockhill';">
+    <h2>9:40AM ET - Knockhill - Race 2</h2>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/btcc-knockhill';">
+    <h2>12:20PM ET - Knockhill - Race 3</h2>
+  </div>
+</div>
+
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #5d3ce3">
+    <h1>NASCAR XFINITY SERIES</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/nascar-texas';">
+    <h2>10:35AM ET - Texas - Free Practice</h2>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/nascar-texas';">
+    <h2>11:05AM ET - Texas - Qualifying</h2>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/nascar-texas';">
+    <h2>4:00PM ET - Andy's Frozen Custard 300</h2>
+  </div>
+</div>
+
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #dc1f24">
+    <h1>NASCAR TRUCK SERIES</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/nascar-talladega';">
+    <h2>9:30AM ET - Talladega - Qualifying</h2>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/nascar-talladega';">
+    <h2>1:00PM ET - Love's RV Stop 250</h2>
+  </div>
+</div>
+
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #fdee1c">
+    <h1 style="color:#000">ARCA MENARDS SERIES</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/arca-salem';">
+    <h2>7:30PM ET - Atlas 200</h2>
+  </div>
+</div>
+
+<!--
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #f92705">
+    <h1>SUPERCARS</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/sandown-500';">
+    <h2>12:15AM ET - Sandown 500</h2>
+  </div>
+</div>
+	-->
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #fd4c00">
+    <h1>WORLD RALLY CHAMPIONSHIP</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/rally-chile';">
+    <h2>7:00AM ET - Rally Chile - SS13-SS16</h2>
+  </div>
+</div>
+<!--
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #ce161e">
+    <h1>IMSA SPORTSCAR CHAMPIONSHIP</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/imsa-indy';">
+    <h2>1:10PM ET - Battle on the Bricks</h2>
+  </div>
+</div>
+
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #d90c16">
+    <h1>SUPER GT</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/sgt-sugo';">
+    <h2>1:40AM ET - Sugo GT 300km Race</h2>
+  </div>
+</div>
+	<!--
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #fff">
+    <h1 style="color: #000">SUPER FORMULA</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/sf-motegi';">
+    <h2>2:00AM ET - Motegi - Race</h2>
+  </div>
+</div>
+	
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #ffcd00">
+    <h1 style="color: #000">DEUTSCHE TOURENWAGEN MASTERS</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/dtm-spielberg';">
+    <h2>3:35AM ET - Red Bull Ring - Qualifying 2</h2>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/dtm-spielberg';">
+    <h2>7:30AM ET - Red Bull Ring - Race 2</h2>
+  </div>
+</div>
+<!--
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #fbf95b">
+    <h1 style="color:#000">FIM EWC</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/ewc-suzuka';">
+    <h2>>>6:30AM ET - 8 Hours of Suzuka</h2>
+  </div>
+</div>
+	-->
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #d80544">
+    <h1>MOTOGP</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/motogp-motegi';">
+    <h2>2:00AM ET - Grand Prix of Japan</h2>
+  </div>
+</div>
+
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #84273b">
+    <h1>MOTO2</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/motogp-motegi';">
+    <h2>12:15AM ET - Motegi - Race</h2>
+  </div>
+</div>
+	<!--
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #84273b">
+    <h1>MOTO3</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/motogp-motegi';">
+    <h2>11:00PM ET - Motegi - Race</h2>
+  </div>
+</div>
+<!--
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #76bb22">
+    <h1>MOTOE</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/motogp-misano';">
+    <h2>6:15AM ET - Misano - Race 1</h2>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/motogp-misano';">
+    <h2>10:10AM ET - Misano - Race 2</h2>
+  </div>
+</div>
+-->
+<script id="cid0020000341398164600" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 200px;height: 300px;">{"handle":"lls-motorsport","arch":"js","styles":{"a":"000000","b":100,"c":"FFFFFF","d":"FFFFFF","k":"000000","l":"000000","m":"000000","n":"FFFFFF","p":"10","q":"000000","r":100,"pos":"br","cv":1,"cvbg":"000000","cvw":75,"cvh":30,"fwtickm":1}}</script>	
+<style>
+@font-face {
+ font-family: DIN-Pro;
+ src: url('DIN-Pro.ttf');
+}
+ 
+footer {
+ text-align: center;
+ padding: 15px;
+ background-color: #000;
+ color: #ffffff;
+ font-family: 'DIN-Pro', sans-serif;
+}
+ 
+h3 {
+ font-size: 12px;
+ font-family: 'DIN-Pro', sans-serif;
+}
+   
+a {
+  color: #ffffff;
+  background-color: transparent;
+  text-decoration: underline;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+a:hover {
+  color: #ff5151;
+  background-color: transparent;
+  text-decoration: underline;
+}
+	
+.tags {
+  color:#000;
+  margin-bottom:38px;
+}
+</style>
+
+<footer>
+ <a href="https://www.latifistreams.com/"><img style="display:block; margin:auto; margin-top:5px" width="300px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+ <h3><a href="/contact">Contact Us</a></h3>
+ <h3><a href="https://twitter.com/latifistreams" target="_blank">Twitter</a> | <a href="https://discord.gg/6vr9CW7ZFa" target="_blank">Discord</a></h3>
+ <h3>#StandWithArtsakh</h3>
+ <img style="margin:5px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Flag_of_Artsakh.svg/1200px-Flag_of_Artsakh.svg.png" width="auto" height="50">
+ <h3 class="tags">lordlatifistreams, latifisteams, lord latifi streams, latifi streams</h3>
+</footer><!--/U1BFOOTER1Z-->
+</body>
+</html>
+<!-- Ⓒ 2023  LORDLATIFISTREAMS -->

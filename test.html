@@ -318,14 +318,34 @@ MotoGP - #d80544
 Moto2 - #84273b
 v8sc - #f92705
 -->
-<script type="text/javascript">
-function localize(t)
-{
-  var d=new Date(t+" UTC");
-  document.write(d.toString().replace(/GMT.*/g,""));
-}
-</script>     
+<script>
+let now = new Date(); // Get the current time
+let elem = document.querySelector(`div[data-hour="${now.getHours()}"]`); // Select the element that's supposed to be shown for the current time
 
+if (elem) { // If its exists, show it
+  elem.style.display = 'block';
+}
+</script>   
+
+<style>
+div[data-hour] {
+  /* By default hide all elements that are "timed" */
+  display: none;
+}
+</style>
+
+<h1>Live Sessions</h1>
+
+<div data-hour="10">
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #ff1e02">
+    <h1>FORMULA 1</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/japanese-gp';">
+    <h2>1:00AM ET - Japanese Grand Prix</h2>
+  </div>
+</div>
+</div>
 <!--
 <h1 style="padding: 100px">No events are scheduled for this date.</h1>
 

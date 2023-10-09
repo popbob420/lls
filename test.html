@@ -141,8 +141,8 @@ div.stream-title {
 }  
 
 div.top-title {
-  background-image: linear-gradient(to bottom, rgba(0,0,0, 0), rgba(33,33,33, 1)), url('https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2022/07/19112106/williams-nicholas-latifi-austrian-grand-prix-planet-f1.jpg');
   width: 100%;
+  background-image: linear-gradient(to bottom, rgba(0,0,0, 0) 0%, rgba(33,33,33, 1) 100%), url('https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2022/07/19112106/williams-nicholas-latifi-austrian-grand-prix-planet-f1.jpg');
   height: 250px;
   display: flex;
   background-size:100% auto;
@@ -151,6 +151,7 @@ div.top-title {
   margin: auto;
   transition: 0.5s;
   margin-bottom: 5px;
+
 }
 
 div.top-title:hover {
@@ -188,9 +189,9 @@ h2.title {
 .tn2 {
  right: 0;
  max-width:100px;
- min-height:50px;
+ min-height:25px;
  margin:auto;
- display: block
+ display: flex
 }
 
 @media screen and (max-width: 360px) {
@@ -205,7 +206,11 @@ h2.title {
  display: flex;
  justify-content: space-between;
  max-width:100vw;
- height:50px
+ height:50px;
+ position: -webkit-sticky; /* Safari */
+ position: sticky;
+ top: 0;
+ z-index:100;
 }
 </style>
 <head>
@@ -213,7 +218,10 @@ h2.title {
 	
 <div class="topnav">
   <a class="tn1" href="https://www.latifistreams.com/"><img style="display:block;" width="250px"  height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
-  <img class="tn2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Flag_of_Artsakh.svg/1200px-Flag_of_Artsakh.svg.png" width="100%" height="50px"></img>
+  <div class="tn2">
+    <a class="tn2" href="https://twitter.com/latifistreams" target="_blank"><img src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/twitter-icon-18-256.png" width="100%" height="25px" style="margin:5px"></img></a>
+    <a class="tn2" href="https://discord.gg/6vr9CW7ZFa" target="_blank"><img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6cc3c481a15a141738_icon_clyde_white_RGB.png" width="100%" height="25px" style="margin:5px"></img></a>
+  </div>
 </div>
 	
 <link rel="preconnect" href="https://fonts.googleapis.com">

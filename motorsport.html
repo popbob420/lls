@@ -252,44 +252,22 @@ setInterval(GetClock,1000);
 </div>
 
 <div class="streamtable">
-<div class="stream-title">
-<div id="clockbox" style="
- font-family: 'Barlow', sans-serif;
- text-align:center;
- font-size:24px;
- color: white;
- padding: .2px;
- margin:12px;
-"></div>
-</div>
-<noscript>JavaScript is disabled.</noscript>
-
-<script type="text/javascript">
-function GetClock(){
-var tzOffset = -4;//set this to the number of hours offset from UTC
-
-var d=new Date();
-var dx=d.toGMTString();
-dx=dx.substr(0,dx.length -3);
-d.setTime(Date.parse(dx))
-d.setHours(d.getHours()+tzOffset);
-var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
-
-if(nhour==0){ap=" AM";nhour=12;}
-else if(nhour<12){ap=" AM";}
-else if(nhour==12){ap=" PM";}
-else if(nhour>12){ap=" PM";nhour-=12;}
-
-if(nmin<=9) nmin="0"+nmin;
-if(nsec<=9) nsec="0"+nsec;
-
-var clocktext=""+nhour+":"+nmin+":"+nsec+ap+" EDT";
-document.getElementById('clockbox').innerHTML=clocktext;
-}
-
-GetClock();
-setInterval(GetClock,1000);
-</script>
+  <div class="stream-title">
+    <h1>Displaying times in:</h1>
+  <div id="timezone" style="
+   font-family: 'Barlow', sans-serif;
+   text-align:center;
+   font-size:24px;
+   color: white;
+   padding: .2px;
+   margin:12px;
+  "></div>
+  </div>
+  <script>
+    document.getElementById("timezone").innerHTML =
+    Intl.DateTimeFormat().resolvedOptions().timeZone;
+  </script>
+  <noscript>JavaScript is disabled.</noscript>
 </div>
 
 <!--
@@ -311,7 +289,30 @@ MotoGP - #d80544
 Moto2 - #84273b
 v8sc - #f92705
 -->
+<script type="text/javascript">
+  function addZero(i) {
+    if (i < 10) {i = "0" + i}
+    return i;
+  }
 
+  function localize(t){
+    var d=new Date(t+" EDT");
+    let hours = d.getHours();
+    let minutes = d.getMinutes();
+ 
+    // Check whether AM or PM
+    let newformat = hours >= 12 ? 'PM' : 'AM';
+ 
+    // Find current hour in AM-PM Format
+    hours = hours % 12;
+ 
+    // To display "0" as "12"
+    hours = hours ? hours : 12;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    document.write(hours + ':' + minutes + ' ' + newformat);
+  }
+</script>
+<!--
 <h1 style="padding: 100px">No events are scheduled for this date.</h1>
 <!--
 <div class="streamtable">
@@ -539,13 +540,13 @@ v8sc - #f92705
     <h2>>>6:30AM ET - 8 Hours of Suzuka</h2>
   </div>
 </div>
-	
+	-->
 <div class="streamtable">
   <div class="stream-title" style="background-color: #d80544">
     <h1>MOTOGP</h1>
   </div>
-  <div class="stream" onclick="location.href='/motorsport/motogp-motegi';">
-    <h2>2:00AM ET - Grand Prix of Japan</h2>
+  <div class="stream" onclick="location.href='/motorsport/motogp-mandalika';">
+    <h2><script type="text/javascript">localize("10/12/2023 10:45:00 PM");</script> - Mandalika - Free Practice 1</h2>
   </div>
 </div>
 
@@ -553,17 +554,17 @@ v8sc - #f92705
   <div class="stream-title" style="background-color: #84273b">
     <h1>MOTO2</h1>
   </div>
-  <div class="stream" onclick="location.href='/motorsport/motogp-motegi';">
-    <h2>12:15AM ET - Motegi - Race</h2>
+  <div class="stream" onclick="location.href='/motorsport/motogp-mandalika';">
+    <h2><script type="text/javascript">localize("10/12/2023 9:50:00 PM");</script> - Mandalika - Free Practice 1</h2>
   </div>
 </div>
-	<!--
+	
 <div class="streamtable">
   <div class="stream-title" style="background-color: #84273b">
     <h1>MOTO3</h1>
   </div>
-  <div class="stream" onclick="location.href='/motorsport/motogp-motegi';">
-    <h2>11:00PM ET - Motegi - Race</h2>
+  <div class="stream" onclick="location.href='/motorsport/motogp-mandalika';">
+    <h2><script type="text/javascript">localize("10/12/2023 9:00:00 PM");</script> - Mandalika - Free Practice 1</h2>
   </div>
 </div>
 <!--

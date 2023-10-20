@@ -301,6 +301,8 @@ v8sc - #f92705
     let minutes = d.getMinutes();
     let month = d.getMonth() + 1;
     let day = d.getDate();
+    let year = d.getFullYear();
+    let year2 = year.toString().substr(-2);
  
     // Check whether AM or PM
     let newformat = hours >= 12 ? 'PM' : 'AM';
@@ -311,7 +313,7 @@ v8sc - #f92705
     // To display "0" as "12"
     hours = hours ? hours : 12;
     minutes = minutes < 10 ? '0' + minutes : minutes;
-    document.write(month + '.' + day + ' ' + hours + ':' + minutes + newformat);
+    document.write(month + '.' + day + '.' + year2 + ' ' + hours + ':' + minutes + newformat);
   }
 </script>
 <!--

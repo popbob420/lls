@@ -42,8 +42,6 @@
     font-style: italic;
     font-display: swap;
 }
-
-
 	
 h1 {
  font-family: 'Barlow', sans-serif;
@@ -68,13 +66,33 @@ body {
 .topnav {
  overflow: hidden;
  background-color: #000;
- vertical-align: middle;
+ width: 100%;
+ height: 69px;
+ position: -webkit-sticky; /* Safari */
+ position: sticky;
+ top: 0;
+ z-index: 99;
+ display: flex;
+}
+
+.topnavmaterial {
+ width: 1450px;
+ margin: auto;
+ padding-left: 25px;
+ padding-right: 25px;
+}
+
+@media screen and (max-width: 750px) {
+  .topnavmaterial {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 
 .topnav a {
  float: left;
  color: #f2f2f2;
- text-align: center;
  padding: 14px 16px;
  text-decoration: none;
  font-size: 17px;
@@ -198,7 +216,9 @@ h2.title {
 <body>
 	
 <div class="topnav">
-  <a class="active" href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+  <div class="topnavmaterial">
+  <a href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+  </div>
 </div>
 	
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -281,7 +301,6 @@ NCS - #ffd901
 NXS - #5d3ce3
 Ncts - #dc1f24
 arca - #fdee1c
-Supercross - #0872cf
 indycar - #037ab8
 Indy NXT - #e32627
 FE - #01005b
@@ -316,9 +335,10 @@ v8sc - #f92705
     document.write(month + '.' + day + '.' + year2 + ' ' + hours + ':' + minutes + newformat);
   }
 </script>
+	<!--
 
 <h1 style="padding: 100px">No events are scheduled for this date.</h1>
-	<!--
+  -->
 <div class="streamtable">
   <div class="stream-title" style="background-color: #ff1e02">
     <h1>FORMULA 1</h1>
@@ -563,6 +583,7 @@ footer {
  background-color: #000;
  color: #ffffff;
  font-family: 'DIN-Pro', sans-serif;
+ height: 250px;
 }
  
 h3 {
@@ -576,28 +597,24 @@ a {
   text-decoration: underline;
   margin-top: 5px;
   margin-bottom: 5px;
+  transition: 0.25s;
 }
 
 a:hover {
+  transition: 0.25s;
   color: #ff5151;
   background-color: transparent;
   text-decoration: underline;
 }
-	
-.tags {
-  color:#000;
-  margin-bottom:38px;
-}
+
 </style>
 
 <footer>
- <a href="https://www.latifistreams.com/"><img style="display:block; margin:auto; margin-top:5px" width="300px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+ <a href="https://www.latifistreams.com/"><img style="margin:auto; margin-top:5px" width="300px" height="auto" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
  <h3><a href="/contact">Contact Us</a></h3>
  <h3><a href="https://twitter.com/latifistreams" target="_blank">Twitter</a> | <a href="https://discord.gg/6vr9CW7ZFa" target="_blank">Discord</a></h3>
  <h3>#StandWithArtsakh #FreePalestine</h3>
  <img style="margin:5px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Flag_of_Artsakh.svg/1200px-Flag_of_Artsakh.svg.png" width="auto" height="50"><img style="margin:5px" src="https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg" width="auto" height="50">
- <h3 class="tags">lordlatifistreams, latifisteams, lord latifi streams, latifi streams</h3>
-</footer><!--/U1BFOOTER1Z-->
-</body>
+</footer>
 </html>
 <!-- Ⓒ 2023  LORDLATIFISTREAMS -->

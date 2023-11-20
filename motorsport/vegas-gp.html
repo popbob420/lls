@@ -52,13 +52,40 @@
       margin: 0;
     }
 
+    .topnav {
+      overflow: hidden;
+      background-color: #000;
+      width: 100%;
+      height: 69px;
+      position: -webkit-sticky; /* Safari */
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      display: flex;
+    }
+
+    .topnavmaterial {
+      width: 1450px;
+      margin: auto;
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    @media screen and (max-width: 750px) {
+      .topnavmaterial {
+        width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
+
     .topnav a {
       float: left;
       color: #f2f2f2;
-      text-align: center;
       padding: 14px 16px;
       text-decoration: none;
       font-size: 17px;
+      font-family: 'DIN-Pro', sans-serif;
     }
 	  
     .column1 {
@@ -95,11 +122,6 @@
         display: none;
       }
 
-    }
-	  
-    .topnav {
-      overflow: hidden;
-      background-color: #000;
     }
 
     h1 {
@@ -211,8 +233,9 @@
 
   <body class="base">
     <div class="topnav">
-      <a class="active" href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%"
-          src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+      <div class="topnavmaterial">
+        <a href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+      </div>
     </div>
     <div class="main">
       <h1>LAS VEGAS GRAND PRIX</h1>
@@ -321,7 +344,7 @@
 
     <footer>
       <a href="https://www.latifistreams.com/"><img style="display:block; margin:auto; margin-top:5px" width="300px"
-          height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+          height="auto" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
       <h3><a href="/contact">Contact Us</a></h3>
       <h3><a href="https://twitter.com/latifistreams" target="_blank">Twitter</a> | <a
           href="https://discord.gg/6vr9CW7ZFa" target="_blank">Discord</a></h3>

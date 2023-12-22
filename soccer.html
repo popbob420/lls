@@ -4,7 +4,7 @@
 <link rel="icon" type="image/x-icon" href="favicon.png">
 <meta content="Lord Latifi Streams" property="og:title" />
 <meta content="Watch Sports in HD with Lord Latifi Streams" property="og:description" />
-<meta content="https://lordlatifistreams.usite.pro/" property="og:url" />
+<meta content="https://latifistreams.com/" property="og:url" />
 <meta content="#ffffff" data-react-helmet="true" name="theme-color" />
 <head>
 <!-- Google tag (gtag.js) -->
@@ -42,7 +42,6 @@
     font-style: italic;
     font-display: swap;
 }
-
 	
 h1 {
  font-family: 'Barlow', sans-serif;
@@ -67,13 +66,33 @@ body {
 .topnav {
  overflow: hidden;
  background-color: #000;
- vertical-align: middle;
+ width: 100%;
+ height: 69px;
+ position: -webkit-sticky; /* Safari */
+ position: sticky;
+ top: 0;
+ z-index: 99;
+ display: flex;
+}
+
+.topnavmaterial {
+ width: 1450px;
+ margin: auto;
+ padding-left: 25px;
+ padding-right: 25px;
+}
+
+@media screen and (max-width: 750px) {
+  .topnavmaterial {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 
 .topnav a {
  float: left;
  color: #f2f2f2;
- text-align: center;
  padding: 14px 16px;
  text-decoration: none;
  font-size: 17px;
@@ -147,14 +166,6 @@ div.stream:active {
   transition: 0.5s;
 }  
 
-div.streamdiv {
-  padding:.5px;
-  background-color: #000;
-  border-radius: 15px;
-  margin:10px;
-  transition: 0.5s;
-}  
-
 div.stream-title {
   padding:.2px;
   background-color: #111;
@@ -163,12 +174,12 @@ div.stream-title {
 }  
 
 div.top-title {
-  background-image: linear-gradient(to bottom, rgba(0,0,0, 0), rgba(33,33,33, 1)), url('https://www.billboard.com/wp-content/uploads/2023/03/Lionel-Messi-2023-billboard-1548.jpg');
+  background-image: linear-gradient(to bottom, rgba(0,0,0, 0), rgba(33,33,33, 1)), url('https://cdn.theathletic.com/app/uploads/2023/03/05131528/MOHAMED-SALAH--scaled-e1678042911315.jpeg');
   width: 100%;
   height: 250px;
   display: flex;
-  background-size: 100% auto;
-  background-position: 50% 25%;
+  background-size:100% auto;
+  background-position: 50% 50%;
   filter: grayscale(1);
   margin: auto;
   transition: 0.5s;
@@ -201,17 +212,17 @@ h2.title {
   }
 }
 </style>
-
 <head>
 <body>
 	
 <div class="topnav">
-  <a class="active" href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+  <div class="topnavmaterial">
+  <a href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+  </div>
 </div>
 	
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
@@ -219,7 +230,7 @@ h2.title {
 <div class="top-title">
   <h2 class="title">SOCCER STREAMS</h2>
 </div>
-  
+
 <div class="streamtable">
 <div class="stream-title">
 <div class="clockbox" style="
@@ -229,7 +240,9 @@ h2.title {
  color: white;
  padding: .2px;
  margin:12px;
-"><noscript><h1>JavaScript is disabled.</h1></noscript></div>
+"></div>
+<noscript>JavaScript is disabled.</noscript>
+
 <script type="text/javascript">
 var tday=["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"];
 var tmonth=["JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"];
@@ -259,322 +272,63 @@ setInterval(GetClock,1000);
 </div>
 
 <div class="streamtable">
-<div class="stream-title">
-<div id="clockbox" style="
- font-family: 'Barlow', sans-serif;
- text-align:center;
- font-size:24px;
- color: white;
- padding: .2px;
- margin:12px;
-"><noscript><h1>JavaScript is disabled.</h1></noscript></div>
+  <div class="stream-title">
+    <h1>Displaying times in:</h1>
+  <div id="timezone" style="
+   font-family: 'Barlow', sans-serif;
+   text-align:center;
+   font-size:24px;
+   color: white;
+   padding: .2px;
+   margin:12px;
+  "></div>
+  </div>
+  <script>
+    document.getElementById("timezone").innerHTML =
+    Intl.DateTimeFormat().resolvedOptions().timeZone;
+  </script>
+  <noscript>JavaScript is disabled.</noscript>
 </div>
+
 <script type="text/javascript">
-function GetClock(){
-var tzOffset = -4;//set this to the number of hours offset from UTC
+  function addZero(i) {
+    if (i < 10) {i = "0" + i}
+    return i;
+  }
 
-var d=new Date();
-var dx=d.toGMTString();
-dx=dx.substr(0,dx.length -3);
-d.setTime(Date.parse(dx))
-d.setHours(d.getHours()+tzOffset);
-var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
-
-if(nhour==0){ap=" AM";nhour=12;}
-else if(nhour<12){ap=" AM";}
-else if(nhour==12){ap=" PM";}
-else if(nhour>12){ap=" PM";nhour-=12;}
-
-if(nmin<=9) nmin="0"+nmin;
-if(nsec<=9) nsec="0"+nsec;
-
-var clocktext=""+nhour+":"+nmin+":"+nsec+ap+" EDT";
-document.getElementById('clockbox').innerHTML=clocktext;
-}
-
-GetClock();
-setInterval(GetClock,1000);
+  function localize(t){
+    var d=new Date(t+" EST");
+    let hours = d.getHours();
+    let minutes = d.getMinutes();
+    let month = d.getMonth() + 1;
+    let day = d.getDate();
+    let year = d.getFullYear();
+    let year2 = year.toString().substr(-2);
+ 
+    // Check whether AM or PM
+    let newformat = hours >= 12 ? 'PM' : 'AM';
+ 
+    // Find current hour in AM-PM Format
+    hours = hours % 12;
+ 
+    // To display "0" as "12"
+    hours = hours ? hours : 12;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    document.write(month + '.' + day + '.' + year2 + ' ' + hours + ':' + minutes + newformat);
+  }
 </script>
-</div>
 <!--
 <h1 style="padding: 100px">No events are scheduled for this date.</h1>
-
-<div class="streamtable">
-  <div class="stream-title" style="background-color: #3c195b">
-    <h1>PREMIER LEAGUE</h1>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/premier-league-1';">
-    <h2>9:00AM ET - Nottingham vs Brentford</h2>
-  </div>
-</div>
-<!--
-<div class="streamtable">
-  <div class="stream-title" style="background-color: #018f5f">
-    <h1>EFL CUP</h1>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/efl-cup-1';">
-    <h2>2:45PM ET - Aston Villa vs Everton</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/efl-cup-2';">
-    <h2>2:45PM ET - Brentford vs Arsenal</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/efl-cup-3';">
-    <h2>2:45PM ET - Chelsea vs Brighton</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/efl-cup-4';">
-    <h2>2:45PM ET - Liverpool vs Leicester</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/efl-cup-5';">
-    <h2>3:00PM ET - Newcastle vs Manchester City</h2>
-  </div>
-</div>
-
-<div class="streamtable">
-  <div class="stream-title" style="background-color: #c41b31">
-    <h1>US OPEN CUP</h1>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/open-cup';">
-    <h2>8:30PM ET - Inter Miami vs Houston</h2>
-  </div>
-</div>
-
-<div class="streamtable">
-  <div class="stream-title" style="background-color: #ff4b44">
-    <h1>LA LIGA</h1>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/la-liga-1';">
-    <h2>8:00AM ET - Almeria vs Granada</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/la-liga-2';">
-    <h2>10:15AM ET - Deportivo Alaves vs Osasuna</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/la-liga-3';">
-    <h2>3:00PM ET - Atlético Madrid vs Cadiz</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/la-liga-4';">
-    <h2>3:00PM ET - Real Betis vs Valencia</h2>
-  </div>
-</div>
-
-<div class="streamtable">
-  <div class="stream-title" style="background-color: #d10214">
-    <h1>BUNDESLIGA</h1>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/bundesliga-1';">
-    <h2>9:30AM ET - SV Darmstadt vs Werder Bremen</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/bundesliga-2';">
-    <h2>11:30AM ET - Freiburg vs Augsburg</h2>
-  </div>
-</div>
-
-<div class="streamtable">
-  <div class="stream-title" style="background-color: #008fd7">
-    <h1>SERIE A</h1>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/serie-a-1';">
-    <h2>6:30AM ET - Bologna vs Empoli</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/serie-a-2';">
-    <h2>9:00AM ET - Udinese vs Genoa</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/serie-a-3';">
-    <h2>12:00PM ET - Atalanta vs Juventus</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/serie-a-3';">
-    <h2>2:45PM ET - Roma vs Frosinone</h2>
-  </div>
-</div>
-<!--
-<div class="streamtable">
-  <div class="stream-title" style="background-color: #091c3e">
-    <h1>LIGUE 1</h1>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/ligue-one-1';">
-    <h2>3:00PM ET - Strasbourg vs Lens</h2>
-  </div>
-</div>
-<!--
-<div class="streamtable">
-  <div class="stream-title" style="background-color: #019e67">
-    <h1>DFB POKAL</h1>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/dfb-pokal-1';">
-    <h2>2:45PM ET - Wehen Wiesbaden vs RB Leipzig</h2>
-  </div>
-</div>
-<!--
-<div class="streamtable">
-  <div class="stream-title" style="background-color: #791222">
-    <h1>COPPA ITALIA</h1>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/coppa-italia-1';">
-    <h2>11:45AM ET - Frosinone vs Pisa</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/coppa-italia-2';">
-    <h2>12:00PM ET - Udinese vs Catanzaro</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/coppa-italia-3';">
-    <h2>3:00PM ET - Genoa vs Modena</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/coppa-italia-4';">
-    <h2>3:15PM ET - Bologna vs Cesena</h2>
-  </div>
-</div>
-	-->
-<!--
-<div class="streamtable">
-  <div class="stream-title" style="background-color: #0e2649">
-    <h1>SAUDI PRO LEAGUE</h1>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/saudi-pro-league-1';">
-    <h2>11:00AM ET - Abha vs Al Hilal</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/saudi-pro-league-2';">
-    <h2>11:00AM ET - Al-Raed vs Al Ittihad</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/saudi-pro-league-3';">
-    <h2>2:00PM ET - Al Shabab vs Al Akhdoud</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/saudi-pro-league-4';">
-    <h2>2:00PM ET - Al-Ettifaq vs Al Nassr</h2>
-  </div>
-</div>
-
-<div class="streamtable">
-  <div class="stream-title" style="background-color: #031767">
-    <h1>CHAMPIONS LEAGUE</h1>
-  </div>
-  <div>
-    <h1>GROUP A</h1>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/champions-league-1';">
-    <h2>12:45PM ET - Galatasaray vs FC København</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/champions-league-2';">
-    <h2>3:00PM ET - Bayern München vs Manchester United</h2>
-  </div>
-  <div>
-    <h1>GROUP B</h1>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/champions-league-3';">
-    <h2>3:00PM ET - Arsenal vs PSV Eindhoven</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/champions-league-4';">
-    <h2>3:00PM ET - Sevilla vs Lens</h2>
-  </div>
-  <div>
-    <h1>GROUP C</h1>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/champions-league-5';">
-    <h2>12:45PM ET - Real Madrid vs Union Berlin</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/champions-league-6';">
-    <h2>3:00PM ET - Braga vs Napoli</h2>
-  </div>
-  <div>
-    <h1>GROUP D</h1>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/champions-league-7';">
-    <h2>3:00PM ET - Benfica vs Salzburg</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/champions-league-1';">
-    <h2>3:00PM ET - Real Sociedad vs Inter</h2>
-  </div>
-</div>
-
-<div class="streamtable">
-  <div class="stream-title" style="background-color: #fff">
-    <h1 style="color:#000">MAJOR LEAGUE SOCCER</h1>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/mls-1';">
-    <h2>7:30PM ET - Inter Miami vs NYCFC</h2>
-  </div>
-</div>
-<!--
-	
-<div class="streamtable">
-  <div class="stream-title" style="background-color: #143cda">
-    <h1>EURO QUALIFICATION</h1>
-  </div>
-  <div>
-    <h1>GROUP A</h1>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/euro-qualifying-1';">
-    <h2>2:45PM ET - Norway vs Georgia</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/euro-qualifying-2';">
-    <h2>2:45PM ET - Spain vs Cyprus</h2>
-  </div>
-  <div>
-    <h1>GROUP C</h1>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/euro-qualifying-3';">
-    <h2>2:45PM ET - Italy vs Ukraine</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/euro-qualifying-4';">
-    <h2>2:45PM ET - Malta vs North Macedonia</h2>
-  </div>
-  <div>
-    <h1>GROUP F</h1>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/euro-qualifying-5';">
-    <h2>2:45PM ET - Belgium vs Estonia</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/euro-qualifying-6';">
-    <h2>2:45PM ET - Sweden vs Austria</h2>
-  </div>
-  <div>
-    <h1>GROUP I</h1>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/euro-qualifying-7';">
-    <h2>2:45PM ET - Israel vs Belarus</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/euro-qualifying-8';">
-    <h2>2:45PM ET - Romania vs Kosovo</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/euro-qualifying-9';">
-    <h2>2:45PM ET - Switzerland vs Andorra</h2>
-  </div>
-</div>
-
-<div class="streamtable">
-  <div class="stream-title" style="background-color: #fff">
-    <h1 style="color:#000">FRIENDLIES</h1>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/friendly-1';">
-    <h2>2:45PM ET - Scotland vs England</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/friendly-2';">
-    <h2>3:00PM ET - Germany vs France</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/friendly-4';">
-    <h2>7:30PM ET - Mexico vs Uzbekistan</h2>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/friendly-3';">
-    <h2>8:30PM ET - USA vs Oman</h2>
-  </div>
-</div>
-	<!--
-<div class="streamtable">
-  <div class="stream-title" style="background-color: #bb9848">
-    <h1>EFL CHAMPIONSHIP</h1>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/championship-1';">
-    <h2>11:45AM ET - Coventry vs Luton</h2>
-  </div>
-</div>
-<!-
-
-<div class="streamtable">
-  <div class="stream-title" style="background-color: #791222">
-    <h1>COPPA ITALIA</h1>
-  </div>
-  <div class="stream" onclick="location.href='/soccer/coppa-italia-1';">
-    <h2>3:00PM ET - Fiorentina vs Inter</h2>
-  </div>
-</div>
 -->
+<div class="streamtable">
+  <div class="stream-title" style="background-color: #ff1e02">
+    <h1>FIFA CLUB WORLD CUP</h1>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport/abu-dhabi-gp';">
+    <h2><script type="text/javascript">localize("11/26/2023 8:00:00 AM");</script> - Abu Dhabi Grand Prix</h2>
+  </div>
+</div>
+
 <style>
 @font-face {
  font-family: DIN-Pro;
@@ -587,6 +341,7 @@ footer {
  background-color: #000;
  color: #ffffff;
  font-family: 'DIN-Pro', sans-serif;
+ height: 250px;
 }
  
 h3 {
@@ -600,28 +355,24 @@ a {
   text-decoration: underline;
   margin-top: 5px;
   margin-bottom: 5px;
+  transition: 0.25s;
 }
 
 a:hover {
+  transition: 0.25s;
   color: #ff5151;
   background-color: transparent;
   text-decoration: underline;
 }
-	
-.tags {
-  color:#000;
-  margin-bottom:38px;
-}
+
 </style>
 
 <footer>
- <a href="https://www.latifistreams.com/"><img style="display:block; margin:auto; margin-top:5px" width="300px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+ <a href="https://www.latifistreams.com/"><img style="margin:auto; margin-top:5px" width="300px" height="auto" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
  <h3><a href="/contact">Contact Us</a></h3>
  <h3><a href="https://twitter.com/latifistreams" target="_blank">Twitter</a> | <a href="https://discord.gg/6vr9CW7ZFa" target="_blank">Discord</a></h3>
- <h3>#StandWithArtsakh</h3>
- <img style="margin:5px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Flag_of_Artsakh.svg/1200px-Flag_of_Artsakh.svg.png" width="auto" height="50">
- <h3 class="tags">lordlatifistreams, latifisteams, lord latifi streams, latifi streams</h3>
+ <h3>#StandWithArtsakh #FreePalestine</h3>
+ <img style="margin:5px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Flag_of_Artsakh.svg/1200px-Flag_of_Artsakh.svg.png" width="auto" height="50"><img style="margin:5px" src="https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg" width="auto" height="50">
 </footer>
-</body>
 </html>
 <!-- Ⓒ 2023  LORDLATIFISTREAMS -->

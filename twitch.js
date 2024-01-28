@@ -1,110 +1,123 @@
-var axios = require('axios');
-var M3U = require('playlist-parser').M3U;
-var qs = require('querystring');
+const https = require('https');
 
-const clientId = 'kimne78kx3ncx6brgo4mv6wki5h1ko';
+const clientId = "kimne78kx3ncx6brgo4mv6wki5h1ko";
 
-// Thanks michaelowens, :)
-// Simple titlecase thing, capitalize first letter
-var titleCase = function(str) {
-    return str.split(' ').map(function(word) { return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase(); }).join(' ');
+function getAccessToken(id, isVod) {
+	const data = JSON.stringify({
+		operationName: "PlaybackAccessToken",
+		extensions: {
+			persistedQuery: {
+				version: 1,
+				sha256Hash: "0828119ded1c13477966434e15800ff57ddacf13ba1911c129dc2200705b0712"
+			}
+		},
+		variables: {
+			isLive: !isVod,
+			login: (isVod ? "" : id),
+			isVod: isVod,
+			vodID: (isVod ? id : ""),
+			playerType: "embed"
+		}
+	});
+
+	const options = {
+		hostname: 'gql.twitch.tv',
+		port: 443,
+		path: '/gql',
+		method: 'POST',
+		headers: {
+			'Client-id': clientId
+		}
+	};
+
+	return new Promise((resolve, reject) => {
+		const req = https.request(options, (response) => {
+			var resData = {};
+			resData.statusCode = response.statusCode;
+			resData.body = [];
+			response.on('data', (chunk) => resData.body.push(chunk));
+			response.on('end', () => {
+				resData.body = resData.body.join('');
+
+				if (resData.statusCode != 200) {
+					reject(new Error(`${JSON.parse(data.body).message}`));
+				} else {
+					if (isVod) {
+						resolve(JSON.parse(resData.body).data.videoPlaybackAccessToken);
+					} else {
+						resolve(JSON.parse(resData.body).data.streamPlaybackAccessToken);
+					}
+				}
+			});
+		});
+
+		req.on('error', (error) => reject(error));
+		req.write(data);
+		req.end();
+	});
 }
 
+function getPlaylist(id, accessToken, vod) {
+	return new Promise((resolve, reject) => {
+		const req = https.get(`https://usher.ttvnw.net/${vod ? 'vod' : 'api/channel/hls'}/${id}.m3u8?client_id=${clientId}&token=${accessToken.value}&sig=${accessToken.signature}&allow_source=true&allow_audio_only=true`, (response) => {
+			let data = {};
+			data.statusCode = response.statusCode;
+			data.body = [];
+			response.on('data', (chunk) => data.body.push(chunk));
+			response.on('end', () => {
+				data.body = data.body.join('');
 
-// Twitch functions
-var getAccessToken = function(channel) {
-    // Get access token
-    return axios.get('https://api.twitch.tv/api/channels/' + channel + '/access_token', {
-        headers: {
-            'Client-ID': clientId
-        }
-    }).then(function(res) {
-        return res.data;
-    });
+				switch (data.statusCode) {
+					case 200:
+						resolve(resolve(data.body));
+						break;
+					case 404:
+						reject(new Error('Transcode does not exist - the stream is probably offline'));
+						break;
+					default:
+						reject(new Error(`Twitch returned status code ${data.statusCode}`));
+						break;
+				}
+			});
+		})
+			.on('error', (error) => reject(error));
+
+		req.end()
+	});
 }
 
-var getPlaylist = function(channel, accessToken) {
-    // Get the playlist with given access token data (parsed /access_token response)
-    var query = {
-        player: 'twitchweb',
-        token: accessToken.token,
-        sig: accessToken.sig,
-        allow_audio_only: 'true',
-        allow_source: 'true',
-        type: 'any',
-        p: Math.floor(Math.random() * 99999) + 1
-    };
-
-    return axios.get('https://usher.ttvnw.net/api/channel/hls/' + channel + '.m3u8?' + qs.stringify(query), {
-        headers: {
-            'Client-ID': clientId
-        }
-    }).then(function(res) {
-        return res.data;
-    });
+function parsePlaylist(playlist) {
+	const parsedPlaylist = [];
+	const lines = playlist.split('\n');
+	for (let i = 4; i < lines.length; i += 3) {
+		parsedPlaylist.push({
+			quality: lines[i - 2].split('NAME="')[1].split('"')[0],
+			resolution: (lines[i - 1].indexOf('RESOLUTION') != -1 ? lines[i - 1].split('RESOLUTION=')[1].split(',')[0] : null),
+			url: lines[i]
+		});
+	}
+	return parsedPlaylist;
 }
 
-// Exposed functions
-// Just get the playlist, return the string nothing else
-var getPlaylistOnly = function(channel) {
-    if (!channel)
-        return Promise.reject(new Error('No channel defined.'));
-
-    var channel = channel.toLowerCase(); // Twitch API only takes lowercase
-    return getAccessToken(channel)
-        .then(function(token) {
-            return getPlaylist(channel, token);
-        });
+function getStream(channel, raw) {
+	return new Promise((resolve, reject) => {
+		getAccessToken(channel, false)
+			.then((accessToken) => getPlaylist(channel, accessToken, false))
+			.then((playlist) => resolve((raw ? playlist : parsePlaylist(playlist))))
+			.catch(error => reject(error));
+	});
 }
 
-// Above get playlist, but then parses it and gives the object
-var getPlaylistParsed = function(channel) {
-    if (!channel)
-        return Promise.reject(new Error('No channel defined.'));
-    
-    return getPlaylistOnly(channel)
-        .then(function(data) {
-            // basically parse then _.compact (remove falsy values)
-            return M3U.parse(data).filter(function(d) { return d; });
-        });
-}
-
-var getStreamUrls = function(channel) { // This returns the one with a custom fully parsed object
-    return getPlaylistParsed(channel)
-        .then(function(playlist) {
-            if (playlist.length < 1)
-                throw new Error('There were no results, maybe the channel is offline?');
-
-            // Parse playlist with quality options and send to new array of objects
-            var streamLinks = [];
-            for (var i = 0; i < playlist.length; i++) {
-                // Quality option
-                var name = playlist[i].title.match(/VIDEO=('|")(.*?)('|")/); // Raw quality name
-                name = name[2]; // Get regex captured group
-
-                // Rename checks
-                // chunked = source
-                if (name === 'chunked') name = 'source';
-                // audio_only = Audio Only
-                else if (name === 'audio_only') name = 'audio only';
-
-                // Resolution
-                var resMatch = playlist[i].title.match(/RESOLUTION=(.*?),/);
-                var res = resMatch ? resMatch[1] : null // Audio only does not have a res so we need this check
-                
-                streamLinks.push({
-                    quality: titleCase(name), // Title case the quality
-                    resolution: res,
-                    url: playlist[i].file
-                });
-            }
-
-            return streamLinks;
-        });
+function getVod(vid, raw) {
+	return new Promise((resolve, reject) => {
+		getAccessToken(vid, true)
+			.then((accessToken) => getPlaylist(vid, accessToken, true))
+			.then((playlist) => resolve((raw ? playlist : parsePlaylist(playlist))))
+			.catch(error => reject(error));
+	});
 }
 
 module.exports = {
-    get: getStreamUrls,
-    raw: getPlaylistOnly,
-    rawParsed: getPlaylistParsed  
-              }
+	getStream: getStream,
+	getVod: getVod
+};

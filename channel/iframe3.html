@@ -37,8 +37,9 @@ body {
 
 <div id="vid"></div>
 <script>
+ var strm = window.atob('aHR0cHM6Ly9jZG4udGVhY2FzdC5ldS9jaDQ1L2luZGV4Lm0zdTg=') ;
  player = new Clappr.Player({
- source: "https://mlb.mrgamingstreams.com/sx.m3u8",
+ source: strm,
  mimeType: "application/x-mpegURL",
  autoPlay: false, 
  width: "100%",

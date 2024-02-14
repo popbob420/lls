@@ -71,14 +71,12 @@ body {
 		}
 	});
  };
-
- player.attachTo(playerElement)
 	
  player.core.getPlugin('error_screen').disable();
 
  player.core.on(Clappr.Events.ERROR, () => {
    player.stop();
-   alert('A Clappr error');
+   alert('g');
  })
 </script>
 </body>

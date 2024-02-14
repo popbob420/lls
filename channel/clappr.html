@@ -63,6 +63,7 @@ body {
       }
     },
  parentId: "#vid"});
+	
  if (navigator.userAgent.match('Android')) {
 	player.on('fullscreen', function(isFullscreen) {
 		if (isFullscreen) {
@@ -70,11 +71,12 @@ body {
 		}
 	});
  };
-player.core.getPlugin('error_screen').disable();
+	
+ player.core.getPlugin('error_screen').disable();
 
-player.core.on(Clappr.Events.ERROR, () => {
-  player.stop();
-  alert('A Clappr error');
-})
+ player.core.on(Clappr.Events.ERROR, () => {
+   player.stop();
+   alert('A Clappr error');
+ })
 </script>
 </body>

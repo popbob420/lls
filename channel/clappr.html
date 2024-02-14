@@ -83,12 +83,7 @@ body {
 		}
 	});
  };
-	
- player.core.getPlugin('error_screen').disable();
 
- player.core.on(Clappr.Events.ERROR, () => {
-   player.stop();
-   alert('g');
- })
+ p2pml.hlsjs.initClapprPlayer(player);
 </script>
 </body>

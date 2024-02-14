@@ -45,6 +45,7 @@ body {
  }
 	
  var src = getParameterByName('url') ;
+ var engine = new p2pml.hlsjs.Engine();
  var strm = window.atob(src) ;
  player = new Clappr.Player({
  source: strm,
@@ -56,6 +57,13 @@ body {
  position: 'bottom-left',
  watermark: 'https://media.discordapp.net/attachments/839307058674139139/1086857384535801916/llsicon.png?width=1025&height=118',
  plugins: {"core": [LevelSelector]}, 
+ playback: {
+       hlsjsConfig: {
+            maxBufferSize: 0,       
+            maxBufferLength: 15,     
+            liveSyncDurationCount: 10,
+            loader: engine.createLoaderClass()
+ },
  levelSelectorConfig: {
       title: 'QUALITY',
  labelCallback: function(playbackLevel, customLabel) {

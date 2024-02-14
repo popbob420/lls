@@ -70,6 +70,11 @@ body {
 		}
 	});
  };
-player.on(Clappr.Events.ERROR, () => {var strm = "https://latifistreams.com/lv_0_20230409110240.mp4"});
+player.core.getPlugin('error_screen').disable();
+
+player.core.on(Clappr.Events.ERROR, () => {
+  player.stop();
+  alert('A Clappr error');
+})
 </script>
 </body>

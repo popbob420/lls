@@ -34,6 +34,8 @@ body {
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
 <script type="text/javascript" src="https://latifistreams.com/channel/level-selector.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/p2p-media-loader-core@latest/build/p2p-media-loader-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/p2p-media-loader-hlsjs@latest/build/p2p-media-loader-hlsjs.min.js"></script>
 	
 <div id="oper" style="text-align: justify;">&nbsp;</div>
 
@@ -45,7 +47,8 @@ body {
 	results = regex.exec(location.search);
 	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
  }
-	
+
+ var engine = new p2pml.hlsjs.Engine();
  var src = getParameterByName('url') ;
  var strm = window.atob(src) ;
  player = new Clappr.Player({
@@ -65,6 +68,8 @@ body {
       }
  },
  parentId: "#vid"});
+
+ p2pml.hlsjs.initClapprPlayer(player);
 	
  if (navigator.userAgent.match('Android')) {
 	player.on('fullscreen', function(isFullscreen) {

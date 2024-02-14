@@ -34,8 +34,6 @@ body {
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
 <script type="text/javascript" src="https://latifistreams.com/channel/level-selector.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/p2p-media-loader-core@latest/build/p2p-media-loader-core.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/p2p-media-loader-hlsjs@latest/build/p2p-media-loader-hlsjs.min.js"></script>
 	
 <div id="oper" style="text-align: justify;">&nbsp;</div>
 
@@ -49,7 +47,6 @@ body {
  }
 	
  var src = getParameterByName('url') ;
- var engine = new p2pml.hlsjs.Engine();
  var strm = window.atob(src) ;
  player = new Clappr.Player({
  source: strm,
@@ -61,13 +58,6 @@ body {
  position: 'bottom-left',
  watermark: 'https://media.discordapp.net/attachments/839307058674139139/1086857384535801916/llsicon.png?width=1025&height=118',
  plugins: {"core": [LevelSelector]}, 
- playback: {
-       hlsjsConfig: {
-            maxBufferSize: 0,       
-            maxBufferLength: 15,     
-            liveSyncDurationCount: 10,
-            loader: engine.createLoaderClass()
- },
  levelSelectorConfig: {
       title: 'QUALITY',
  labelCallback: function(playbackLevel, customLabel) {
@@ -84,6 +74,5 @@ body {
 	});
  };
 
- p2pml.hlsjs.initClapprPlayer(player);
 </script>
 </body>

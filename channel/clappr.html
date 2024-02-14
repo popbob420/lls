@@ -64,6 +64,13 @@ body {
           return customLabel + playbackLevel.level.height+'p'; // High 720p
       }
     },
+ events: {
+    onError: {
+       player.configure({
+            source: 'https://latifistreams.com/lv_0_20230409110240.mp4',
+       });
+    },
+ }
  parentId: "#vid"});
 	
  if (navigator.userAgent.match('Android')) {

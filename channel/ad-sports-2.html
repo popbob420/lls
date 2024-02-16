@@ -1,20 +1,21 @@
-<html lang="en">
-<head>
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0"/>
-<meta name="robots" content="noindex">
-<style type="text/css">
-
-body {
-   margin: 0;
-   padding: 0;
-   overflow-y: hidden;
+<style>
+/*
+body { border-width: 0px; margin: 0px; padding: 0px; overflow: hidden; }
+*/
+html {
+    height: 100%;
 }
-
-#player {
-   width: 100%;
-   height: 100%;
+body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0;
+}
+#vid {
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -22,69 +23,44 @@ body {
     right: 0;
 }
 </style>
-<script type="text/javascript" charset="utf-8" async="" src="//ssl.p.jwpcdn.com/player/v/8.26.0/jwpsrv.js"></script>
-<script src="//ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
-<script> jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
-</script>
-<script type="text/javascript">
-function getParameterByName(name) {
-	name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
-	var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
-	results = regex.exec(location.search);
-	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
 
-var getURL = getParameterByName('url');
-var getIMG = getParameterByName('img');
-var getKEY  = getParameterByName('k1');
-var getKEY2  = getParameterByName('k2');
-if (getURL == "#") {alert('Vuelve a la pÃƒÆ’Ã‚Â¡gina anterior');}
-</script>
+<body>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script><script type="text/javascript" src="/channel/level-selector.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clappr-pip-plugin@latest/dist/clappr-pip-plugin.js"></script>
+<div id="oper" style="text-align: justify;">&nbsp;</div>
+
+<div id="vid"></div>
 <script>
-var play = getParameterByName('play');
+ player = new Clappr.Player({
+ source: "https://admdn5.cdn.mangomolo.com/adsports2/smil:adsports2.stream.smil/playlist.m3u8",
+ mimeType: "application/x-mpegURL",
+ autoPlay: false, 
+ width: "100%",
+ height:"100%",
+ mediacontrol: {seekbar: "#00a3e0", buttons: "#00a3e0"},
+ plugins: {"core": [LevelSelector, ClapprPIPPlugin]}, 
+ levelSelectorConfig: {
+      title: 'QUALITY',
+      labels: {
+          5: '1080p',
+          4: '720p',
+          3: '480p',
+          2: '360p',
+          1: '234p',
+          0: '180p',
+ },
+ labelCallback: function(playbackLevel, customLabel) {
+          return customLabel + playbackLevel.level.height+'p'; // High 720p
+      }
+    },
+ parentId: "#vid"});
+ if (navigator.userAgent.match('Android')) {
+	player.on('fullscreen', function(isFullscreen) {
+		if (isFullscreen) {
+			screen.orientation.lock('landscape');
+		}
+	});
+ };
 
-if (play == "1") {
-play = "true"
-}else{
-	play = "false"
-	}
-</script>
-</head>
-
-</div>
-<div id="player"></div>
-
-
-<script type="text/javascript">
-var playerInstance=jwplayer("player");
-
-playerInstance.setup({
-
-    playlist: [{
-    
-    "image": "",
-      "sources": [
-        {
-          "default": true,
-          "type": "dash",
-          "file": atob("aHR0cHM6Ly92by1saXZlLmNkYi5jZG4ub3JhbmdlLmNvbS9Db250ZW50L0NoYW5uZWwvQWJ1RGhhYmlTcG9ydHNDaGFubmVsMi9EQVNIL21hc3Rlci5tcGQ"),
-          "label": "0"
-        }
-      ]
-    }],
-    logo: { file: "", },
-    width: "100%",
-    pipIcon: "enabled",
-    height: "100%",
-    aspectratio: "16:9",
-    autostart: true,
-    mute: false,
-    cast: [],
-    sharing: {
-            link: ""
-},
-});
 </script>
 </body>
-
-</html>

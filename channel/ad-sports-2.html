@@ -26,36 +26,27 @@ body {
 
 <body>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
-<script type="text/javascript" src="/channel/level-selector.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/clappr-pip-plugin@latest/dist/clappr-pip-plugin.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js"></script>
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script><script type="text/javascript" src="/channel/level-selector.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clappr-pip-plugin@latest/dist/clappr-pip-plugin.js"></script>
 <div id="oper" style="text-align: justify;">&nbsp;</div>
 
 <div id="vid"></div>
 <script>
  player = new Clappr.Player({
- source: "https://vo-live.cdb.cdn.orange.com/Content/Channel/AbuDhabiSportsChannel2/DASH/master.mpd",
+ source: "https://vo-live.cdb.cdn.orange.com/Content/Channel/AbuDhabiSportsChannel2/HLS/index.m3u8",
  mimeType: "application/x-mpegURL",
  autoPlay: false, 
  width: "100%",
  height:"100%",
  mediacontrol: {seekbar: "#00a3e0", buttons: "#00a3e0"},
- plugins: {"core": [LevelSelector, DashShakaPlayback]}, 
+ plugins: {"core": [LevelSelector, ClapprPIPPlugin]}, 
  levelSelectorConfig: {
       title: 'QUALITY',
       labels: {
-          5: '1080p',
-          4: '720p',
-          3: '480p',
-          2: '360p',
-          1: '234p',
-          0: '180p',
+          3: '1080p',
+          2: '720p',
+          1: '480p',
+          0: '360p',
  },
- shakaOnBeforeLoad: function(shaka_player) {
-            // shaka_player.getNetworkingEngine().registerRequestFilter() ...
-          },
  labelCallback: function(playbackLevel, customLabel) {
           return customLabel + playbackLevel.level.height+'p'; // High 720p
       }

@@ -38,11 +38,6 @@
     font-display: swap;
 }
 
-    @font-face {
-      font-family: F1;
-      src: url('Formula1-Wide.otf');
-    }
-
     * {
       box-sizing: border-box;
     }
@@ -52,40 +47,13 @@
       margin: 0;
     }
 
-    .topnav {
-      overflow: hidden;
-      background-color: #000;
-      width: 100%;
-      height: 69px;
-      position: -webkit-sticky; /* Safari */
-      position: sticky;
-      top: 0;
-      z-index: 99;
-      display: flex;
-    }
-
-    .topnavmaterial {
-      width: 1450px;
-      margin: auto;
-      padding-left: 25px;
-      padding-right: 25px;
-    }
-
-    @media screen and (max-width: 750px) {
-      .topnavmaterial {
-        width: 100%;
-        padding-left: 0px;
-        padding-right: 0px;
-      }
-    }
-
     .topnav a {
       float: left;
       color: #f2f2f2;
+      text-align: center;
       padding: 14px 16px;
       text-decoration: none;
       font-size: 17px;
-      font-family: 'DIN-Pro', sans-serif;
     }
 	  
     .column1 {
@@ -123,9 +91,14 @@
       }
 
     }
+	  
+    .topnav {
+      overflow: hidden;
+      background-color: #000;
+    }
 
     h1 {
-      font-family: F1, DIN-Pro, sans-serif;
+      font-family: DIN-Pro, sans-serif;
       font-size: 29px;
       color: #ffffff;
       text-align: center;
@@ -151,9 +124,6 @@
         width: 95%;
 	margin: auto;
         padding-top: 100px;
-      }
-      h1 {
-	font-size: 19px;
       }
     }
 
@@ -183,8 +153,11 @@
     }
 
     .btn:hover {
-      background: #e40046;
-      cursor: pointer;
+      background: #e40046
+    }
+
+    .btn:focus {
+      background: #fff
     }
 
     .title {
@@ -229,23 +202,20 @@
 
   <body class="base">
     <div class="topnav">
-      <div class="topnavmaterial">
-        <a href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
-      </div>
+      <a class="active" href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%"
+          src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
     </div>
     <div class="main">
       <h1>BAHRAIN PRESEASON TESTING</h1>
       <div class="row">
         <div class="column1" style="background-color:#;">
-          <button class="btn" id="default" onclick="document.getElementById('iframe').src = ''">Stream 1</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = ''">Stream 2</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = ''">Stream 3</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = ''">Stream 4</button>
-	  <button class="btn" onclick="document.getElementById('iframe').src = 'https://wikisport.se/strm/2mf1.php'">Stream 5</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = ''">Stream 6</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = ''">Stream 7</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = 'https://wikisport.se/strm/t16.php'">Stream 8</button>
-          <iframe id="iframe" src="" height="94%" width="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
+          <button class="btn" id="default" onclick="document.getElementById('iframe').src = '/channel/iframe'">Stream 1</button>
+          <button class="btn" onclick="document.getElementById('iframe').src = '/channel/iframee'">Stream 2</button>
+	  <button class="btn" onclick="document.getElementById('iframe').src = 'https://voodc.com/embed/858a918f9c8b8995879983889a869a868a.html'">Stream 3</button>
+	  <button class="btn" onclick="document.getElementById('iframe').src = 'https://wikisport.se/strm/9.php'">Stream 4</button>
+	  <button class="btn" onclick="document.getElementById('iframe').src = 'https://poscitechs.shop/live/stream-39.php'">Stream 5</button>		
+	  <button class="btn" onclick="document.getElementById('iframe').src = 'https://wikisport.se/embed/ps2.php'">Stream 6 [INT.]</button>
+	  <iframe id="iframe" src="/channel/iframe" allow="autoplay; encrypted-media" height="94%" width="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
           <button class="btn" onclick="TheaterMode();">Theater Mode [PC]</button>
           <script>
         $('#default').css({"box-shadow":"0px 5px 0px #e40046 inset"});
@@ -280,7 +250,7 @@
         </div>
         <div class="column2" style="background-color:#;">
           <iframe src="https://www.twitch.tv/embed/latifistreams/chat?darkpopout&amp;parent=latifistreams.com" height="100%" width="100%" frameborder="0"></iframe>
-	</div>
+      	</div>
       </div>
     </div>
     <!--<div class="ad1">
@@ -301,50 +271,55 @@
       </div>
     </div>
     </section>
-<style>
-@font-face {
- font-family: DIN-Pro;
- src: url('DIN-Pro.ttf');
-}
- 
-footer {
- text-align: center;
- padding: 15px;
- background-color: #000;
- color: #ffffff;
- font-family: 'DIN-Pro', sans-serif;
- height: 250px;
-}
- 
-h3 {
- font-size: 12px;
- font-family: 'DIN-Pro', sans-serif;
-}
-   
-a {
-  color: #ffffff;
-  background-color: transparent;
-  text-decoration: underline;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  transition: 0.25s;
-}
+    <style>
+      @font-face {
+        font-family: DIN-Pro;
+        src: url('DIN-Pro.ttf');
+      }
 
-a:hover {
-  transition: 0.25s;
-  color: #ff5151;
-  background-color: transparent;
-  text-decoration: underline;
-}
+      footer {
+        text-align: center;
+        padding: 15px;
+        background-color: #000;
+        color: #ffffff;
+        font-family: 'DIN-Pro', sans-serif;
+      }
 
-</style>
+      h3 {
+        font-size: 12px;
+        font-family: 'DIN-Pro', sans-serif;
+      }
 
-<footer>
- <a href="https://www.latifistreams.com/"><img style="margin:auto; margin-top:5px" width="300px" height="auto" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
- <h3><a href="/contact">Contact Us</a></h3>
- <h3><a href="https://twitter.com/latifistreams" target="_blank">Twitter</a> | <a href="https://discord.gg/6vr9CW7ZFa" target="_blank">Discord</a></h3>
- <h3>#StandWithArtsakh #FreePalestine</h3>
- <img style="margin:5px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Flag_of_Artsakh.svg/1200px-Flag_of_Artsakh.svg.png" width="auto" height="50"><img style="margin:5px" src="https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg" width="auto" height="50">
-</footer>
+      a {
+        color: #ffffff;
+        background-color: transparent;
+        text-decoration: underline;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+
+      a:hover {
+        color: #ff5151;
+        background-color: transparent;
+        text-decoration: underline;
+      }
+    </style>
+
+    <footer>
+      <a href="https://www.latifistreams.com/"><img style="display:block; margin:auto; margin-top:5px" width="300px"
+          height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+      <h3><a href="/contact">Contact Us</a></h3>
+      <h3><a href="https://twitter.com/latifistreams" target="_blank">Twitter</a> | <a
+          href="https://discord.gg/6vr9CW7ZFa" target="_blank">Discord</a></h3>
+      <h3>#StandWithArtsakh #FreePalestine</h3>
+      <img style="margin:5px; margin-bottom: 70px"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Flag_of_Artsakh.svg/1200px-Flag_of_Artsakh.svg.png"
+        width="auto" height="50">
+      <img style="margin:5px; margin-bottom: 70px"
+        src="https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg"
+        width="auto" height="50">
+    </footer>
+  </body>
+</head>
 </html>
   <!-- Ⓒ 2023  LORDLATIFISTREAMS -->

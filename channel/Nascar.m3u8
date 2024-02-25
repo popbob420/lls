@@ -1,5 +1,8 @@
-#EXTM3U #EXT-X-VERSION:3 #EXT-X-ALLOW-CACHE:NO
+#EXTM3U 
+#EXT-X-VERSION:7 
+#EXT-X-ALLOW-CACHE:NO
 
 #EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="main_audio",CODECS="mp4a.40.5",LANGUAGE="eng",NAME="Track 1 ENG",DEFAULT=YES,AUTOSELECT=YES,URI="https://prod-3-89-145-23.amperwave.net/performanceracing-pnrmp3-ibc1?session-id=0bd3986a735d133daaf54bad82ec1d32"
 
 #EXT-X-STREAM-INF:BANDWIDTH=1391346,RESOLUTION=1280x720,CODECS="avc1.4d001f,mp4a.40.5",AUDIO="main_audio" https://da-d50d12b5.online.meo.pt/wp/cdn-er-vspp-cvl2.online.meo.pt/shls/LIVE$SPORTTVLive_HD/index.m3u8/S!d2EISU9TX0xpdmUSBkPIS1XDVP7...8BFgyf/Level(3000000)
+#EXT-X-ENDLIST

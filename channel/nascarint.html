@@ -34,7 +34,7 @@ body {
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
 <script type="text/javascript" src="https://latifistreams.com/channel/level-selector.min.js"></script>
-	
+<script type="text/javascript" src="https://raw.githubusercontent.com/PreDeToR/clappr-audio-track-selector-plugin/master/dist/audio-track-selector.js"></script>
 <div id="oper" style="text-align: justify;">&nbsp;</div>
 
 <div id="vid"></div>
@@ -57,7 +57,7 @@ body {
  mediacontrol: {seekbar: "#00a3e0", buttons: "#00a3e0"},
  position: 'bottom-left',
  watermark: 'https://media.discordapp.net/attachments/839307058674139139/1086857384535801916/llsicon.png?width=1025&height=118',
- plugins: {"core": [LevelSelector]}, 
+ plugins: {"core": [LevelSelector, AudioTrackSelector]}, 
  levelSelectorConfig: {
       title: 'QUALITY',
  labelCallback: function(playbackLevel, customLabel) {

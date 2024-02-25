@@ -1,20 +1,27 @@
-<html lang="en">
-<head>
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0"/>
-<meta name="robots" content="noindex">
-<style type="text/css">
-
-body {
-   margin: 0;
-   padding: 0;
-   overflow-y: hidden;
+<!--<script>
+if(window==window.top){
+window.location.replace("https://en.m.wikipedia.org/wiki/Nicholas_Latifi");
 }
+</script>-->
 
-#player {
-   width: 100%;
-   height: 100%;
+<style>
+/*
+body { border-width: 0px; margin: 0px; padding: 0px; overflow: hidden; }
+*/
+html {
+    height: 100%;
+}
+body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0;
+}
+#vid {
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -22,47 +29,60 @@ body {
     right: 0;
 }
 </style>
-<script type="text/javascript" charset="utf-8" async="" src="//ssl.p.jwpcdn.com/player/v/8.26.0/jwpsrv.js"></script>
-<script src="//ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
-<script> jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
-</script>
-<script type="text/javascript">
 
-</div>
-<div id="player"></div>
+<body>
 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
+<script type="text/javascript" src="https://latifistreams.com/channel/level-selector.min.js"></script>
+	
+<div id="oper" style="text-align: justify;">&nbsp;</div>
 
-<script type="text/javascript">
-var playerInstance=jwplayer("player");
+<div id="vid"></div>
+<script>
+ function getParameterByName(name) {
+	name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+	var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
+	results = regex.exec(location.search);
+	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+ }
 
-playerInstance.setup({
+ var src = getParameterByName('url') ;
+ var strm = window.atob(src) ;
+ player = new Clappr.Player({
+ source: "https://da-d50d12b5.online.meo.pt/wp/cdn-er-vspp-cvl2.online.meo.pt/shls/LIVE$SPORTTVLive_HD/index.m3u8/S!d2EISU9TX0xpdmUSBkPIS1XDVP7...8BFgyf/Level(3000000)",
+ mimeType: "application/x-mpegURL",
+ autoPlay: false, 
+ width: "100%",
+ height:"100%",
+ mediacontrol: {seekbar: "#00a3e0", buttons: "#00a3e0"},
+ position: 'bottom-left',
+ watermark: 'https://media.discordapp.net/attachments/839307058674139139/1086857384535801916/llsicon.png?width=1025&height=118',
+ plugins: {"core": [LevelSelector]}, 
+ levelSelectorConfig: {
+      title: 'QUALITY',
+ labelCallback: function(playbackLevel, customLabel) {
+          return customLabel + playbackLevel.level.height+'p'; // High 720p
+      }
+ },
+ parentId: "#vid"});
 
-    playlist: [{
-    
-    "image": "",
-      "sources": [
-        {
-          "default": true,
-          "type": "dash",
-          "file": "https://da-d50d12b5.online.meo.pt/wp/cdn-er-vspp-cvl2.online.meo.pt/shls/LIVE$SPORTTVLive_HD/index.m3u8/S!d2EISU9TX0xpdmUSBkPIS1XDVP7...8BFgyf/Level(3000000)",
-          "label": "0"
-        }
-      ]
-    }],
-    logo: { file: "", },
-    width: "100%",
-    pipIcon: "enabled",
-    height: "100%",
-    aspectratio: "16:9",
-    autostart: true,
-    mute: false,
-    cast: [],
-    tracks: [{"file":"https://prod-3-89-145-23.amperwave.net/performanceracing-pnrmp3-ibc1?session-id=0bd3986a735d133daaf54bad82ec1d32","label":"English","default","true"}],
-    sharing: {
-            link: ""
-},
-});
+ player.core.getPlugin('error_screen').disable();
+
+ player.core.on(Clappr.Events.ERROR, () => {
+  player.stop();
+  player.configure({
+  source: 'https://latifistreams.com/images/1000010342.m3u8',
+  // [...]
+  });
+ })
+	
+ if (navigator.userAgent.match('Android')) {
+	player.on('fullscreen', function(isFullscreen) {
+		if (isFullscreen) {
+			screen.orientation.lock('landscape');
+		}
+	});
+ };
+
 </script>
 </body>
-
-</html>

@@ -46,15 +46,6 @@
       background: #232323;
       margin: 0;
     }
-
-    .topnav a {
-      float: left;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
-    }
 	  
     .column1 {
       float: left;
@@ -95,8 +86,39 @@
     .topnav {
       overflow: hidden;
       background-color: #000;
+      width: 100%;
+      height: 69px;
+      position: -webkit-sticky; /* Safari */
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      display: flex;
     }
 
+    .topnavmaterial {
+      width: 1450px;
+      margin: auto;
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    @media screen and (max-width: 750px) {
+      .topnavmaterial {
+        width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
+
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      font-family: 'DIN-Pro', sans-serif;
+    }
+	  
     h1 {
       font-family: DIN-Pro, sans-serif;
       font-size: 29px;
@@ -220,18 +242,19 @@
 
   <body class="base">
     <div class="topnav">
-      <a class="active" href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%"
-          src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+      <div class="topnavmaterial">
+        <a href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+      </div>
     </div>
     <div class="main">
-      <div class="title1"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg" class="title" width="auto" height="50"><h1>Bayern Munich vs RB Leipzig</h1><img src="https://upload.wikimedia.org/wikipedia/en/0/04/RB_Leipzig_2014_logo.svg" class="title" width="auto" height="50"></div>
+      <div class="title1"><img src="https://upload.wikimedia.org/wikipedia/commons/7/72/VfL_Bochum_logo.svg" class="title" width="auto" height="50"><h1>VfL Bochum vs RB Leipzig</h1><img src="https://upload.wikimedia.org/wikipedia/en/0/04/RB_Leipzig_2014_logo.svg" class="title" width="auto" height="50"></div>
       <div class="row">
         <div class="column1" style="background-color:#;">
-          <button class="btn" id="default" onclick="document.getElementById('iframe').src = 'https://latifistreams.com/channel/raw?url=aHR0cHM6Ly9saW5lYXIwMjctZ2ItZGFzaDEtcHJkLWxsLmNkbi5za3ljZHAuY29tLzAxNmEvQ29udGVudC9EQVNIXzAwM183MjBfMzAvTGl2ZS9jaGFubmVsKHNreXNwb3J0c2Zvb3RiYWxsKS9tYW5pZmVzdF83MjAubXBk&k1=MDAwNTU5OGE0ZDBmOTEzMjg0NDRjNmZjZGVhMDRhY2I=&k2=YWIwM2NhZWM3YTE4ZGExZmE2YThmMzA2ZDkxNzE1YTE='">Stream 1</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = 'https://latifistreams.com/channel/raw?url=aHR0cHM6Ly9saXZlLWZ0Yy1uYS1zb3V0aC0yLm1lZGlhLnN0YXJvdHQuY29tL2dydTEvcWIwMS9zdGFycGx1cy9ldmVudC8yMDI0LzAyLzI0L0JheWVybl9NdW5pY2hfdnNfUkJfTGVpcHpfMjAyNDAyMjRfMTcwODc4OTU1NzAyNC9jdHItYWxsLWNvbXBsZXRlLm0zdTg=&k1=N2I4NWRiZjdjZmEzNGIzNWJkMDgzMTI2NmY1OWQ4ZmY=&k2=YzUyMDkwNmIwOGYxOThmYjBlZTQwZmQxOWIzYmU5YTc='">Stream 2</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = 'https://voodc.com/embed/858a918fa08d889987998384968a988584928e.html'">Stream 3</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = 'https://poscitechs.shop/live/stream-35.php'">Stream 4</button>
-          <iframe id="iframe" src="https://latifistreams.com/channel/raw?url=aHR0cHM6Ly9saW5lYXIwMjctZ2ItZGFzaDEtcHJkLWxsLmNkbi5za3ljZHAuY29tLzAxNmEvQ29udGVudC9EQVNIXzAwM183MjBfMzAvTGl2ZS9jaGFubmVsKHNreXNwb3J0c2Zvb3RiYWxsKS9tYW5pZmVzdF83MjAubXBk&k1=MDAwNTU5OGE0ZDBmOTEzMjg0NDRjNmZjZGVhMDRhY2I=&k2=YWIwM2NhZWM3YTE4ZGExZmE2YThmMzA2ZDkxNzE1YTE=" allow="autoplay; encrypted-media" height="94%" width="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
+          <button class="btn" id="default" onclick="document.getElementById('iframe').src = ''">Stream 1</button>
+          <button class="btn" onclick="document.getElementById('iframe').src = ''">Stream 2</button>
+          <button class="btn" onclick="document.getElementById('iframe').src = 'https://sportsonline.si/channels/hd/hd4.php'">Stream 3</button>
+          <button class="btn" onclick="document.getElementById('iframe').src = 'https://poscitechs.shop/live/stream-6.php'">Stream 4</button>
+          <iframe id="iframe" src="" allow="autoplay; encrypted-media" height="94%" width="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
           <button class="btn" onclick="TheaterMode();">Theater Mode [PC]</button>
           <script>
         $('#default').css({"box-shadow":"0px 5px 0px #e40046 inset"});
@@ -276,7 +299,7 @@
     </div>-->
     <div class="ad">
       <a href="https://discord.gg/6vr9CW7ZFa" target="_blank"><img
-          src="https://media.discordapp.net/attachments/839307058674139139/1033433326385639424/llsdsc.png"
+          src="https://latifistreams.com/images/llsdsc.png"
           style="width:100%;height:auto;"></a>
       <h2>Use an adblocker for the best experience.</h2>
     </div>

@@ -46,15 +46,6 @@
       background: #232323;
       margin: 0;
     }
-
-    .topnav a {
-      float: left;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
-    }
 	  
     .column1 {
       float: left;
@@ -95,6 +86,37 @@
     .topnav {
       overflow: hidden;
       background-color: #000;
+      width: 100%;
+      height: 69px;
+      position: -webkit-sticky; /* Safari */
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      display: flex;
+    }
+
+    .topnavmaterial {
+      width: 1450px;
+      margin: auto;
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    @media screen and (max-width: 750px) {
+      .topnavmaterial {
+        width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
+
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      font-family: 'DIN-Pro', sans-serif;
     }
 
     h1 {
@@ -220,18 +242,19 @@
 
   <body class="base">
     <div class="topnav">
-      <a class="active" href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%"
-          src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+      <div class="topnavmaterial">
+        <a href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+      </div>
     </div>
     <div class="main">
-      <div class="title1"><img src="https://d6bvpt6ekkwt0.cloudfront.net/5faa82a8ca2f3ac7798b4570/width-200/tottenham-logo.png?1675557623" class="title" width="auto" height="50"><h1>Tottenham vs Wolves</h1><img src="https://upload.wikimedia.org/wikipedia/en/f/fc/Wolverhampton_Wanderers.svg" class="title" width="auto" height="50"></div>
+      <div class="title1"><img src="https://upload.wikimedia.org/wikipedia/en/e/e5/Nottingham_Forest_F.C._logo.svg" class="title" width="auto" height="50"><h1>Nottingham Forest vs Liverpool</h1><img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg" class="title" width="auto" height="50"></div>
       <div class="row">
         <div class="column1" style="background-color:#;">
-          <button class="btn" id="default" onclick="document.getElementById('iframe').src = 'https://latifistreams.com/channel/raw?url=aHR0cHM6Ly9saXZlLWZ0Yy1uYS1zb3V0aC0yLm1lZGlhLnN0YXJvdHQuY29tL2dydTEvcWIwMS9zdGFycGx1cy9ldmVudC8yMDI0LzAyLzE3L1RvdHRlbmhhbV9Ib3RzcHVyX3ZzX1dvbHZfMjAyNDAyMTdfMTcwODE3NTQyMzAyNC9jdHItYWxsLWNvbXBsZXRlLm0zdTg&k1=MWY5ZjY4Y2RiMzA1NGFiNjhiMmY1MGY3NjA1YWNmNmU&k2=M2QzMDQxZjUyNzc2NjJjNzNmODViNTkwMDkzYzliNzI'">Stream 1</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = 'https://latifistreams.com/channel/clappr?url=Ly9jZG4udGVhY2FzdC5ldS9lczQxL2luZGV4Lm0zdTg/dG9rZW49YzJWeWRtVnlYM1JwYldVOU1UY3dPREU0TURrNE1TWm9ZWE5vWDNaaGJIVmxQVTVxWkdwTmVtdDNUakpSTlZsNll6Qk9Na1Y2VFhwRmVsbFVaRzFPYWxwb1dtMUZNVnBIVG10T1JFRW1aWGh3YVhKNVBURTNNRGd4T1RFM09ERW1hWEE5TWpZd056cG1Zamt3T21VMk9UQTZZemszT1RwaFl6TTVPbUpqTlRjNlpUVXhPRG8wTW1Waw=='">Stream 2</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = 'https://voodc.com/embed/858a918f9a8c859187998385988a988c89.html'">Stream 3</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = 'https://poscitechs.shop/live/stream-447.php'">Stream 4</button>
-          <iframe id="iframe" src="https://latifistreams.com/channel/raw?url=aHR0cHM6Ly9saXZlLWZ0Yy1uYS1zb3V0aC0yLm1lZGlhLnN0YXJvdHQuY29tL2dydTEvcWIwMS9zdGFycGx1cy9ldmVudC8yMDI0LzAyLzE3L1RvdHRlbmhhbV9Ib3RzcHVyX3ZzX1dvbHZfMjAyNDAyMTdfMTcwODE3NTQyMzAyNC9jdHItYWxsLWNvbXBsZXRlLm0zdTg&k1=MWY5ZjY4Y2RiMzA1NGFiNjhiMmY1MGY3NjA1YWNmNmU&k2=M2QzMDQxZjUyNzc2NjJjNzNmODViNTkwMDkzYzliNzI" allow="autoplay; encrypted-media" height="94%" width="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
+          <button class="btn" id="default" onclick="document.getElementById('iframe').src = 'https://latifistreams.com/channel/raw?url=aHR0cHM6Ly9mc2x5LnN0cmVhbS5wZWFjb2NrdHYuY29tL0NvbnRlbnQvQ01BRl9PTDEtQ1RSLTRzL0xpdmUvY2hhbm5lbCh1c2EtZWFzdCkvbWFzdGVyLm1wZA==&k1=ODgyYzlmNTYxM2I0M2I0N2FkYzcwYWE5NjhhMzA4Y2U=&k2=ZGU1MzRlZjg5MTRiZmU2MmJhM2NkZDZiZGI5ZTFjMDQ='">Stream 1</button>
+          <button class="btn" onclick="document.getElementById('iframe').src = ''">Stream 2</button>
+          <button class="btn" onclick="document.getElementById('iframe').src = ''">Stream 3</button>
+          <button class="btn" onclick="document.getElementById('iframe').src = 'https://poscitechs.shop/live/stream-24.php'">Stream 4</button>
+          <iframe id="iframe" src="https://latifistreams.com/channel/raw?url=aHR0cHM6Ly9mc2x5LnN0cmVhbS5wZWFjb2NrdHYuY29tL0NvbnRlbnQvQ01BRl9PTDEtQ1RSLTRzL0xpdmUvY2hhbm5lbCh1c2EtZWFzdCkvbWFzdGVyLm1wZA==&k1=ODgyYzlmNTYxM2I0M2I0N2FkYzcwYWE5NjhhMzA4Y2U=&k2=ZGU1MzRlZjg5MTRiZmU2MmJhM2NkZDZiZGI5ZTFjMDQ=" allow="autoplay; encrypted-media" height="94%" width="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
           <button class="btn" onclick="TheaterMode();">Theater Mode [PC]</button>
           <script>
         $('#default').css({"box-shadow":"0px 5px 0px #e40046 inset"});
@@ -276,7 +299,7 @@
     </div>-->
     <div class="ad">
       <a href="https://discord.gg/6vr9CW7ZFa" target="_blank"><img
-          src="https://media.discordapp.net/attachments/839307058674139139/1033433326385639424/llsdsc.png"
+          src="https://latifistreams.com/images/llsdsc.png"
           style="width:100%;height:auto;"></a>
       <h2>Use an adblocker for the best experience.</h2>
     </div>

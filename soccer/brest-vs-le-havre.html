@@ -47,15 +47,6 @@
       margin: 0;
     }
 
-    .topnav a {
-      float: left;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
-    }
-	  
     .column1 {
       float: left;
       width: 70%;
@@ -95,6 +86,37 @@
     .topnav {
       overflow: hidden;
       background-color: #000;
+      width: 100%;
+      height: 69px;
+      position: -webkit-sticky; /* Safari */
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      display: flex;
+    }
+
+    .topnavmaterial {
+      width: 1450px;
+      margin: auto;
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    @media screen and (max-width: 750px) {
+      .topnavmaterial {
+        width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
+
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      font-family: 'DIN-Pro', sans-serif;
     }
 
     h1 {
@@ -220,18 +242,19 @@
 
   <body class="base">
     <div class="topnav">
-      <a class="active" href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%"
-          src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+      <div class="topnavmaterial">
+        <a href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+      </div>
     </div>
     <div class="main">
-      <div class="title1"><img src="https://upload.wikimedia.org/wikipedia/en/c/cc/RC_Lens_logo.svg" class="title" width="auto" height="50"><h1>Lens vs Monaco</h1><img src="https://upload.wikimedia.org/wikipedia/en/c/cf/LogoASMonacoFC2021.svg" class="title" width="auto" height="50"></div>
+      <div class="title1"><img src="https://upload.wikimedia.org/wikipedia/en/0/05/Stade_Brestois_29_logo.svg" class="title" width="auto" height="50"><h1>Brest vs Le Havre</h1><img src="https://upload.wikimedia.org/wikipedia/en/f/fc/Le_Havre_AC_logo.svg" class="title" width="auto" height="50"></div>
       <div class="row">
         <div class="column1" style="background-color:#;">
-          <button class="btn" id="default" onclick="document.getElementById('iframe').src = 'https://fulldeportes.live/usa/bein1usa.php'">Stream 1</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = ''">Stream 2</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = 'https://poscitechs.shop/live/stream-425.php'">Stream 3</button>
+          <button class="btn" id="default" onclick="document.getElementById('iframe').src = 'https://latifistreams.com/channel/raw?url=aHR0cHM6Ly9vdHRiLmxpdmUuY2Yud3cuYWl2LWNkbi5uZXQvbGhyLW5pdHJvL2xpdmUvY2xpZW50cy9kYXNoL2VuYy9mMHF2a3JyYThqL291dC92MS9mOGZhMTdmMDg3NTY0ZjUxYWE0ZDVjNzAwYmU0M2VjNC9jZW5jLm1wZA==&k1=NmQxNzA4YjE4NWM2YzRkN2IzNzYwMDUyMGM3Y2M5M2M=&k2=MWFhY2UwNWY1OGQ4ZWRlZjk2OTdmZDUyY2IwOWY0NDE='">Stream 1</button>
+          <button class="btn" onclick="document.getElementById('iframe').src = 'https://sportsonline.si/channels/hd/hd11.php'">Stream 2</button>
+          <button class="btn" onclick="document.getElementById('iframe').src = 'https://poscitechs.shop/live/stream-32.php'">Stream 3</button>
           <button class="btn" onclick="document.getElementById('iframe').src = 'https://poscitechs.shop/live/stream-59.php'">Stream 4</button>
-          <iframe id="iframe" src="https://fulldeportes.live/usa/bein1usa.php" allow="autoplay; encrypted-media" height="94%" width="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
+          <iframe id="iframe" src="https://latifistreams.com/channel/raw?url=aHR0cHM6Ly9vdHRiLmxpdmUuY2Yud3cuYWl2LWNkbi5uZXQvbGhyLW5pdHJvL2xpdmUvY2xpZW50cy9kYXNoL2VuYy9mMHF2a3JyYThqL291dC92MS9mOGZhMTdmMDg3NTY0ZjUxYWE0ZDVjNzAwYmU0M2VjNC9jZW5jLm1wZA==&k1=NmQxNzA4YjE4NWM2YzRkN2IzNzYwMDUyMGM3Y2M5M2M=&k2=MWFhY2UwNWY1OGQ4ZWRlZjk2OTdmZDUyY2IwOWY0NDE=" allow="autoplay; encrypted-media" height="94%" width="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
           <button class="btn" onclick="TheaterMode();">Theater Mode [PC]</button>
           <script>
         $('#default').css({"box-shadow":"0px 5px 0px #e40046 inset"});
@@ -276,7 +299,7 @@
     </div>-->
     <div class="ad">
       <a href="https://discord.gg/6vr9CW7ZFa" target="_blank"><img
-          src="https://media.discordapp.net/attachments/839307058674139139/1033433326385639424/llsdsc.png"
+          src="https://latifistreams.com/images/llsdsc.png"
           style="width:100%;height:auto;"></a>
       <h2>Use an adblocker for the best experience.</h2>
     </div>

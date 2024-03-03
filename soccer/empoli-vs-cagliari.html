@@ -46,15 +46,6 @@
       background: #232323;
       margin: 0;
     }
-
-    .topnav a {
-      float: left;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
-    }
 	  
     .column1 {
       float: left;
@@ -95,8 +86,39 @@
     .topnav {
       overflow: hidden;
       background-color: #000;
+      width: 100%;
+      height: 69px;
+      position: -webkit-sticky; /* Safari */
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      display: flex;
     }
 
+    .topnavmaterial {
+      width: 1450px;
+      margin: auto;
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    @media screen and (max-width: 750px) {
+      .topnavmaterial {
+        width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
+
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      font-family: 'DIN-Pro', sans-serif;
+    }
+	  
     h1 {
       font-family: DIN-Pro, sans-serif;
       font-size: 29px;
@@ -220,20 +242,21 @@
 
   <body class="base">
     <div class="topnav">
-      <a class="active" href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%"
-          src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+      <div class="topnavmaterial">
+        <a href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+      </div>
     </div>
     <div class="main">
-      <div class="title1"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/FC_Internazionale_Milano_2021.svg" class="title" width="auto" height="50"><h1>Inter vs Atalanta</h1><img src="https://upload.wikimedia.org/wikipedia/en/6/66/AtalantaBC.svg" class="title" width="auto" height="50"></div>
+      <div class="title1"><img src="https://upload.wikimedia.org/wikipedia/en/e/e9/Empoli_F.C._logo_%282021%29.png" class="title" width="auto" height="50"><h1>Empoli vs Cagliari</h1><img src="https://upload.wikimedia.org/wikipedia/en/6/61/Cagliari_Calcio_1920.svg" class="title" width="auto" height="50"></div>
       <div class="row">
         <div class="column1" style="background-color:#;">
-          <button class="btn" id="default" onclick="document.getElementById('iframe').src = 'https://latifistreams.com/channel/raw?url=aHR0cHM6Ly9saXZlLWZ0Yy1uYS1zb3V0aC0yLm1lZGlhLnN0YXJvdHQuY29tL2dydTEvcWIwMS9zdGFycGx1cy9ldmVudC8yMDI0LzAyLzI4L0ludGVyX3ZzX0F0YWxhbnRhXzIwMjQwMjI4XzE3MDkxNDMyMTkwMjMvY3RyLWFsbC1jb21wbGV0ZS5tM3U4&k1=ZWFlMDYwNTEyOTUxNGExMTg5ZDMyYWJhNTMyMzA5OTA=&k2=OGM3MDhhZWZiYWE0Mzk0OTMxNDFmNzk1OTY5NWFmNTY='">Stream 1</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = 'https://latifistreams.com/channel/raw?url=aHR0cHM6Ly9saXZlLWZ0Yy1zYS1lYXN0LTEubWVkaWEuc3Rhcm90dC5jb20vZ3J1MS9xYjAxL3N0YXJwbHVzL2V2ZW50LzIwMjQvMDIvMjgvSW50ZXJfZGVfTWlsb194X0F0YWxhbnRhXzIwMjQwMjI4XzE3MDkxNDM1NDYwMjMvY3RyLWFsbC1jb21wbGV0ZS5tM3U4&k1=NGM0MjUwYTFlMjg4NGM5Nzk1M2MxODQ0ODA4OGY0YzA=&k2=YWYxNGE0ZjFmM2NkYjZhOTUxZGRjODExODc5ZmJlNmI='">Stream 2</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = 'https://voodc.com/embed/858a91909a888c9687998385998c98868497.html'">Stream 3</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = 'https://voodc.com/embed/858a91909a888c9687998385998d98868498.html'">Stream 4</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = 'https://poscitechs.shop/live/stream-31.php'">Stream 3</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = 'https://poscitechs.shop/live/stream-56.php'">Stream 4</button>
-	  <iframe id="iframe" src="https://latifistreams.com/channel/raw?url=aHR0cHM6Ly9saXZlLWZ0Yy1uYS1zb3V0aC0yLm1lZGlhLnN0YXJvdHQuY29tL2dydTEvcWIwMS9zdGFycGx1cy9ldmVudC8yMDI0LzAyLzI4L0ludGVyX3ZzX0F0YWxhbnRhXzIwMjQwMjI4XzE3MDkxNDMyMTkwMjMvY3RyLWFsbC1jb21wbGV0ZS5tM3U4&k1=ZWFlMDYwNTEyOTUxNGExMTg5ZDMyYWJhNTMyMzA5OTA=&k2=OGM3MDhhZWZiYWE0Mzk0OTMxNDFmNzk1OTY5NWFmNTY=" allow="autoplay; encrypted-media" height="94%" width="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
+          <button class="btn" id="default" onclick="document.getElementById('iframe').src = 'https://latifistreams.com/channel/raw?url=aHR0cHM6Ly9haXMtcy5haXMtdmlkbnQuY29tL2Fpcy9wbGF5L29yaWdpbi9saXZlL2Vkcy9TMDAwMS9EQVNIL1MwMDAxLm1wZA==&k1=M2ZkNTJkMWU5YmE0YjE4MGFlYzEyYzkyOTViNjJjMGY=&k2=YmIyNzRlMzNkYTBjNzA5ZTYyYzU1ZDBjYmE5MTE4ODk='">Stream 1</button>
+          <button class="btn" onclick="document.getElementById('iframe').src = 'https://latifistreams.com/channel/raw?url=aHR0cHM6Ly9saW5lYXIzMDItaXQtZGFzaDEtcHJkLWxsLmNkbjEzLnNreWNkcC5jb20vMDE2YS8zMTIwOS9GSEQvc2t5c3BvcnRzZXJpZWEvbWFzdGVyLm1wZA&k1=MDAzNmU1ZDBlODhkZmIwODdmMTc5MWRhNjE1MGNlZDk&k2=MGJjNjUzZDgzMDgzN2RjZWIxM2JkMTcxNjlmMGY4ZTI'">Stream 2</button>
+          <button class="btn" onclick="document.getElementById('iframe').src = 'https://sportsonline.si/channels/hd/hd5.php'">Stream 3</button>
+          <button class="btn" onclick="document.getElementById('iframe').src = 'https://poscitechs.shop/live/stream-31.php'">Stream 4</button>
+          <button class="btn" onclick="document.getElementById('iframe').src = 'https://poscitechs.shop/live/stream-55.php'">Stream 5</button>
+          <!--<button class="btn" onclick="document.getElementById('iframe').src = ''">Stream 6</button>-->
+	  <iframe id="iframe" allow="autoplay; encrypted-media" src="https://latifistreams.com/channel/raw?url=aHR0cHM6Ly9haXMtcy5haXMtdmlkbnQuY29tL2Fpcy9wbGF5L29yaWdpbi9saXZlL2Vkcy9TMDAwMS9EQVNIL1MwMDAxLm1wZA==&k1=M2ZkNTJkMWU5YmE0YjE4MGFlYzEyYzkyOTViNjJjMGY=&k2=YmIyNzRlMzNkYTBjNzA5ZTYyYzU1ZDBjYmE5MTE4ODk=" height="94%" width="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
           <button class="btn" onclick="TheaterMode();">Theater Mode [PC]</button>
           <script>
         $('#default').css({"box-shadow":"0px 5px 0px #e40046 inset"});
@@ -278,7 +301,7 @@
     </div>-->
     <div class="ad">
       <a href="https://discord.gg/6vr9CW7ZFa" target="_blank"><img
-          src="https://media.discordapp.net/attachments/839307058674139139/1033433326385639424/llsdsc.png"
+          src="https://latifistreams.com/images/llsdsc.png"
           style="width:100%;height:auto;"></a>
       <h2>Use an adblocker for the best experience.</h2>
     </div>
@@ -337,5 +360,6 @@
         src="https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg"
         width="auto" height="50">
     </footer>
-</html>
-  <!-- Ⓒ 2023  LORDLATIFISTREAMS -->
+<!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ca056c4c480c44159302b4619a935ae0"}'></script><!-- Cloudflare Pages Analytics --></html>
+  <!-- Ⓒ 2023  LORDLATIFISTREAMS --
+	

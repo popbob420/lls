@@ -284,7 +284,7 @@ setInterval(GetClock,1000);
   }
 
   function localize(t){
-    var d=new Date(t+" EST");
+    var d=new Date(t+" EDT");
     let hours = d.getHours();
     let minutes = d.getMinutes();
     let month = d.getMonth() + 1;

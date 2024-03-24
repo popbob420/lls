@@ -31,8 +31,9 @@ body {
 
 <div id="vid"></div>
 <script>
+ var strm = window.atob('aHR0cHM6Ly92by1saXZlLXl1enppdC1ncmFiYnlvLmNkYi5jZG4ub3JhbmdlLmNvbS9Db250ZW50L0NoYW5uZWwvQWJ1RGhhYmlTcG9ydHNDaGFubmVsMi9ITFMvaW5kZXgubTN1OA==')
  player = new Clappr.Player({
- source: "https://vo-live.cdb.cdn.orange.com/Content/Channel/AbuDhabiSportsChannel2/HLS/index.m3u8",
+ source: strm,
  mimeType: "application/x-mpegURL",
  autoPlay: false, 
  width: "100%",

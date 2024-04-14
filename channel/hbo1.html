@@ -26,11 +26,11 @@ body{
 <div id="player"></div> 
 <script> 
 var player = new Clappr.Player({ 
-        source: 'https://fly.live.us.prd.media.max.com/live/lo/use1/c80c675e-bf1f-4a7d-8227-4e04cc34b2d6-dash-6hdvr-cenc/master.mpd', 
+        source: 'https://akm.live.us.prd.media.max.com/live/lo/use1/a89f2527-15d0-484b-8d1e-f04f269bb297-dash-6hdvr-cenc/master.mpd', 
         mimeType: 'application/dash+xml', 
         height: '100%', 
         width: '100%', 
-        poster: 'https://images.cdn.prd.api.discomax.com/2024/03/22/17091114-8cdc-3b56-9753-76ce9637b35e.jpeg',
+        poster: 'https://images.cdn.prd.api.discomax.com/2024/03/22/c9fd453e-dbaf-3ea0-b06a-1afc79b31da3.jpeg',
         plugins: [
             LevelSelector, 
             DashShakaPlayback, 
@@ -38,7 +38,7 @@ var player = new Clappr.Player({
             ClapprPip.PipPlugin, 
             Clappr.MediaControl,
             Clappr.Poster
-        ], 
+        ],
         events: {
             onReady: function() {
                 var plugin = this.getPlugin('click_to_pause'); 
@@ -52,9 +52,9 @@ var player = new Clappr.Player({
         shakaConfiguration: { 
             drm: { 
              clearKeys: { 
-              "01006991e9bb2c7028dbefc17ac23a46": "f7547b30e4b700b673780e42cf1c3c89",
-              "010144307302f81ffc18915f9089aaef": "0974be98a8b5764ce7d3f823b79ff81c",
-              "0102d1afbfe62ac8d82f308710a519a0": "0d3a8f98e7d786fad646d8c291ebb985"
+              "010009786338c4e454cf5d737cc875ad": "ed5b3507341945e2f4e9eec0d41fc600",
+              "01017cd0bf3c0d4d3a419b08919b5e4b": "9f49a2c2c20c2c0243321de7eb1811be",
+              "010226e9bf276ed9d0ee6a2b562fa557": "23ea7b0836ca751f997867dce6c788ec"
                     } 
             }, 
             preferredAudioLanguage: 'en-UK', 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>LLS - DTM at Hockenheimring</title>
+<title>LLS - DTM</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <meta content="Lord Latifi Streams" property="og:title" />
 <meta content="Watch Motorsport in HD with Lord Latifi Streams" property="og:description" />
@@ -37,10 +37,6 @@
     font-style: normal;
     font-display: swap;
 }
-    @font-face {
-      font-family: F1;
-      src: url('Formula1-Wide.otf');
-    }
 
     * {
       box-sizing: border-box;
@@ -50,10 +46,10 @@
       background: #232323;
       margin: 0;
     }
-
+	  
     .column1 {
       float: left;
-      width: 75%;
+      width: 70%;
       padding: 10px;
       height: 700px;
       /* Should be removed. Only for demonstration */
@@ -61,9 +57,10 @@
 
     .column2 {
       float: left;
-      width: 25%;
+      width: 30%;
       padding: 10px;
       height: 700px;
+
       /* Should be removed. Only for demonstration */
     }
 
@@ -75,7 +72,7 @@
     }
 
     /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 900px) {
       .column1 {
         width: 100%;
       }
@@ -85,23 +82,45 @@
       }
 
     }
-
+	  
     .topnav {
       overflow: hidden;
       background-color: #000;
-    }
+      width: 100%;
+      height: 69px;
+      position: -webkit-sticky; /* Safari */
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      display: flex;
+     }
 
-    .topnav a {
-      float: left;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
-    }
+.topnavmaterial {
+ width: 1450px;
+ margin: auto;
+ padding-left: 25px;
+ padding-right: 25px;
+}
+
+@media screen and (max-width: 750px) {
+  .topnavmaterial {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+.topnav a {
+ float: left;
+ color: #f2f2f2;
+ padding: 14px 16px;
+ text-decoration: none;
+ font-size: 17px;
+ font-family: 'DIN-Pro', sans-serif;
+}
 
     h1 {
-      font-family: DIN-Pro;
+      font-family: DIN-Pro, sans-serif;
       font-size: 29px;
       color: #ffffff;
       text-align: center;
@@ -125,11 +144,19 @@
       div.main {
         height: 1000px;
         width: 95%;
-        margin: auto;
+	margin: auto;
         padding-top: 100px;
       }
     }
 
+    div.ad1 {
+      height: auto;
+      width: 100%;
+      max-width: 700px;
+      margin: auto;
+      padding: 5px;
+    }
+	  
     div.ad {
       height: auto;
       width: 100%;
@@ -160,24 +187,59 @@
       margin-right: 10px;
       margin-left: 10px;
     }
+
+    .chatmobile {
+	position: fixed;
+	bottom: 0;
+	width: 100vw;
+	height: 55px;
+	background-color: #111;
+	display: flex;
+	align-items: center;
+      }
+
+     .chatmobile a {
+	color: white;
+	font-family: DIN-Pro;
+	font-size: 18px;
+	margin: auto;
+	text-decoration: none;
+	display: flex;
+     }
+
+     .chatmobile a:hover {
+	color: #00a3e0;
+	transition: 1s
+     }
+
+     @media screen and (min-width: 900px) {
+       .chatmobile {
+	 display: none;
+       }
+    }
+
   </style>
 
 <body>
 
   <body class="base">
     <div class="topnav">
-      <a class="active" href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%"
-          src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+      <div class="topnavmaterial">
+        <a href="https://www.latifistreams.com/"><img style="display:block;" width="250px" height="100%" src="https://i.ibb.co/JnSrcZN/llslogo.png" /></a>
+      </div>
     </div>
     <div class="main">
-      <h1>DTM AT HOCKENHEIMRING</h1>
+      <h1>DTM AT OSCHERSLEBEN</h1>
       <div class="row">
         <div class="column1" style="background-color:#;">
           <button class="btn" id="default" onclick="document.getElementById('iframe').src = '/channel/ss1'">Stream 1</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = 'https://d.daddylivehd.sx/embed/stream-594.php'">Stream 2</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = 'https://d.daddylivehd.sx/embed/stream-451.php'">Stream 3</button>
-          <button class="btn" onclick="document.getElementById('iframe').src = 'https://d.daddylivehd.sx/embed/stream-418.php'">Stream 4</button>
-          <iframe id="iframe" src="/channel/ss1" height="94%" width="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
+          <button class="btn" onclick="document.getElementById('iframe').src = 'https://latifistreams.com/channel/clappr?url=aHR0cHM6Ly9zNi5ob3BzbGFuLmNvbS9wcm83eDEvaW5kZXgubTN1OD90b2tlbj00MDY4M2ExNGQ0OTIyZWRjYmVkMWEzNWIwMDM4YTc4MmY1YjUxZDVlLThjOGU0NGUyYWE1NmE4ZTNlMzRmZDhjMzJiNjZmYzJjLTE3MTQyMDQ0ODMtMTcxNDE5MzY4Mw=='">Stream 2</button>
+	  <!--<button class="btn" onclick="document.getElementById('iframe').src = 'https://voodc.com/embed/1/858a928b9a8a889387998388938c98858a98.html'">Stream 3</button>
+	  <button class="btn" onclick="document.getElementById('iframe').src = ''">Stream 4 </button>
+	  <button class="btn" onclick="document.getElementById('iframe').src = ''">Stream 4</button>		
+	  <button class="btn" onclick="document.getElementById('iframe').src = ''">Stream 6 [INT.]</button>-->
+	  <iframe id="iframe" src="/channel/ss1" allow="autoplay; encrypted-media" height="94%" width="100%" frameborder="0" scrolling="no" allowfullscreen></iframe>
+	  
           <button class="btn" onclick="TheaterMode();">Theater Mode [PC]</button>
           <script>
         $('#default').css({"box-shadow":"0px 5px 0px #e40046 inset"});
@@ -188,7 +250,7 @@
             var TheaterModeActivated = false
             function TheaterMode() {
               if (TheaterModeActivated) {
-                TheaterModeActivated = false; <!--after click-->
+                TheaterModeActivated = false; 
                 $(".topnav").css({ "display": "" });
                 $(".column1").css({ "height": "700px" });
                 $(".main").css({ "width": "" });
@@ -210,22 +272,29 @@
             }
           </script>
         </div>
-
         <div class="column2" style="background-color:#;">
-          <script id="cid0020000337696593918" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js"
-            style="width: 100%;height: 100%">{ "handle": "lls-motorsport", "arch": "js", "styles": { "a": "000000", "b": 100, "c": "FFFFFF", "d": "FFFFFF", "k": "000000", "l": "000000", "m": "000000", "n": "FFFFFF", "p": "10", "q": "000000", "r": 100, "t": 0, "ab": false, "fwtickm": 1 } }</script>
-        </div>
+          <iframe src="https://www.twitch.tv/embed/latifistreams/chat?darkpopout&amp;parent=latifistreams.com" height="100%" width="100%" frameborder="0"></iframe>
+      	</div>
       </div>
     </div>
-    <div class="ad">
-      <a href="https://discord.gg/6vr9CW7ZFa" target="_blank"><img
-          src="https://media.discordapp.net/attachments/839307058674139139/1033433326385639424/llsdsc.png"
+    <!--<div class="ad1">
+      <a href="https://x.com/news_rpm?s=21" target="_blank"><img
+          src="https://media.discordapp.net/attachments/1157085385009139732/1159927860925042819/IMG_2463.jpg"
           style="width:100%;height:auto;"></a>
-
+    </div>-->
+    <div class="ad">
+      <!--<h2>ALT. COMMENTARY</h2>
+      <iframe src="https://live.amperwave.net/direct/performanceracing-pnrmp3-ibc1?source=Web" width="100%" height="auto" frameborder="0"></iframe>
+      --><a href="https://discord.gg/6vr9CW7ZFa" target="_blank"><img
+          src="https://latifistreams.com/images/llsdsc.png"
+          style="width:100%;height:auto;"></a>
       <h2>Use an adblocker for the best experience.</h2>
     </div>
     </div>
-
+      <div class="chatmobile">
+	<a href="https://www.twitch.tv/popout/latifistreams/chat" target="_blank">Click here to view chat
+	<svg style="color: white; margin-left: 5px;" width="25" height="25" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 13C12.5523 13 13 12.5523 13 12V3C13 2.44771 12.5523 2 12 2H3C2.44771 2 2 2.44771 2 3V6.5C2 6.77614 2.22386 7 2.5 7C2.77614 7 3 6.77614 3 6.5V3H12V12H8.5C8.22386 12 8 12.2239 8 12.5C8 12.7761 8.22386 13 8.5 13H12ZM9 6.5C9 6.5001 9 6.50021 9 6.50031V6.50035V9.5C9 9.77614 8.77614 10 8.5 10C8.22386 10 8 9.77614 8 9.5V7.70711L2.85355 12.8536C2.65829 13.0488 2.34171 13.0488 2.14645 12.8536C1.95118 12.6583 1.95118 12.3417 2.14645 12.1464L7.29289 7H5.5C5.22386 7 5 6.77614 5 6.5C5 6.22386 5.22386 6 5.5 6H8.5C8.56779 6 8.63244 6.01349 8.69139 6.03794C8.74949 6.06198 8.80398 6.09744 8.85143 6.14433C8.94251 6.23434 8.9992 6.35909 8.99999 6.49708L8.99999 6.49738" fill="white"></path> </svg></a>
+      </div>
     </div>
     </section>
     <style>
@@ -260,11 +329,6 @@
         background-color: transparent;
         text-decoration: underline;
       }
-
-      .tags {
-        color: #000;
-        margin-bottom: 38px;
-      }
     </style>
 
     <footer>
@@ -273,9 +337,13 @@
       <h3><a href="/contact">Contact Us</a></h3>
       <h3><a href="https://twitter.com/latifistreams" target="_blank">Twitter</a> | <a
           href="https://discord.gg/6vr9CW7ZFa" target="_blank">Discord</a></h3>
- <h3>#StandWithArtsakh #FreePalestine</h3>
- <img style="margin:5px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Flag_of_Artsakh.svg/1200px-Flag_of_Artsakh.svg.png" width="auto" height="50"><img style="margin:5px" src="https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg" width="auto" height="50">
-      <h3 class="tags">lordlatifistreams, latifisteams, lord latifi streams, latifi streams</h3>
+      <h3>#StandWithArtsakh #FreePalestine</h3>
+      <img style="margin:5px; margin-bottom: 70px"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Flag_of_Artsakh.svg/1200px-Flag_of_Artsakh.svg.png"
+        width="auto" height="50">
+      <img style="margin:5px; margin-bottom: 70px"
+        src="https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg"
+        width="auto" height="50">
     </footer>
   </body>
 </head>

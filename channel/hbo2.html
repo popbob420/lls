@@ -26,11 +26,11 @@ body{
 <div id="player"></div> 
 <script> 
 var player = new Clappr.Player({ 
-        source: 'https://cors.hypetech.xyz/https://hls-m006-live-aka-canalplus.akamaized.net/live/disk/canalplusf1-hd/dash-fhddvr/canalplusf1-hd.mpd', 
+        source: 'https://tvup-ccs-live.akamaized.net/espn/espn.mpd', 
         mimeType: 'application/dash+xml', 
         height: '100%', 
         width: '100%', 
-        poster: 'https://images.cdn.prd.api.discomax.com/2024/05/06/9cda2853-7a11-3a5b-8dbf-ec9a7015c29c.jpeg',
+        poster: '',
         plugins: [
             LevelSelector, 
             DashShakaPlayback, 
@@ -52,10 +52,9 @@ var player = new Clappr.Player({
         shakaConfiguration: { 
             drm: { 
              clearKeys: { 
-              "f370399659f54954a80a0e53c7a87b40": "c94fd8c303dbc9f6415ac2744ed92113",
-              "482032e4d54c48698814d1995a3f452c": "692ff1301d75d6c6f756fc31197fff9a",
-              "93c2893555a240598a4a0ae40eb407d5": "ac7000a06c8c7ec0b33881d7051adc56",
-              "2b3eca9093e84eb3941aec39612dc814": "97e2d3e0037b0394b3d52ad2393038d1"
+              "70f9a5b3f5bd50b7869e82f55dabb334": "97ba43a659232d2f008c46ee933c3a76",
+              "3de3bbc384135f91a0dce9bcae640845": "2e81160da292b22c4ed81166304c4a9e",
+              "28749d1eefec53bda57daf3271cb6bcb": "202d4aefeba4224b4a4b14e09acbadf8"
                     } 
             }, 
             preferredAudioLanguage: 'pt-BR', 

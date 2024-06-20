@@ -1,0 +1,304 @@
+    var iframeURLs = {
+  
+
+        'ESPNPREMIUM2': {
+            url: 'https://tucanaldeportivo.com/espnpremium-sd.php',
+        
+        },
+
+     'TNTARG': {
+            url: 'https://streamtp.live/global2.php?stream=tntsports_argentina',
+        },
+
+          'ESPNPR': {
+            url: 'https://streamtp.live/global2.php?stream=espn_premium',
+        
+        },
+
+        'STARPLUS': {
+            url: 'https://streamtp.live/global1.php?stream=starplus09',
+        
+        },
+        
+
+      'GH': {
+            url: 'https://nebunexa.co/pais/gh/?id=GH',
+        },
+          'GH2': {
+            url: 'https://nebunexa.co/pais/ar/?id=GH',
+        },
+
+          'GH3': {
+            url: 'https://nebunexa.co/pais/gh2/?id=GH',
+        }, 
+  'GH4': {
+            url: 'https://derealfama.co/ar/gh24hs.php',
+        }, 
+           'CAM1': {
+            url: 'https://nebunexa.co/pais/gh/?id=GHCAMARA1',
+        }, 
+
+           'CAM2': {
+            url: 'https://nebunexa.co/pais/gh/?id=GHCAMARA2',
+        }, 
+
+   'dtv': {
+            url: 'https://streamtp.live/global2.php?stream=dsports',
+        }, 
+
+        'SPORTV': {
+            url: 'https://reidoscanais.app/embed/?id=sportvalternativo',
+        }, 
+
+        'EVENT': {
+            url: 'https://1stream.eu/nhl-playoffs/florida-panthers-edmonton-oilers-live-stream/797500?embed=1',
+        }, 
+
+        'EVENT2': {
+            url: 'https://1stream.eu/mlb/toronto-blue-jays-milwaukee-brewers-live-stream/792766?embed=1',
+        }, 
+
+        'EVENTOS': {
+            url: 'https://streamtp.live/global1.php?stream=eventos',
+        }, 
+
+'dtv2': {
+            url: 'https://streamtp.live/global2.php?stream=dsports',
+        }, 
+
+'dtv2f': {
+            url: 'https://streamtp.live/global2.php?stream=dsports_2',
+        }, 
+
+'dtvplus': {
+            url: 'https://nebunexa.com/players/dtvpl3.html?id=1071',
+        }, 
+        
+        
+             'CAM3': {
+            url: 'https://nebunexa.co/pais/gh/?id=GHCAMARA3',
+        }, 
+
+              'STAR': {
+            url: 'https://streamtp.live/global1.php?stream=starplus10',
+        }, 
+          
+        'STAR2': {
+            url: 'https://streamtp.live/global1.php?stream=starplus06',
+        }, 
+
+       'TYC': {
+            url: 'https://nebunexa.co/pais/ar/?id=TYC',
+        },
+         
+            'ESPN': {
+
+            url: 'https://reidoscanais.app/embed/?id=espn',
+        },
+        
+ 'ESPN2': {
+
+            url: 'https://nebunexa.com/players/p/ar/espn.html?get=espn2&key=89a298a13ceef0b41183f600e7b90535&key2=5d0f849365de9ad63d448b3778b7278c&up=esp2',
+
+        },
+
+     'GP': {
+
+            url: 'https://tucanaldeportivo.com/golperu.php',
+
+        },
+
+ 'WINSPORTSPLUS': {
+
+            url: 'https://streamtp.live/global2.php?stream=winplus',
+
+        },
+
+        'WINSPORTSPLUS2': {
+
+url: 'https:\/\/streamtp.live\/global2.php?stream=winplus2',
+
+},
+
+      'WINSPORTS': {
+
+            url: 'https://streamtp.live/global2.php?stream=winsports',
+
+        },
+
+         'ESPNCO': {
+
+            url: 'https://tiogol.com/val/co.php?chid=CH0100000000165&keyId=2444f7f19b29352eb6d1c7f9d8f71d59&key=027fc4f3b6275111c0c8b5ae84933ea8',
+
+        },
+
+          'ESPNPREMIUMHLS': {
+
+            url: 'https://television-libre.online/html/hls.html?get=aHR0cHM6Ly9kZWxpdmVyeS5jZG4ucmNzLm5ldC5hci9tbnAvZXNwbnByZW1pdW1faGxzL3BsYXlsaXN0Lm0zdTg=',
+
+        },
+
+         'TNTSPORTSHLS': {
+
+            url: 'https://television-libre.online/html/hls.html?get=aHR0cHM6Ly9kZWxpdmVyeS5jZG4ucmNzLm5ldC5hci9tbnAvdG50c3BvcnRzX2hscy9wbGF5bGlzdC5tM3U4',
+
+        },
+
+
+         'ESPNPREMIUMMPD': {
+
+            url: 'https://television-libre.online/html/dash?get=aHR0cHM6Ly9kZWxpdmVyeS5jZG4ucmNzLm5ldC5hci9tbnAvZXNwbnByZW1pdW0vb3V0cHV0Lm1wZA==',
+
+        },
+
+         'TNTSPORTSMPD': {
+
+            url: 'https://television-libre.online/html/dash.html?get=aHR0cHM6Ly9kZWxpdmVyeS5jZG4ucmNzLm5ldC5hci9tbnAvdG50c3BvcnRzL291dHB1dC5tcGQ=',
+
+        },
+
+          'ESPNCL': {
+
+            url: 'https://tiogol.com/val/ch.php?chid=CH0100000000164&keyId=1f76baf7c7ac317c8ee9f64991298e88&key=8c3aa01f5cf71aab30d6df7ab74bfb23',
+
+        },
+
+                 'VTVPLUS': {
+
+            url: 'https://tiogol.com/val/uy.php?chid=CH0100000000028&keyId=12d1ef63300a35c49c8cab6e6b89f8e5&key=d092d2e9815a561f4167a8cc70e38cf7',
+
+        },
+
+        'STAR-PLUS': {
+
+url: 'https://streamtp.live/global1.php?stream=starplus10',
+
+},
+
+              'TNTCL': {
+
+            url: 'https://streamtp.live/global2.php?stream=tnt_chile',
+
+        },
+
+      'TNT2CL': {
+
+            url: 'https://clarovideo.nebunexa.com/tntcl.html',
+
+        },
+          
+        'ESPNMX': {
+
+            url: 'https://tiogol.com/val/ch.php?chid=CH0100000000042&keyId=ce810782e63339049f1a4854a081416b&key=9fe13e1bbc3fdebd7acc0b6070f61340',
+
+        },
+
+         'ESPN2MX': {
+
+            url: 'https://tiogol.com/val/ch.php?chid=CH0100000000042&keyId=ce810782e63339049f1a4854a081416b&key=9fe13e1bbc3fdebd7acc0b6070f61340',
+
+        },
+
+
+         'L1MAX': {
+
+            url: 'https://clarovideo.nebunexa.com/l1max.html',
+
+        },
+
+         'LIGA1PE': {
+
+            url: 'https://clarovideo.nebunexa.com/liga1.html',
+
+        },
+        
+         'FOX1': {
+
+            url: 'https://nebunexa.com/players/p/ar/espn.html?get=foxsports1&key=52e1096faaf5cf92389cc454ea7dab9d&key2=23d9aa694d80815a7bc882b891bea531&up=fx',
+
+        },   
+
+        
+        'TSN4': {
+
+url: 'https://bestsolaris.com/solaris.php?postid=59628',
+
+},   
+
+'FOXUS': {
+
+url: 'https://sons-stream.com/tvon.php?hd=33',
+
+},   
+
+         'FOX2': {
+
+            url: 'https://nebunexa.com/players/p/ar/espn.html?get=foxsports2&key=84eab44f4c28bb6effed659f6818beb5&key2=edcf3e66bdef41a5222c21b294c7b4df&up=fx2',
+
+        },   
+        
+
+         'FOX3': {
+
+            url: 'https://nebunexa.com/players/p/ar/espn.html?get=foxsports3&key=42ce46770c4e78d2cc55fd0ca0df6a52&key2=95ae4efea9557984c8e145ba007051f7&up=fx3',
+
+        },  
+
+        
+
+        'ESPN_MX_DISH': {
+
+            url: 'https://nebunexa.com/players/p/mx/espn.html',
+
+        },
+
+        
+        'ECDF': {
+
+            url: 'https://streamtp.live/global1.php?stream=ecdf',
+
+        },
+
+        'SPORTV': {
+
+url: 'https://reidoscanais.app/embed/player.php?l=aHR0cHM6Ly92aXZvbGl4b3Bhbm8uY29tL3BsYXllci9lc3BvcnRlcy0yL3Nwb3J0di5odG1s',
+
+},
+
+        'TYC_SP': {
+
+        url: 'https://streamtp.live/global2.php?stream=tyc_sports',
+
+        },
+
+        'ESPN_DEPORTES': {
+
+url: 'https://streamtp.live/global2.php?stream=espn_deportes',
+
+},
+
+        'TYC_SPORT': {
+
+url: 'https://betzta.com/canales.php?stream=tycsport',
+
+},
+
+
+        'MOVISTAR_PE': {
+
+        url: 'https://tucanaldeportivo.com/movistardeportes.php',
+
+        },
+
+         'ESPN2_MX_DISH': {
+
+            url: 'https://nebunexa.com/players/p/mx/espn2.html',
+
+        },
+       
+          'ESPN3_MX_DISH': {
+
+            url: 'https://nebunexa.com/players/p/mx/espn3.html',
+
+        }  
+          

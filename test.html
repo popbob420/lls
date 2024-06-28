@@ -31,28 +31,41 @@
 }
 
 @font-face {
-    font-family: 'DIN-Pro';
-    src: url('https://latifistreams.com/DINPro.eot');
-    src: url('https://latifistreams.com/DINPro.eot?#iefix') format('embedded-opentype'),
-        url('https://latifistreams.com/DINPro.woff2') format('woff2'),
-        url('https://latifistreams.com/DINPro.woff') format('woff'),
-        url('https://latifistreams.com/DINPro.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Boska-Variable';
+  src: url('https://latifistreams.com/fonts/Boska-Variable.eot');
+  src: url('https://latifistreams.com/fonts/Boska-Variable.eot') format('embedded-opentype'),
+       url('https://latifistreams.com/fonts/Boska-Variable.woff2') format('woff2'),
+       url('https://latifistreams.com/fonts/Boska-Variable.woff') format('woff'),
+       url('https://latifistreams.com/fonts/Boska-Variable.ttf') format('truetype');
+  font-weight: 200 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Boska-VariableItalic';
+  src: url('https://latifistreams.com/fonts/Boska-VariableItaic.eot');
+  src: url('https://latifistreams.com/fonts/Boska-VariableItaic.eot') format('embedded-opentype'),
+       url('https://latifistreams.com/fonts/Boska-VariableItaic.woff2') format('woff2'),
+       url('https://latifistreams.com/fonts/Boska-VariableItaic.woff') format('woff'),
+       url('https://latifistreams.com/fonts/Boska-VariableItaic.ttf') format('truetype');
+  font-weight: 200 900;
+  font-display: swap;
+  font-style: italic;
 }
 
  
 h1 {
  font-family: 'HelveticaBold', sans-serif;
- letter-spacing: -2px;
+ letter-spacing: -1.5px;
  text-align:center;
  font-size:45px;
  color: white;
 }
  
 h2 {
- font-family: 'DIN-Pro', sans-serif;
+ font-family: 'Boska-Variable', sans-serif;
+ font-weight: 400px;
  text-align:center;
  font-size: 19px;
  color: white;
@@ -205,25 +218,31 @@ div.timer-inner {
 </div>
 <body>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-
-
 <style>
-  .home {
-    background-color: #00a3e0;
-    height: 500px;
+  .homescreen {
+    background-image: url("https://res.cloudinary.com/prod-f2f3/image/upload/v1583750780/f2/global/articles/2018/08_Aug/_56I7336.jpg");
+    background-size:100% auto;
+    background-position: 50% 50%;
+    height: 750px;
     display: flex;
   }
-
+  .homescreencontent {
+    width: 1450px;
+    background-color: #00a3e0;
+    margin: auto;
+  }
+  .homescreencontent h1 {
+    text-align: left;
+    font-size: 72px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 </style>
 
-<div class="home">
-  <h1>Lord Latifi Streams</h1>
+<div class="homescreen">
+  <div class="homescreencontent">
+    <h1>LordLatifiStreams</h1>
+  </div>
 </div>
 
 

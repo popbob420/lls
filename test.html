@@ -56,20 +56,26 @@
 
  
 h1 {
- font-family: 'Boska-VariableItalic', sans-serif;
+ font-family: 'HelveticaBold', sans-serif;
+ font-weight: 600;
  text-align: left;
- font-weight: 800;
- letter-spacing: -1.5px;
- text-align:center;
- font-size:45px;
+ font-size: 84px; 
  color: white;
 }
  
 h2 {
- font-family: 'HelveticaBold', sans-serif;
+ font-family: 'Boska-VariableItailc', sans-serif;
  font-weight: 400;
- text-align:center;
- font-size: 19px;
+ text-align:left;
+ font-size:45px;
+ color: white;
+}
+
+p {
+ font-family: 'HelveticaBold', sans-serif;
+ font-weight: 600;
+ text-align: left;
+ font-size: 18px; 
  color: white;
 }
 
@@ -127,14 +133,6 @@ body {
  text-decoration: none;
  font-size: 17px;
  font-family: 'DIN-Pro', sans-serif;
-}
-
-p {
- font-family: 'DIN-Pro', sans-serif;
- text-align: center;
- font-size: 32px;
- color: white;
- background-color:#232323;
 }
 	
 div.streamtable {
@@ -230,13 +228,10 @@ div.timer-inner {
   }
   .homescreencontent {
     width: 1450px;
-    background-color: #00a3e0;
+    /* background-color: #00a3e0; */
     margin: auto;
   }
   .homescreencontent h1 {
-    font-family: 'HelveticaBold', sans-serif;
-    text-align: left;
-    font-size: 72px;
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -276,29 +271,29 @@ var x = setInterval(function() {
 
 <div class="streamtable">
   <div class="timer-inner">
-    <h2>Countdown to</h2>
-    <h1>Japanese Grand Prix</h1>
+    <p>Countdown to</p>
+    <h2><i>Japanese Grand Prix</i></h2>
     <div id="countdown"></div>
   </div>
   <div class="stream" onclick="location.href='/motorsport';">
-    <h2>Motorsport Streams</h2>
+    <p>Motorsport Streams</p>
   </div>
   <div class="stream" onclick="location.href='/replays';">
-    <h2>Motorsport Replays</h2>
+    <p>Motorsport Replays</p>
   </div>
   <div class="stream" onclick="location.href='/soccer';">
-    <h2>Soccer Streams</h2>
+    <p>Soccer Streams</p>
   </div>
 </div>
 
 <div class="streamtable">
   <div class="timer-inner">
-    <h2>Countdown to</h2>
-    <h1>2024 EUROS</h1>
+    <p>Countdown to</p>
+    <h2><i>2024 EUROS</i></h2>
     <div id="countdown2"></div>
   </div>
   <div class="stream" onclick="location.href='/soccer';">
-    <h2>Soccer Streams</h2>
+    <p>Soccer Streams</p>
   </div>
 </div>
 

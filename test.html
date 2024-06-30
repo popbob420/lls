@@ -22,14 +22,13 @@
 <style>
 @font-face {
   font-family: 'HelveticaBold';
-  src: url('https://latifistreams.com/fonts/HelveticaBold.eot');
-  src: url('https://latifistreams.com/fonts/HelveticaBold.eot') format('embedded-opentype'),
-      url('https://latifistreams.com/fonts/HelveticaBold.woff2') format('woff2'),
-      url('https://latifistreams.com/fonts/HelveticaBold.woff') format('woff'),
-      url('https://latifistreams.com/fonts/HelveticaBold.ttf') format('truetype');
+  src: url('../fonts/HelveticaBold.eot');
+  src: url('../fonts/HelveticaBold.eot') format('embedded-opentype'),
+      url('../fonts/HelveticaBold.woff2') format('woff2'),
+      url('../fonts/HelveticaBold.woff') format('woff'),
+      url('../fonts/HelveticaBold.ttf') format('truetype');
   font-weight: 600;
   font-display: block;
-  font-style: bold;
 }
 
 @font-face {
@@ -66,7 +65,7 @@ h1 {
 }
  
 h2 {
- font-family: 'Boska-VariableItalic';
+ font-family: 'Boska-Variable', serif;
  font-weight: 800;
  text-align:left;
  font-size:45px;
@@ -82,7 +81,7 @@ p {
 }
 
 body {
- background: #212121;
+ background: #111;
  margin: 0;
 }
  
@@ -222,10 +221,10 @@ div.timer-inner {
 
 <style>
   .homescreen {
-    background-image: url("https://res.cloudinary.com/prod-f2f3/image/upload/v1583750780/f2/global/articles/2018/08_Aug/_56I7336.jpg");
+    background-image: url("https://latifistreams.com/images/llstopbanner.png");
     background-size:100% auto;
     background-position: 50% 50%;
-    height: 750px;
+    height: 75vh;
     display: flex;
   }
   .homescreencontent {
@@ -236,6 +235,10 @@ div.timer-inner {
   .homescreencontent h1 {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  ::selection {
+    background: rgba(213, 181, 110, 90%);
   }
 </style>
 
@@ -274,7 +277,7 @@ var x = setInterval(function() {
 <div class="streamtable">
   <div class="timer-inner">
     <p>Countdown to</p>
-    <h2><i>Japanese Grand Prix</i></h2>
+    <h2>Japanese Grand Prix</h2>
     <div id="countdown"></div>
   </div>
   <div class="stream" onclick="location.href='/motorsport';">

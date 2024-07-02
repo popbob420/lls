@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<head>
 <meta name="viewport" content="width=device-width, initial -scale=1 ">
 <title>LordLatifiStreams</title>
 <link rel="icon" type="image/x-icon" href="favicon.png">
@@ -6,8 +7,8 @@
 <meta content="Watch Sports in HD with Lord Latifi Streams" property="og:description" />
 <meta content="https://latifistreams.com" property="og:url" />
 <meta content="#ffffff" data-react-helmet="true" name="theme-color" />
+</head>
 
-<head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3W9MBHEVCM"></script>
 <script>
@@ -22,25 +23,13 @@
 <style>
 @font-face {
   font-family: 'HelveticaBold';
-  src: url('../fonts/HelveticaBold.eot');
-  src: url('../fonts/HelveticaBold.eot') format('embedded-opentype'),
-      url('../fonts/HelveticaBold.woff2') format('woff2'),
-      url('../fonts/HelveticaBold.woff') format('woff'),
-      url('../fonts/HelveticaBold.ttf') format('truetype');
+  src: url('https://latifistreams.com/fonts/HelveticaBold.eot');
+  src: url('https://latifistreams.com/fonts/HelveticaBold.eot') format('embedded-opentype'),
+      url('https://latifistreams.com/fonts/HelveticaBold.woff2') format('woff2'),
+      url('https://latifistreams.com/fonts/HelveticaBold.woff') format('woff'),
+      url('https://latifistreams.com/fonts/HelveticaBold.ttf') format('truetype');
   font-weight: 600;
   font-display: block;
-}
-
-@font-face {
-  font-family: 'Boska-Variable';
-  src: url('https://latifistreams.com/fonts/Boska-Variable.eot');
-  src: url('https://latifistreams.com/fonts/Boska-Variable.eot') format('embedded-opentype'),
-      url('https://latifistreams.com/fonts/Boska-Variable.woff2') format('woff2'),
-      url('https://latifistreams.com/fonts/Boska-Variable.woff') format('woff'),
-      url('https://latifistreams.com/fonts/Boska-Variable.ttf') format('truetype');
-  font-variation-settings: 'wght' 200;
-  font-display: block;
-  font-style: normal;
 }
 
 @font-face {
@@ -61,6 +50,9 @@ h1 {
  text-align: left;
  font-size: 84px; 
  color: white;
+ padding-left: 20px;
+ padding-right: 20px;
+ word-spacing: -25px;
 }
  
 h2 {
@@ -68,6 +60,13 @@ h2 {
  font-weight: 800;
  text-align:left;
  font-size:45px;
+ color: white;
+}
+
+h3 {
+font-family: 'HelveticaBold', sans-serif;
+ text-align: left;
+ font-size: 24px; 
  color: white;
 }
 
@@ -83,19 +82,6 @@ body {
  background: #111;
  margin: 0;
 }
- 
-.rectangle{
- padding-top: 0px;
- width:99.9%;
- height:50px;
- background-color:#000000;
- border:1px solid #000; 
- position: relative;
- text-align: center;
- color: white;
- margin: auto;
- font-size: 35px;
-} 
  
 .topnav {
  overflow: hidden;
@@ -177,36 +163,12 @@ div.ad {
   padding: 5px;
 }
 
-div.timer {
-  width: 90%;
-  max-width: 1000px;
-  height: 250px;
-  border-radius: 15px;
-  background-color: #000;
-  margin: auto;
-  padding: 5px;
-  display: flex;
-}
-
-div.timer-inner {
-  padding:25px;
-  background: linear-gradient(to right,  #111111 0%,rgba(0,1,17,0) 100%), url('https://cdn.sanity.io/images/fnx611yr/production/948a702f66ad410f30be3acc4fab21c3055d98d9-4088x2299.jpg');
-  background-size:100% auto;
-  background-position: 50% 50%;
-  filter: grayscale(1);
-  border-radius: 15px;
-  margin:10px;
-  font-family: 'DIN-Pro', sans-serif;
-  color: #fff;
-}
-
 .cls-1 {
   fill: #fff;
   fill-rule: evenodd;
 }
 </style>
 
-<head>
 <div class="topnav">
   <div class="topnavmaterial">
   <a href="https://www.latifistreams.com/">
@@ -226,14 +188,23 @@ div.timer-inner {
     height: 75vh;
     display: flex;
   }
+
+  @media screen and (max-width: 1090px) and (min-height: 850px) {
+  .homescreen {
+    background-size: auto 100%;
+  }
+  }
+
+  @media screen and (max-width: 390px) {
+  h1 {
+    font-size: 69px;
+  }
+  }
+
   .homescreencontent {
     width: 1450px;
     /* background-color: #00a3e0; */
     margin: auto;
-  }
-  .homescreencontent h1 {
-    padding-left: 20px;
-    padding-right: 20px;
   }
 
   ::selection {
@@ -243,63 +214,49 @@ div.timer-inner {
 
 <div class="homescreen">
   <div class="homescreencontent">
-    <h1>LordLatifiStreams</h1>
+    <h1>Lord Latifi Streams</h1>
   </div>
 </div>
 
-
-<script>
-var start_date = new Date("Jan 1, 2025 00:00:00 EDT").getTime();
-
-var x = setInterval(function() {
-
-  var now = new Date().getTime();
-  var distance = start_date - now;
-    
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-    
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("countdown").innerHTML = "expired";
+<style>
+  .table {
+    max-width: 1450px;
+    width: 90%;
+    background-color: #000;
+    display: flexbox;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
-}, 1000);
-</script>
 
+  .tablecontent {
+    padding: 20px;
+  }
 
+</style>
 
-<div class="streamtable">
-  <div class="timer-inner">
-    <p>Countdown to</p>
-    <h2>Japanese Grand Prix</h2>
-    <div id="countdown"></div>
-  </div>
-  <div class="stream" onclick="location.href='/motorsport';">
-    <p>Motorsport Streams</p>
-  </div>
-  <div class="stream" onclick="location.href='/replays';">
-    <p>Motorsport Replays</p>
-  </div>
-  <div class="stream" onclick="location.href='/soccer';">
-    <p>Soccer Streams</p>
+<div class="table">
+  <div class="tablecontent">
+    <p>Countdown to:</p>
+    <h2>sample text</h2>
+    <p>timer</p>
   </div>
 </div>
 
-<div class="streamtable">
-  <div class="timer-inner">
-    <p>Countdown to</p>
-    <h2><i>2024 EUROS</i></h2>
-    <div id="countdown2"></div>
-  </div>
-  <div class="stream" onclick="location.href='/soccer';">
-    <p>Soccer Streams</p>
+<div class="table">
+  <div class="tablecontent">
+    <p>Countdown to:</p>
+    <h2>sample text</h2>
+    <p>timer</p>
   </div>
 </div>
 
+<div class="table">
+  <div class="tablecontent">
+    <h3>Motorsport Streams</h3>
+    <h3>Football Streams</h3>
+    <h3>Motorsport Replays</h3>
+  </div>
+</div>
 
 <!-- Ⓒ 2023  LORDLATIFISTREAMS -->

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<head>
 <meta name="viewport" content="width=device-width, initial -scale=1 ">
 <title>LordLatifiStreams</title>
 <link rel="icon" type="image/x-icon" href="favicon.png">
@@ -7,8 +6,8 @@
 <meta content="Watch Sports in HD with Lord Latifi Streams" property="og:description" />
 <meta content="https://latifistreams.com" property="og:url" />
 <meta content="#ffffff" data-react-helmet="true" name="theme-color" />
-</head>
 
+<head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3W9MBHEVCM"></script>
 <script>
@@ -22,65 +21,283 @@
      crossorigin="anonymous"></script>
 <style>
 @font-face {
-    font-family: 'DIN-Pro';
-    src: url('https://latifistreams.com/DINPro.eot');
-    src: url('https://latifistreams.com/DINPro.eot?#iefix') format('embedded-opentype'),
-        url('https://latifistreams.com/DINPro.woff2') format('woff2'),
-        url('https://latifistreams.com/DINPro.woff') format('woff'),
-        url('https://latifistreams.com/DINPro.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'HelveticaBold';
+  src: url('https://latifistreams.com/fonts/HelveticaBold.eot');
+  src: url('https://latifistreams.com/fonts/HelveticaBold.eot') format('embedded-opentype'),
+      url('https://latifistreams.com/fonts/HelveticaBold.woff2') format('woff2'),
+      url('https://latifistreams.com/fonts/HelveticaBold.woff') format('woff'),
+      url('https://latifistreams.com/fonts/HelveticaBold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: block;
+  font-style: bold;
 }
 
-body {
- background: #111;
- margin: 0;
- display:flex;
- height:100vh;
- align-items:center;
+@font-face {
+  font-family: 'Boska-Variable';
+  src: url('https://latifistreams.com/fonts/Boska-Variable.eot');
+  src: url('https://latifistreams.com/fonts/Boska-Variable.eot') format('embedded-opentype'),
+      url('https://latifistreams.com/fonts/Boska-Variable.woff2') format('woff2'),
+      url('https://latifistreams.com/fonts/Boska-Variable.woff') format('woff'),
+      url('https://latifistreams.com/fonts/Boska-Variable.ttf') format('truetype');
+  font-variation-settings: 'wght' 200;
+  font-display: block;
+  font-style: normal;
 }
 
-
-.cls-1 {
-  fill: #fff;
-  fill-rule: evenodd;
+@font-face {
+  font-family: 'Boska-VariableItalic';
+  src: url('https://latifistreams.com/fonts/Boska-VariableItaic.eot');
+  src: url('https://latifistreams.com/fonts/Boska-VariableItaic.eot') format('embedded-opentype'),
+       url('https://latifistreams.com/fonts/Boska-VariableItaic.woff2') format('woff2'),
+       url('https://latifistreams.com/fonts/Boska-VariableItaic.woff') format('woff'),
+       url('https://latifistreams.com/fonts/Boska-VariableItaic.ttf') format('truetype');
+  font-variation-settings: 'wght' 200;
+  font-display: block;
+  font-style: italic;
 }
 
-.goodbye {
-  background-color: #232323;
-  height: auto;
-  max-width: 500px;
-  width: 90%;
-  padding: 25px;
-  margin: 0 auto;
+ 
+h1 {
+ font-family: 'HelveticaBold', sans-serif;
+ font-weight: 600;
+ text-align: left;
+ font-size: 84px; 
+ color: white;
+}
+ 
+h2 {
+ font-family: 'Boska-VariableItalic';
+ font-weight: 800;
+ text-align:left;
+ font-size:45px;
+ color: white;
 }
 
 p {
- font-family: 'DIN-Pro', sans-serif;
+ font-family: 'HelveticaBold', sans-serif;
  font-weight: 600;
  text-align: left;
  font-size: 18px; 
  color: white;
 }
+
+body {
+ background: #212121;
+ margin: 0;
+}
+ 
+.rectangle{
+ padding-top: 0px;
+ width:99.9%;
+ height:50px;
+ background-color:#000000;
+ border:1px solid #000; 
+ position: relative;
+ text-align: center;
+ color: white;
+ margin: auto;
+ font-size: 35px;
+} 
+ 
+.topnav {
+ overflow: hidden;
+ background-color: #000;
+ width: 100%;
+ height: 79px;
+ position: -webkit-sticky; /* Safari */
+ position: sticky;
+ top: 0;
+ z-index: 99;
+ display: flex;
+}
+
+.topnavmaterial {
+ width: 1450px;
+ margin: auto;
+ padding-left: 25px;
+ padding-right: 25px;
+ display: flex;
+ align-items: center;
+}
+
+@media screen and (max-width: 750px) {
+  .topnavmaterial {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+.topnav a {
+ float: left;
+ color: #f2f2f2;
+ padding: 14px 16px;
+ text-decoration: none;
+ font-size: 17px;
+ font-family: 'DIN-Pro', sans-serif;
+}
+	
+div.streamtable {
+  padding: 5px;
+  background-color: #000;
+  border-radius: 15px;
+  margin:auto;
+  width: 90%;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  max-width: 1000px;
+}
+
+div.stream {
+  padding:20px;
+  background-color: #111;
+  border-radius: 15px;
+  margin:10px;
+  transition: 0.5s;
+}  
+
+div.stream:hover {
+  padding:20px;
+  background-color: #00a3e0;
+  border-radius: 15px;
+  margin:10px;
+  transition: 0.5s;
+  cursor: pointer;
+}  
+
+div.stream-title {
+  padding:.5px;
+  background-color: #111;
+  border-radius: 15px;
+  margin:10px;
+}  
+
+div.ad {
+  height: auto;
+  max-width: 500px;
+  margin: auto;
+  padding: 5px;
+}
+
+div.timer {
+  width: 90%;
+  max-width: 1000px;
+  height: 250px;
+  border-radius: 15px;
+  background-color: #000;
+  margin: auto;
+  padding: 5px;
+  display: flex;
+}
+
+div.timer-inner {
+  padding:25px;
+  background: linear-gradient(to right,  #111111 0%,rgba(0,1,17,0) 100%), url('https://cdn.sanity.io/images/fnx611yr/production/948a702f66ad410f30be3acc4fab21c3055d98d9-4088x2299.jpg');
+  background-size:100% auto;
+  background-position: 50% 50%;
+  filter: grayscale(1);
+  border-radius: 15px;
+  margin:10px;
+  font-family: 'DIN-Pro', sans-serif;
+  color: #fff;
+}
+
+.cls-1 {
+  fill: #fff;
+  fill-rule: evenodd;
+}
 </style>
 
-<body>
-
-<div class="goodbye">
-  
+<head>
+<div class="topnav">
+  <div class="topnavmaterial">
+  <a href="https://www.latifistreams.com/">
     <svg xmlns="http://www.w3.org/2000/svg" width="250" height="auto" viewBox="0 0 6366 800">
       <path id="llslogo" class="cls-1" d="M100.888,693.2H514.706V588.007H222.973V108.1H100.888V693.2Zm639.991-80.183q-49.552,0-76.3-35.272T637.821,477.458q0-65,26.756-100.079t76.3-35.08q49.545,0,76.105,35.08t26.557,100.079q0,65.011-26.557,100.284t-76.105,35.272h0ZM962.058,477.458q0-93.593-54.7-162.207T741.276,246.635q-111.388,0-166.082,68.616t-54.7,162.207q0,95.193,54.7,162.809t166.082,67.617q111.38,0,166.082-67.617t54.7-162.809h0Zm274.932-227.25q-50.745,0-82.45,26.6-19.425,15.88-45.58,59.145v-75.42H1001.14V693.2H1114.9V486.389q0-52,13.08-77.007,23.385-44.451,91.57-44.458,5.145,0,13.47.4t19.03,1.588V251q-7.53-.392-9.71-0.6c-1.46-.13-3.24-0.2-5.35-0.2h0Zm200.01,0q-85.23,0-136.16,63.511t-50.93,174.258q0,96.068,51.72,157.388t127.44,61.328q45.975,0,76.9-17.465t55.09-55.969V693.2h109.8V108.9H1556.31v206.41a137.353,137.353,0,0,0-49.55-47.831q-30.525-17.268-69.76-17.267h0Zm24.57,361.219q-47.955,0-71.54-35.924t-23.59-95.862q0-55.569,23.19-93.083t72.74-37.511q32.49,0,57.07,20.641,40.035,34.143,40.04,113.526,0,56.769-24.97,92.488t-72.94,35.725h0Zm260.19,81.77h413.81V588.007H1843.84V108.1H1721.76V693.2Zm666.06-168.3q-1.2,56.769-32.4,78.2t-68.22,21.435q-23.34,0-39.64-12.9t-16.3-41.877q0-32.544,26.69-48.031,15.765-9.126,51.92-15.48l25.72-4.764q19.275-3.572,30.33-7.74a124.577,124.577,0,0,0,21.9-10.916v42.076Zm-107.81-90.106q-65.88,8.336-99.83,27.786-61.89,35.724-61.89,115.51,0,61.533,38.47,95.068t97.48,33.542q46.245,0,82.93-21.038a233.331,233.331,0,0,0,54.23-43.267q1.185,14.691,3.17,26.2a125.622,125.622,0,0,0,7.13,24.61h122.88V676.526q-11.1-5.155-16.65-13.1t-6.74-30.167q-0.8-29.371-.79-50.015V384.772q0-78.195-55.33-106.381-55.35-28.181-126.6-28.183-109.47,0-154.46,57.16-28.275,36.525-31.85,93.281h109.01q4.005-25.006,16.07-39.694,16.875-19.844,57.46-19.847,36.15,0,54.84,10.122t18.68,36.717q0,21.836-24.35,32.153-13.59,5.953-45.12,9.923Zm294.35-89.71v266.35q0,40.488,19.03,59.938,29.325,30.572,109.4,27.786l53.51-1.984V612.618q-5.55.4-11.3,0.595c-3.83.136-7.47,0.2-10.9,0.2q-34.485,0-41.22-6.549t-6.74-33.145V345.077h70.16V264.5h-70.16V143.827H2574.36V264.5h-60.25v80.579h60.25Zm330.03-240.548H2789.83v104.4h114.56v-104.4ZM2789.83,693.2h114.56V260.528H2789.83V693.2Zm342.71-591.049q-93.945,0-118.51,38.9-23.4,26.2-23.39,95.664V264.5H2928.8v79.785h63.42V693.2H3104.4V344.283h74.12V264.5H3104.4V227.979a36.048,36.048,0,0,1,8.52-23.221q8.52-10.514,30.92-9.924t31.91,1.786V104.529q-15.075-1.191-23.78-1.786-8.73-.6-19.43-0.595h0Zm186.54,2.381H3204.52v104.4h114.56v-104.4ZM3204.52,693.2h114.56V260.528H3204.52V693.2Zm163.95-180.609q0,91.3,66.1,143.5t181.49,52.2q112.98,0,174.88-52.992t61.9-133.175q0-78.2-52.24-119.48-33.645-26.589-101.05-42.473l-102.53-24.213q-59.355-13.89-77.63-24.214-28.44-15.481-28.44-46.839,0-34.134,28.85-53.191t77.21-19.053q43.47,0,72.73,14.687,43.89,22.234,47.14,75.022h117.33q-3.21-93.276-69.22-142.3t-159.5-49.023q-111.945,0-169.73,52t-57.78,130.594q0,86.14,59.06,126.625,34.875,24.217,128.13,44.855L3628.42,459q55.545,11.909,81.12,27.389,25.575,15.882,25.58,44.855,0,49.625-52.21,67.877-27.525,9.528-71.64,9.527-73.65,0-104.01-36.122-16.59-19.843-22.26-59.938H3368.47Zm536.14-167.511v266.35q0,40.488,19.02,59.938,29.34,30.572,109.4,27.786l53.51-1.984V612.618c-3.7.266-7.47,0.465-11.29,0.595q-5.76.2-10.9,0.2-34.485,0-41.23-6.549t-6.73-33.145V345.077h70.15V264.5h-70.15V143.827H3904.61V264.5h-60.25v80.579h60.25Zm448.54-94.869q-50.745,0-82.45,26.6-19.425,15.88-45.58,59.145v-75.42H4117.3V693.2h113.76V486.389q0-52,13.08-77.007,23.385-44.451,91.57-44.458,5.145,0,13.47.4t19.03,1.588V251q-7.53-.392-9.71-0.6c-1.46-.13-3.24-0.2-5.35-0.2h0ZM4573.79,342.3q39.99,0,67,23.326t30.09,68.368H4476.26q6.15-42.257,30.1-66.972t67.43-24.722h0Zm-0.04-93.282q-94.98,0-154.5,59.994t-59.52,172.417q0,119.985,65.93,173.222t152.18,53.234q104.49,0,162.55-63.114,37.32-39.688,41.88-78.2H4666.93q-10.08,19.053-23.25,29.771-24.12,19.853-62.72,19.847-36.42,0-62.29-16.275-42.555-26.2-45.18-91.3h314.67q0.84-56.052-3.72-85.87-7.875-50.889-34.42-89.449-29.46-43.725-74.66-64.007t-101.61-20.275h0ZM5044.9,524.893q-1.215,56.769-32.4,78.2-31.2,21.435-68.22,21.435-23.34,0-39.64-12.9t-16.3-41.877q0-32.544,26.68-48.031,15.765-9.126,51.93-15.48l25.71-4.764q19.29-3.572,30.34-7.74a124.921,124.921,0,0,0,21.9-10.916v42.076Zm-107.81-90.106q-65.88,8.336-99.83,27.786-61.89,35.724-61.89,115.51,0,61.533,38.47,95.068t97.48,33.542q46.245,0,82.93-21.038a233.277,233.277,0,0,0,54.22-43.267q1.2,14.691,3.17,26.2a125.693,125.693,0,0,0,7.14,24.61h122.88V676.526q-11.1-5.155-16.65-13.1-5.565-7.935-6.74-30.167-0.8-29.371-.79-50.015V384.772q0-78.195-55.33-106.381-55.35-28.181-126.6-28.183-109.485,0-154.46,57.16-28.275,36.525-31.85,93.281h109.01q4.005-25.006,16.07-39.694,16.875-19.844,57.45-19.847,36.165,0,54.85,10.122t18.68,36.717q0,21.836-24.36,32.153-13.575,5.953-45.12,9.923ZM5698.37,251q-42.81,0-77.69,17.862-32.9,17.862-55.09,55.969-12.69-31.752-37.26-52Q5497.8,251.008,5448.26,251q-52.32,0-85.22,25.4-18.645,14.291-39.64,48.03V261.322H5213.6V693.2h114.56V432.8q0-35.325,9.11-53.191,16.65-31.351,65.01-31.358,41.625,0,55.89,31.358,7.92,17.472,7.93,55.969V693.2h113.76V435.58q0-28.969,9.11-49.618,17.85-38.9,64.61-38.9,40.44,0,55.5,30.168,7.92,15.88,7.92,40.488V693.2h115.75l0.79-272.7q0-42.071-3.97-63.908-6.345-32.945-24.57-55.573-22.59-27.779-50.34-38.9A150.289,150.289,0,0,0,5698.37,251h0Zm171.48,304.059q0,66.685,48.65,109.755t150.73,43.068q100.08,0,147.94-40.687t47.87-104.991q0-48.825-33.3-81.374-33.69-32.153-101.2-48.03-101.265-22.226-117.95-31.359-16.695-8.726-16.7-28.183,0-15.48,15.71-26.992,15.69-11.508,52.66-11.511,44.91,0,63.6,23.022,9.93,12.71,12.32,34.535h112.96q-7.545-79.386-58.59-111.74t-132.08-32.351q-85.4,0-132.47,43.068T5882.93,394.3q0,50.816,30.12,77.8,30.12,27.39,103.77,45.649,102.285,24.216,118.18,34.137,15.87,9.927,15.88,28.977,0,19.854-19.71,29.771t-53.18,9.923q-56.955,0-78.06-22.625-11.94-12.7-15.53-42.87H5869.85Z"/>
     </svg>
-    <p>
-    
-      After almost 4 years since it's beginning, LordLatifiStreams is <u>permanently</u> shutting down. 
-      We have built an incredible community of users and would like to thank every single one of you for your support throughout the years. Goodbye everyone. 
+  </a>
+  </div>
+</div>
+<body>
 
-    </p>
-  
+<style>
+  .homescreen {
+    background-image: url("https://res.cloudinary.com/prod-f2f3/image/upload/v1583750780/f2/global/articles/2018/08_Aug/_56I7336.jpg");
+    background-size:100% auto;
+    background-position: 50% 50%;
+    height: 750px;
+    display: flex;
+  }
+  .homescreencontent {
+    width: 1450px;
+    /* background-color: #00a3e0; */
+    margin: auto;
+  }
+  .homescreencontent h1 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+</style>
+
+<div class="homescreen">
+  <div class="homescreencontent">
+    <h1>LordLatifiStreams</h1>
+  </div>
 </div>
 
-</body>
 
-<!-- why are you here? anyways, forza inter! -->
+<script>
+var start_date = new Date("Jan 1, 2025 00:00:00 EDT").getTime();
+
+var x = setInterval(function() {
+
+  var now = new Date().getTime();
+  var distance = start_date - now;
+    
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "expired";
+  }
+}, 1000);
+</script>
+
+
+
+<div class="streamtable">
+  <div class="timer-inner">
+    <p>Countdown to</p>
+    <h2><i>Japanese Grand Prix</i></h2>
+    <div id="countdown"></div>
+  </div>
+  <div class="stream" onclick="location.href='/motorsport';">
+    <p>Motorsport Streams</p>
+  </div>
+  <div class="stream" onclick="location.href='/replays';">
+    <p>Motorsport Replays</p>
+  </div>
+  <div class="stream" onclick="location.href='/soccer';">
+    <p>Soccer Streams</p>
+  </div>
+</div>
+
+<div class="streamtable">
+  <div class="timer-inner">
+    <p>Countdown to</p>
+    <h2><i>2024 EUROS</i></h2>
+    <div id="countdown2"></div>
+  </div>
+  <div class="stream" onclick="location.href='/soccer';">
+    <p>Soccer Streams</p>
+  </div>
+</div>
+
+
+<!-- Ⓒ 2023  LORDLATIFISTREAMS -->

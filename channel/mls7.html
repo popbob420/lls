@@ -1,10 +1,32 @@
-<style>
-html {
-    margin: 0;
-    width:100vw;
-    height:100vh;
-}
-</style>
+
 <html>
-<div id="skakhorlum-embed"><script type="text/javascript" src="https://www.sawlive.tv/embedn/1000/900/skakhorlum"></script></div>
+<head>
+<title>hi</title>
+<!--<meta name="referrer" content="no-referrer" />
+<meta name="referrer" content="never">-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//cdn.jsdelivr.net/npm/@clappr/player@0.4.0/dist/clappr.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/shaka-player@4.7.9/dist/shaka-player.compiled.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/clappr-shaka-playback@2.2.8/dist/clappr-shaka-playback.external.min.js"></script>
+<script src='//cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js' type='text/javascript'></script>
+</head>
+<body style="margin:0px;padding:0px;background-color: #111111">
+<div align="center">
+<div id="vid"></div>
+<script>
+var player = new Clappr.Player({
+source: 'https://ottb.live.cf.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/wybgz0orr8/out/v1/2f6d1612abd44f5883917f8a585b955f/cenc.mpd',
+width:'100%',
+height:'100%',
+autoPlay: false,
+mimeType: "application/x-mpegURL",
+mediacontrol: {seekbar: "#00a3e0", buttons: "#00a3e0"}, 
+plugins: [LevelSelector,ClapprShakaPlayback],
+shakaConfiguration: {
+drm: { clearKeys: {'11c8c1c2ef0385cf1e64d44bb9c3a395':'5769730ffbdc4b2fd8945929d9ace063'}
+}},
+parentId: "#vid"});
+</script>
+</div>
+<!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ca056c4c480c44159302b4619a935ae0"}'></script><!-- Cloudflare Pages Analytics --></body>
 </html>

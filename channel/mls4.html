@@ -32,7 +32,7 @@ body {
 
 <body>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/@clappr/player@0.4.0/dist/clappr.min.js"></script>
 <script type="text/javascript" src="/channel/level-selector.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/shaka-player@4.7.9/dist/shaka-player.compiled.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/clappr-shaka-playback@2.2.8/dist/clappr-shaka-playback.external.min.js"></script>
@@ -53,10 +53,6 @@ body {
       drm: {
           clearKeys: {e31a5a81caff5d07ea2411a571fc2e59':'96c5ef69479732ae734f962748c19729'}
  }},
- labelCallback: function(playbackLevel, customLabel) {
-          return customLabel + playbackLevel.level.height+'p'; // High 720p
-      }
-    },
  parentId: "#vid"});
  if (navigator.userAgent.match('Android')) {
 	player.on('fullscreen', function(isFullscreen) {

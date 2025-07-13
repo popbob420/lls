@@ -1,10 +1,69 @@
+<!--<script>
+if(window==window.top){
+window.location.replace("https://en.m.wikipedia.org/wiki/Nicholas_Latifi");
+}
+</script>-->
+
 <style>
+/*
+body { border-width: 0px; margin: 0px; padding: 0px; overflow: hidden; }
+*/
 html {
+    height: 100%;
+}
+body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
     margin: 0;
-    width:100vw;
-    height:100vh;
+}
+#vid {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 </style>
-<html>
-<div id="skakhorlum-embed"><script type="text/javascript" src="https://www.sawlive.tv/embedn/1000/900/skakhorlum"></script></div>
-</html>
+
+<body>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+<script type="text/javascript" src="/channel/level-selector.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/shaka-player@4.7.9/dist/shaka-player.compiled.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/clappr-shaka-playback@2.2.8/dist/clappr-shaka-playback.external.min.js"></script>
+<div id="oper" style="text-align: justify;">&nbsp;</div>
+
+<div id="vid"></div>
+<script>
+ var strm = window.atob('aHR0cHM6Ly9mYTcyM2ZjMWIxNzEudXMtd2VzdC0yLnBsYXliYWNrLmxpdmUtdmlkZW8ubmV0L2FwaS92aWRlby92MS91cy13ZXN0LTIuMTk2MjMzNzc1NTE4LmNoYW5uZWwuWmR1ZHJFRUxrS2EwLm0zdTg/dG9rZW49ZXlKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKRlV6TTROQ0o5LmV5SmhkM002WTJoaGJtNWxiQzFoY200aU9pSmhjbTQ2WVhkek9tbDJjenAxY3kxM1pYTjBMVEk2TVRrMk1qTXpOemMxTlRFNE9tTm9ZVzV1Wld3dldtUjFaSEpGUlV4clMyRXdJaXdpWVhkek9tRmpZMlZ6Y3kxamIyNTBjbTlzTFdGc2JHOTNMVzl5YVdkcGJpSTZJaW9pTENKaGQzTTZjM1J5YVdOMExXOXlhV2RwYmkxbGJtWnZjbU5sYldWdWRDSTZabUZzYzJVc0ltVjRjQ0k2TVRZM09EazVNRGc1TlgwLk5HN0hqbVRWZWllRktfSkYwcVRaT2RyaldXbkVVT1E4NmgwZm1OR09BV2lzcXF6a01ZZ1RyNDlhbEF1dVBRcnQ4cXl0OUcxSnRwVDRwaUluM3UyRTVUM2FGVGZPSFVOOTVyN3QyR2E2aXBjMXRuaE8tT05STlJURmZLUjZUdjgyJnBsYXllcl92ZXJzaW9uPTEuMTQuMA==') ;
+ player = new Clappr.Player({
+ source: "https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/i2pcjr4pe5/out/v1/912e9db56d75403b8a9ac0a719110f36/cenc.mpd",
+ mimeType: "application/x-mpegURL",
+ autoPlay: false, 
+ width: "100%",
+ height:"100%",
+ mediacontrol: {seekbar: "#00a3e0", buttons: "#00a3e0"},
+ plugins: {"core": [LevelSelector, ClapprShakaPlayback]}, 
+ shakaConfiguration: {
+      drm: {
+          clearKeys: {e31a5a81caff5d07ea2411a571fc2e59':'96c5ef69479732ae734f962748c19729'}
+ }},
+ labelCallback: function(playbackLevel, customLabel) {
+          return customLabel + playbackLevel.level.height+'p'; // High 720p
+      }
+    },
+ parentId: "#vid"});
+ if (navigator.userAgent.match('Android')) {
+	player.on('fullscreen', function(isFullscreen) {
+		if (isFullscreen) {
+			screen.orientation.lock('landscape');
+		}
+	});
+ };
+</script>
+</body>
